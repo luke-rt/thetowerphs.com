@@ -1,4 +1,5 @@
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -9,7 +10,7 @@ import {
 import type { MetaFunction } from "remix";
 
 export const meta: MetaFunction = () => {
-  return { title: "New Remix App" };
+  return { title: "The Tower" };
 };
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <Banner />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
@@ -30,3 +32,12 @@ export default function App() {
     </html>
   );
 }
+
+function Banner() {
+  return(
+    <Link to="/" title="The Tower">
+      <img src="/logo.png" alt="Tower banner" style={{maxWidth: "70%"}}/>
+    </Link>
+  );
+}
+
