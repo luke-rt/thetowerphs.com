@@ -1,34 +1,32 @@
-# Welcome to Remix!
-
-- [Remix Docs](https://remix.run/docs)
-
-## Deployment
-
-After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
-
-If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
-
-```sh
-npm i -g vercel
-vercel
-```
-
-It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
+# `thetowerphs.com` Source Code
 
 ## Development
+Hi! This project was built with the Remix.run framework, and it may look intimidating because of the amount of files, but if you're familiar with web development it shouldn't be too difficult to learn.
 
-To run your Remix app locally, make sure your project's local dependencies are installed:
+### File heirarchy
+There are only a couple important files that might need changing:
+- Any files in the app/ directory
+- Any assets(images, fonts, etc) in the public/ directory
+- Stylesheets in the styles/ directory
 
-```sh
-npm install
+I'll quickly explain what each file does
+`app/root.tsx` is the root module, so stuff like the navigation bar, top banner, and other things that won't change no matter what page you're on will go there
+`routes/*` are different pages, any folder is a new route in the URL, ie thetowerphs.com/newfe, and any file beginning with $ is a dynamic path, so one that is changed at runtime
+`lib/*` are the library files for stuff like querying from MongoDB
+`components/*` are common React components used in different pages, ie Button
+
+Any other files not listed probably won't need to be changed ever
+
+### Getting started
+Clone this directory locally and run `yarn`. Be sure you have yarn installed globally with `npm i -g yarn`
+
+`yarn dev` creates an unoptomized dev server at `localhost:3000` where any file changes automatically reload the webpage
+
+To deploy the website, run
+```
+git add .
+git commit -m "My commit message that you can change to explain what this change is"
+git push
 ```
 
-Afterwards, start the Remix development server like so:
-
-```sh
-npm run dev
-```
-
-Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
-
-If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
+Vercel will then automatically deploy this website to thetowerphs.com

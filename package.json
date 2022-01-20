@@ -8,8 +8,8 @@
     "build:css": "sass styles:app/styles/ --style=compressed",
     "build": "run-s build:css build:remix",
     "dev:remix": "remix dev",
-    "dev:css": "sass styles/styles/ --watch ",
-    "dev": "run-p dev:*",
+    "dev:css": "sass styles/:app/styles/ --watch ",
+    "dev": "run-p dev:css dev:remix",
     "postinstall": "remix setup node",
     "start": "remix-serve build"
   },

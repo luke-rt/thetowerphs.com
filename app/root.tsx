@@ -33,7 +33,9 @@ export default function App() {
       <body>
         <Banner />
         <NavBar />
-        <Outlet />
+        <div id="content">
+          <Outlet />
+        </div>
         <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}

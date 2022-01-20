@@ -1,23 +1,20 @@
 import { Link, useLoaderData } from "remix";
 import { article } from "@prisma/client";
-import { getDataTest } from "~/lib/queries";
 
-export let loader = () => {
-  return getDataTest();
+import Preview from "~/components/Preview";
+import { getArticles } from "~/lib/queries";
+
+export let loader = async () => {
+  return getArticles();
 }
 
 export default function Index() {
   let articles: article[] = useLoaderData();
   return (
     <div>
-      <h1>Welcome to Remix</h1>
-      <ul>
         {articles.map(article => (
-            <li key={article.id}>
-                <Link to={article.id}>{article.title}</Link>
-            </li>
+          <Preview key={article.id} article={article} />
         ))}
-      </ul>
     </div>
   );
 }
