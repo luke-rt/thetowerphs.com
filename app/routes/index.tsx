@@ -1,6 +1,6 @@
 import { Link, useLoaderData } from "remix";
 import { article } from "@prisma/client";
-import { getDataTest } from "../lib/queries";
+import { getDataTest } from "~/lib/queries";
 
 export let loader = () => {
   return getDataTest();
@@ -9,7 +9,7 @@ export let loader = () => {
 export default function Index() {
   let articles: article[] = useLoaderData();
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+    <div>
       <h1>Welcome to Remix</h1>
       <ul>
         {articles.map(article => (
