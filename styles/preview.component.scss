@@ -1,0 +1,28 @@
+.articlePreview {
+  padding: 4px;
+  margin: 2px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  display: inline-block;
+
+  a {
+    margin: 8px;
+    padding: 4px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .title {
+    font-size: xx-large;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .author {
+    font-size: large;
+  }
+}

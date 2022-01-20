@@ -1,5 +1,11 @@
 @use "globals.scss";
 
+#content {
+  display: block;
+  margin-left: 6vw;
+  margin-right: 6vw;
+}
+
 #navigation-bar {
   display: block;
   background-color: globals.$primary-color;
