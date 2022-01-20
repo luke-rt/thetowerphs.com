@@ -5,10 +5,10 @@
   "license": "MIT",
   "scripts": {
     "build:remix": "remix build",
-    "build:css": "sass styles/:app/styles/ --style=compressed",
-    "build": "run-s build:*",
+    "build:css": "sass styles:app/styles/ --style=compressed",
+    "build": "run-s build:css build:remix",
     "dev:remix": "remix dev",
-    "dev:css": "sass styles/:app/styles/ --watch ",
+    "dev:css": "sass styles/styles/ --watch ",
     "dev": "run-p dev:*",
     "postinstall": "remix setup node",
     "start": "remix-serve build"
