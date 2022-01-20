@@ -5,5 +5,6 @@ node_modules
 .output
 .env
 
+/app/styles
 public/build
 api/_build

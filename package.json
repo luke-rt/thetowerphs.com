@@ -4,8 +4,12 @@
   "description": "The website for Princeton High School's newspaper club, The Tower",
   "license": "MIT",
   "scripts": {
-    "build": "remix build",
-    "dev": "remix dev",
+    "build:remix": "remix build",
+    "build:css": "sass styles/:app/styles/ --style=compressed",
+    "build": "run-s build:*",
+    "dev:remix": "remix dev",
+    "dev:css": "sass styles/:app/styles/ --watch ",
+    "dev": "run-p dev:*",
     "postinstall": "remix setup node",
     "start": "remix-serve build"
   },
@@ -23,7 +27,9 @@
     "@remix-run/dev": "^1.1.1",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
+    "npm-run-all": "^4.1.5",
     "prisma": "^3.8.1",
+    "sass": "^1.49.0",
     "typescript": "^4.1.2"
   },
   "engines": {

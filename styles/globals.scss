@@ -1,0 +1,12 @@
+$font-stack: georgia, system-ui, sans-serif;
+$primary-color: black;
+$bg-color: white;
+$line-height: 1.4;
+
+* {
+  font-family: $font-stack;
+  color: $primary-color;
+  background-color: $bg-color;
+  line-height: $line-height;
+  text-decoration: none;
+}

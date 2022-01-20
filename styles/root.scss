@@ -1,0 +1,10 @@
+@use "globals.scss";
+
+#navigation-bar {
+  display: block;
+  background-color: globals.$primary-color;
+  margin-left: 6vw;
+  margin-right: 6vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
