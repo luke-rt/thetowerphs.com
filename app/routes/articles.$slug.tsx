@@ -6,7 +6,6 @@ import { getArticleById } from "~/lib/queries";
 
 export let loader: LoaderFunction = async({params}) => {
   invariant(params.slug, "expected params.slug");
-
   return getArticleById(params.slug);
 }
 

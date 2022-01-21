@@ -6,6 +6,24 @@
   margin-right: 6vw;
 }
 
+#footer {
+  margin-left: 7vw;
+  margin-right: 7vw;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  hr {
+    background-color: #ccc;
+    height: 3px;
+    border: none;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+  }
+  h1 {
+    font-family: Canterbury;
+    font-size: xxx-large;
+  }
+}
+
 #navigation-bar {
   display: block;
   background-color: globals.$primary-color;
@@ -13,4 +31,9 @@
   margin-right: 6vw;
   padding-left: 5vw;
   padding-right: 5vw;
+
+  hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
 }

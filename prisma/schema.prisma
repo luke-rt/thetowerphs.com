@@ -9,11 +9,12 @@ datasource db {
 }
 
 model article {
-  id        String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
-  author    String
-  content   String
-  date      DateTime @db.Date
-  published Boolean
-  section   String
-  title     String
+  id          String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  author      String
+  category    String
+  content     String
+  date        DateTime @db.Date
+  published   Boolean
+  subcategory String
+  title       String
 }

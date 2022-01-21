@@ -36,6 +36,7 @@ export default function App() {
         <div id="content">
           <Outlet />
         </div>
+        <Footer />
         <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}
@@ -54,35 +55,44 @@ function Banner() {
   );
 }
 
+function Footer() {
+  return(
+    <div id="footer">
+      <hr />
+      <h1>The Tower</h1>
+    </div>
+  )
+}
+
 function NavBar() {
   return(
     <div id="navigation-bar">
-      <Button name="News & Features" href="/newfe">
-        <Link to="/newfe/phs-profile">PHS Profiles</Link>
+      <Button name="News & Features" href="category/news-features">
+        <Link to="category/phs-profiles">PHS Profiles</Link>
         <hr />
-        <Link to="/newfe/meanwhile-in-princeton">Meanwhile In Princeton</Link>
+        <Link to="category/meanwhile-in-princeton">Meanwhile In Princeton</Link>
       </Button>
 
-      <Button name="Opinions" href="/opinions">
-        <Link to="/opinions/editorials">Editorials</Link>
+      <Button name="Opinions" href="category/opinions">
+        <Link to="category/editorials">Editorials</Link>
         <hr />
-        <Link to="/opinions/cheers-jeers">Cheers & Jeers</Link>
+        <Link to="category/cheers-jeers">Cheers & Jeers</Link>
       </Button>
 
-      <Button name="Vanguard" href="/vanguard">
-        <Link to="/vanguard/random-musings">Random Musings</Link>
+      <Button name="Vanguard" href="category/vanguard">
+        <Link to="category/random-musings">Random Musings</Link>
         <hr />
-        <Link to="/vanguard/spreads">Spreads</Link>
+        <Link to="category/spreads">Spreads</Link>
       </Button>
 
-      <Button name="Arts & Entertainment" href="/ane">
-        <Link to="/arts-entertainment/recipes">Recipes</Link>
+      <Button name="Arts & Entertainment" href="category/arts-entertainment">
+        <Link to="category/recipes">Recipes</Link>
         <hr />
-        <Link to="/arts-entertainment/student-artists">Student Artists</Link>
+        <Link to="category/student-artists">Student Artists</Link>
       </Button>
 
-      <Button name="Sports" href="/sports">
-        <Link to="/sports/student-athletes">Student Athletes</Link>
+      <Button name="Sports" href="category/sports">
+        <Link to="category/student-athletes">Student Athletes</Link>
       </Button>
 
       <Button name="About" href="/about" />

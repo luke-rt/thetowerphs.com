@@ -12,7 +12,7 @@ export default function Preview({article}: Props) {
       <div>
         <Link to={"credit/"} className="author">{article.author}</Link>
          •
-        <Link to={"category/"} className="category">{article.section}</Link>
+        <Link to={"category/"} className="category">{article.category}</Link>
       </div>
     </div>
   )
