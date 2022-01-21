@@ -9,7 +9,6 @@ export async function getArticles() {
 
   prisma.$disconnect();
 
-  console.log(articles)
   return articles;
 }
 
@@ -32,15 +31,11 @@ export async function getArticlesByCategory(cat: string) {
 
   const articles = await prisma.article.findMany({
     where: {
-      section: cat,
+      subcategory: cat,
       published: true,
     },
   })
   prisma.$disconnect();
 
   return articles;
-}
-
-export async function expandCategoryName(cat: string) {
-
 }
