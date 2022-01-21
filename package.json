@@ -1,7 +1,11 @@
 {
-  "private": true,
   "name": "thetowerphs.com",
   "description": "The website for Princeton High School's newspaper club, The Tower",
+  "repository": "https://github.com/TowerPHS/thetowerphs.com",
+  "author": {
+    "name": "Luke Tong",
+    "email": "luke.rtong@gmail.com"
+  },
   "license": "MIT",
   "scripts": {
     "build:remix": "remix build",
