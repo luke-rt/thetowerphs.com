@@ -67,32 +67,32 @@ function Footer() {
 function NavBar() {
   return(
     <div id="navigation-bar">
-      <Button name="News & Features" href="category/news-features">
-        <Link to="category/phs-profiles">PHS Profiles</Link>
+      <Button name="News & Features" href="/category/news-features">
+        <Link to="/category/phs-profiles">PHS Profiles</Link>
         <hr />
-        <Link to="category/meanwhile-in-princeton">Meanwhile In Princeton</Link>
+        <Link to="/category/meanwhile-in-princeton">Meanwhile In Princeton</Link>
       </Button>
 
-      <Button name="Opinions" href="category/opinions">
-        <Link to="category/editorials">Editorials</Link>
+      <Button name="Opinions" href="/category/opinions">
+        <Link to="/category/editorials">Editorials</Link>
         <hr />
-        <Link to="category/cheers-jeers">Cheers & Jeers</Link>
+        <Link to="/category/cheers-jeers">Cheers & Jeers</Link>
       </Button>
 
-      <Button name="Vanguard" href="category/vanguard">
-        <Link to="category/random-musings">Random Musings</Link>
+      <Button name="Vanguard" href="/category/vanguard">
+        <Link to="/category/random-musings">Random Musings</Link>
         <hr />
-        <Link to="category/spreads">Spreads</Link>
+        <Link to="/category/spreads">Spreads</Link>
       </Button>
 
-      <Button name="Arts & Entertainment" href="category/arts-entertainment">
-        <Link to="category/recipes">Recipes</Link>
+      <Button name="Arts & Entertainment" href="/category/arts-entertainment">
+        <Link to="/category/recipes">Recipes</Link>
         <hr />
-        <Link to="category/student-artists">Student Artists</Link>
+        <Link to="/category/student-artists">Student Artists</Link>
       </Button>
 
-      <Button name="Sports" href="category/sports">
-        <Link to="category/student-athletes">Student Athletes</Link>
+      <Button name="Sports" href="/category/sports">
+        <Link to="/category/student-athletes">Student Athletes</Link>
       </Button>
 
       <Button name="About" href="/about" />
