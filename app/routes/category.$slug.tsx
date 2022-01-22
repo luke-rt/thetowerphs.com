@@ -1,4 +1,4 @@
-import { Link, LoaderFunction, useLoaderData } from "remix";
+import { LoaderFunction, useLoaderData } from "remix";
 import { article } from "@prisma/client";
 import { getArticlesByCategory } from "~/lib/queries";
 import invariant from 'tiny-invariant';
@@ -18,5 +18,5 @@ export default function Category() {
         <Preview key={article.id} article={article} />
       ))}
     </div>
-  )
+  );
 }
