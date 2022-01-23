@@ -9,6 +9,7 @@ import {
   ScrollRestoration
 } from "remix";
 import type { MetaFunction } from "remix";
+import { FaInstagramSquare, FaFacebookSquare} from "react-icons/fa";
 import styles from "~/styles/styles.css";
 
 import Button from "~/components/Button";
@@ -63,7 +64,13 @@ function Footer() {
   return(
     <div id="footer">
       <hr />
-      <h1>The Tower</h1>
+      <div className="footer-top">
+        <h1>The Tower</h1>
+        <span>
+          <a href="https://www.instagram.com/thetowerphs/" target="_blank" rel="noopener noreferrer"><FaInstagramSquare size="2em"/></a>
+          <a href="https://www.facebook.com/phstower" target="_blank" rel="noopener noreferrer"><FaFacebookSquare size="2em"/></a>
+        </span>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,8 @@
+#frontPage {
+  display: flex;
+  .frontpage-articles {
+    flex: 1;
+    max-width: 80vw;
+    padding-right: 0;
+  }
+}

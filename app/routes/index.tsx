@@ -3,6 +3,7 @@ import { article } from "@prisma/client";
 
 import Preview from "~/components/Preview";
 import { getArticles } from "~/lib/queries";
+import VirtualArchive from "~/components/VirtualArchive";
 
 export let loader = async () => {
   return getArticles();
@@ -11,10 +12,13 @@ export let loader = async () => {
 export default function Index() {
   let articles: article[] = useLoaderData();
   return (
-    <div>
+    <div id="frontPage">
+      <div className="frontpage-articles">
         {articles.map(article => (
           <Preview key={article.id} article={article} category />
         ))}
+      </div>
+      <VirtualArchive />
     </div>
   );
 }
