@@ -68,31 +68,31 @@ function NavBar() {
   return(
     <div id="navigation-bar">
       <Button name="News & Features" href="/category/news-features">
-        <Link to="/category/phs-profiles">PHS Profiles</Link>
+        <Link to="/category/news-features/phs-profiles">PHS Profiles</Link>
         <hr />
-        <Link to="/category/meanwhile-in-princeton">Meanwhile In Princeton</Link>
+        <Link to="/category/news-features/meanwhile-in-princeton">Meanwhile In Princeton</Link>
       </Button>
 
       <Button name="Opinions" href="/category/opinions">
-        <Link to="/category/editorials">Editorials</Link>
+        <Link to="/category/opinions/editorials">Editorials</Link>
         <hr />
-        <Link to="/category/cheers-jeers">Cheers & Jeers</Link>
+        <Link to="/category/opinions/cheers-jeers">Cheers & Jeers</Link>
       </Button>
 
       <Button name="Vanguard" href="/category/vanguard">
-        <Link to="/category/random-musings">Random Musings</Link>
+        <Link to="/category/vanguard/random-musings">Random Musings</Link>
         <hr />
-        <Link to="/category/spreads">Spreads</Link>
+        <Link to="/category/vanguard/spreads">Spreads</Link>
       </Button>
 
       <Button name="Arts & Entertainment" href="/category/arts-entertainment">
-        <Link to="/category/recipes">Recipes</Link>
+        <Link to="/category/arts-entertainment/recipes">Recipes</Link>
         <hr />
-        <Link to="/category/student-artists">Student Artists</Link>
+        <Link to="/category/arts-entertainment/student-artists">Student Artists</Link>
       </Button>
 
       <Button name="Sports" href="/category/sports">
-        <Link to="/category/student-athletes">Student Athletes</Link>
+        <Link to="/category/sports/student-athletes">Student Athletes</Link>
       </Button>
 
       <Button name="About" href="/about" />
