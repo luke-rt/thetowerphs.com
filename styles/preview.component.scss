@@ -1,28 +1,32 @@
 .articlePreview {
+  display: block;
   padding: 4px;
-  margin: 1vw 3vw 1vw 3vw;
-  border-style: solid;
-  border-width: 1px;
-  border-color: black;
-  display: inline-block;
+  margin: 1vw 4vw 1vw 4vw;
+  min-height: 18vh;
+  border: none;
+  border-bottom: 1px solid gainsboro;
 
   a {
-    margin: 8px;
-    padding: 4px;
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  span {
+    margin-left: 1vw;
+    color: #8b8b8b;
   }
 
   .title {
     font-size: xx-large;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 
-  .author {
-    font-size: large;
+  .authors a {
+    margin-right: 10px;
+    color: #8b8b8b;
+  }
+
+  .preview {
+    margin-top: 1vh;
   }
 }

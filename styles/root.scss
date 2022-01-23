@@ -9,14 +9,13 @@
 #footer {
   margin-left: 7vw;
   margin-right: 7vw;
-  padding-top: 4vh;
-  padding-bottom: 4vh;
+  padding-top: 2vh;
   hr {
     background-color: #ccc;
     height: 3px;
     border: none;
     margin-top: 3vh;
-    margin-bottom: 3vh;
+    margin-bottom: 1vh;
   }
   h1 {
     font-family: Canterbury;
@@ -27,10 +26,11 @@
 #navigation-bar {
   display: block;
   background-color: globals.$primary-color;
-  margin-left: 6vw;
-  margin-right: 6vw;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  margin-bottom: 2vh;
+  margin-left: 7vw;
+  margin-right: 7vw;
+  padding-left: 4vw;
+  padding-right: 4vw;
 
   hr {
     margin-top: 5px;
