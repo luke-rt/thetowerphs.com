@@ -14,7 +14,11 @@ import styles from "~/styles/styles.css";
 import Button from "~/components/Button";
 
 export const meta: MetaFunction = () => {
-  return { title: "The Tower" };
+  return {
+    title: "The Tower",
+    description: "Princeton High School's newspaper website",
+    keywords: "newspaper, PHS, Tower"
+  };
 };
 
 export const links: LinksFunction = () => {

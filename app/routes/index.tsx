@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "remix";
+import { useLoaderData } from "remix";
 import { article } from "@prisma/client";
 
 import Preview from "~/components/Preview";

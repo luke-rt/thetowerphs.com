@@ -1,8 +1,16 @@
-import { Link, LoaderFunction, useLoaderData } from "remix";
+import { Link, LoaderFunction, MetaFunction, useLoaderData } from "remix";
 import { article } from "@prisma/client";
 import invariant from 'tiny-invariant';
 
 import { getArticleById } from "~/lib/queries";
+
+export const meta: MetaFunction = ({data}) => {
+  return {
+    title: data.title + " | The Tower",
+    description: "Read this article on thetowerphs.com",
+    keywords: "newspaper, PHS, Tower"
+  };
+};
 
 export let loader: LoaderFunction = async({params}) => {
   invariant(params.slug, "expected params.slug");
