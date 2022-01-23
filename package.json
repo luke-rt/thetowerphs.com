@@ -14,6 +14,7 @@
     "dev:remix": "remix dev",
     "dev:css": "sass styles/:app/styles/ --watch ",
     "dev": "run-p dev:css dev:remix",
+    "lint": "eslint app/**/**/*.ts app/**/**/*.tsx",
     "postinstall": "remix setup node",
     "start": "remix-serve build"
   },
@@ -34,6 +35,10 @@
     "@types/lodash": "^4.14.178",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "eslint": "^8.7.0",
+    "eslint-plugin-react": "^7.28.0",
     "npm-run-all": "^4.1.5",
     "prisma": "^3.8.1",
     "sass": "^1.49.0",

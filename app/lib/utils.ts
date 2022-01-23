@@ -3,10 +3,10 @@ import {startCase, camelCase} from "lodash";
 
 // Irregular category names, ie just converting to Title Case won't resolve it bc of capitalizations, or ampersands, etc
 const categories = new Map<string, string>([
-  ["news-features", "News & Features"],
-  ["phs-profiles", "PHS Profiles"],
-  ["cheers-jeers", "Cheers & Jeers"],
-  ["arts-entertainment", "Arts & Entertainment"],
+	["news-features", "News & Features"],
+	["phs-profiles", "PHS Profiles"],
+	["cheers-jeers", "Cheers & Jeers"],
+	["arts-entertainment", "Arts & Entertainment"],
 ]);
 
 export interface ArticleData {
@@ -15,7 +15,7 @@ export interface ArticleData {
 }
 
 export function expandCategorySlug(slug: string) {
-  let expanded = categories.get(slug);
-  if(expanded) return expanded;
-  return startCase(camelCase(slug));
+	const expanded = categories.get(slug);
+	if(expanded) return expanded;
+	return startCase(camelCase(slug));
 }

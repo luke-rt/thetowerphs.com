@@ -1,22 +1,17 @@
 .article {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
-  h1 {
-    text-align: center;
-  }
+	.authors {
+		a {
+			margin-right: 8px;
+		}
+	}
 
-  .authors {
-    margin-left: 35vw;
-
-    a {
-      text-align: center;
-      margin-left: 1vh;
-    }
-  }
-
-  .article-content {
-    width: 50vw;
-    margin-left: 18vw;
-  }
+	.article-content {
+		max-width: 50vw;
+	}
 
   p {
     margin-top: 3vh;

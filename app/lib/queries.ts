@@ -3,89 +3,106 @@ import { ArticleData } from "~/lib/utils";
 
 const prisma = new PrismaClient();
 
-export async function getArticles() {
-  await prisma.$connect();
+export async function getFrontpageArticles() {
+	await prisma.$connect();
 
-  const articles: article[] = await prisma.article.findMany();
+	// TODO: fix frontpage collection to array of strings with ID, then do npx prisma db pull and npx generate
+	const articles: article[] = await prisma.article.findMany();
 
-  prisma.$disconnect();
+	prisma.$disconnect();
 
-  return articles;
+	return articles;
 }
 
 export async function getArticleById(id: string) {
-  await prisma.$connect();
+	await prisma.$connect();
 
-  const article = await prisma.article.findFirst({
-    where: {
-      id: id,
-      published: true,
-    },
-  });
+	const article = await prisma.article.findFirst({
+		where: {
+			id: id,
+			published: true,
+		},
+	});
 
-  prisma.$disconnect();
+	prisma.$disconnect();
 
-  return article;
+	return article;
+}
+
+export async function getArticle(cat: string, slug: string) {
+	await prisma.$connect();
+
+	const article = await prisma.article.findFirst({
+		where: {
+			category: cat,
+			title: decodeURI(slug),
+			published: true,
+		},
+	});
+
+	prisma.$disconnect();
+
+	return article;
 }
 
 export async function getArticlesByCategory(cat: string) {
-  await prisma.$connect();
+	await prisma.$connect();
 
-  const articles = await prisma.article.findMany({
-    where: {
-      category: cat,
-      published: true,
-    },
-  });
+	const articles = await prisma.article.findMany({
+		where: {
+			category: cat,
+			published: true,
+		},
+	});
 
-  prisma.$disconnect();
+	prisma.$disconnect();
 
-  let data: ArticleData = {
-    slug: cat,
-    articles: articles,
-  }
+	const data: ArticleData = {
+		slug: cat,
+		articles: articles,
+	};
 
-  return data;
+	return data;
 }
 
 export async function getArticlesBySubcategory(subcat: string) {
-  await prisma.$connect();
+	await prisma.$connect();
 
-  const articles = await prisma.article.findMany({
-    where: {
-      subcategory: subcat,
-      published: true,
-    },
-  });
+	const articles = await prisma.article.findMany({
+		where: {
+			subcategory: subcat,
+			published: true,
+		},
+	});
 
-  prisma.$disconnect();
+	prisma.$disconnect();
 
-  let data: ArticleData = {
-    slug: subcat,
-    articles: articles,
-  }
+	const data: ArticleData = {
+		slug: subcat,
+		articles: articles,
+	};
 
-  return data;
+	return data;
 }
 
 export async function getArticlesByAuthor(author: string) {
-  await prisma.$connect();
+	await prisma.$connect();
 
-  const articles = await prisma.article.findMany({
-    where: {
-      authors: {
-        has: decodeURI(author)
-      },
-      published: true,
-    },
-  });
+	const articles = await prisma.article.findMany({
+		where: {
+			authors: {
+				has: decodeURI(author)
+			},
+			published: true,
+		},
+	});
 
-  prisma.$disconnect();
+	prisma.$disconnect();
 
-  let data: ArticleData = {
-    slug: author,
-    articles: articles,
-  }
+	const data: ArticleData = {
+		slug: author,
+		articles: articles,
+	};
 
-  return data;
+	return data;
 }
