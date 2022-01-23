@@ -2,11 +2,12 @@
 
 #content {
   display: block;
+  margin-top: 4vh;
   margin-left: 6vw;
-  margin-right: 6vw;
 }
 
 #footer {
+  display: block;
   margin-left: 7vw;
   margin-right: 7vw;
   padding-top: 2vh;
@@ -17,10 +18,19 @@
     margin-top: 3vh;
     margin-bottom: 1vh;
   }
-  h1 {
-    font-family: Canterbury;
-    font-size: xxx-large;
+  .footer-top {
+    h1 {
+      font-family: Canterbury;
+      font-size: xxx-large;
+      float:left;
+      padding-right: 10px;
+    }
+    span svg {
+      padding-top: 2vh;
+      margin-left: 3px;
+    }
   }
+
 }
 
 #navigation-bar {

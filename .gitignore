@@ -8,3 +8,6 @@ node_modules
 /app/styles
 public/build
 api/_build
+
+.DS_Store
+public/.DS_Store
