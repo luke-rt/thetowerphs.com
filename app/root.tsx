@@ -61,7 +61,7 @@ function Footer() {
       <hr />
       <h1>The Tower</h1>
     </div>
-  )
+  );
 }
 
 function NavBar() {
@@ -98,5 +98,5 @@ function NavBar() {
       <Button name="About" href="/about" />
       <Button name="Subscribe" href="/subscribe" />
     </div>
-  )
+  );
 }

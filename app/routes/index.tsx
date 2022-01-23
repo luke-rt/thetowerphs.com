@@ -13,7 +13,7 @@ export default function Index() {
   return (
     <div>
         {articles.map(article => (
-          <Preview key={article.id} article={article} />
+          <Preview key={article.id} article={article} category />
         ))}
     </div>
   );

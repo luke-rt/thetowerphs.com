@@ -1,4 +1,4 @@
-import { LoaderFunction, useLoaderData } from "remix";
+import { Link, LoaderFunction, useLoaderData } from "remix";
 import { article } from "@prisma/client";
 import invariant from 'tiny-invariant';
 
@@ -11,11 +11,22 @@ export let loader: LoaderFunction = async({params}) => {
 
 export default function Article() {
   let article: article = useLoaderData();
+  const paragraphs = article.content.split('\n');
+
   return (
     <div className="article">
-      <h1 className="title">{article.title}</h1>
-
+      <h1 className="title">{ article.title }</h1>
+      <div className="authors">
+        By
+        {article.authors.map(author => (
+            <Link to={ "/credit/" + encodeURI(author) } >{author}</Link>
+        ))}
+      </div>
+      <div className="article-content">
+        {paragraphs.map(paragraph => (
+          <p>{paragraph}</p>
+        ))}
+      </div>
     </div>
-
   );
 }

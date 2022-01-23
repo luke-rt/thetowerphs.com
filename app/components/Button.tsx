@@ -10,7 +10,7 @@ export default function Button({name, href, children}: Props) {
   if(children) {
     return(
       <div className="dropdown" style={{display: "inline-block"}}>
-        <Link to={href} className="btn">{name}</Link>
+        <Link to={href} className="btn">{ name }</Link>
         <div className="content">
           {children}
         </div>
@@ -20,7 +20,7 @@ export default function Button({name, href, children}: Props) {
 
   return(
     <div className="dropdown" style={{display: "inline-block"}}>
-      <Link to={href} className="btn">{name}</Link>
+      <Link to={href} className="btn">{ name }</Link>
     </div>
   );
 }

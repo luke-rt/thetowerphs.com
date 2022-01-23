@@ -64,7 +64,9 @@ export async function getArticlesByAuthor(author: string) {
 
   const articles = await prisma.article.findMany({
     where: {
-      author: decodeURI(author),
+      authors: {
+        has: decodeURI(author)
+      },
       published: true,
     },
   });

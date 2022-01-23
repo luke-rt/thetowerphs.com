@@ -10,7 +10,7 @@ datasource db {
 
 model article {
   id          String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
-  author      String
+  authors     String[]
   category    String
   content     String
   date        DateTime @db.Date
