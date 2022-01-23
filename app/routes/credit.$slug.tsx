@@ -1,9 +1,9 @@
 import { LoaderFunction, useLoaderData } from "remix";
-import { article } from "@prisma/client";
 import invariant from "tiny-invariant";
 
 import { getArticlesByAuthor } from "~/lib/queries";
 import Preview from "~/components/Preview";
+import { ArticleData } from "~/lib/utils";
 
 export let loader: LoaderFunction = async({params}) => {
   invariant(params.slug, "expected params.slug");
@@ -12,10 +12,11 @@ export let loader: LoaderFunction = async({params}) => {
 }
 
 export default function Credit() {
-  let articles: article[] = useLoaderData();
+  let data: ArticleData = useLoaderData();
   return(
     <div className="credit">
-      {articles.map(article => (
+      <h1>{data.slug}'s Work</h1>
+      {data.articles.map(article => (
         <Preview key={article.id} article={article} category />
       ))}
     </div>

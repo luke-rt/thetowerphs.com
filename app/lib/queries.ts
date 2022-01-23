@@ -1,7 +1,7 @@
 import { article, PrismaClient } from "@prisma/client";
+import { ArticleData } from "~/lib/utils";
 
 const prisma = new PrismaClient();
-const supercategories: string[] = ["opinions", "news-features", "vanguard", "arts-entertainment", "sports"];
 
 export async function getArticles() {
   await prisma.$connect();
@@ -31,32 +31,41 @@ export async function getArticleById(id: string) {
 export async function getArticlesByCategory(cat: string) {
   await prisma.$connect();
 
-  if(supercategories.includes(cat)) {
-    // category is a supercategory
-    const articles = await prisma.article.findMany({
-      where: {
-        category: cat,
-        published: true,
-      },
-    });
+  const articles = await prisma.article.findMany({
+    where: {
+      category: cat,
+      published: true,
+    },
+  });
 
-    prisma.$disconnect();
+  prisma.$disconnect();
 
-    return articles;
+  let data: ArticleData = {
+    slug: cat,
+    articles: articles,
   }
-  else {
-    // category is a subcategory
-    const articles = await prisma.article.findMany({
-      where: {
-        subcategory: cat,
-        published: true,
-      },
-    });
 
-    prisma.$disconnect();
+  return data;
+}
 
-    return articles;
+export async function getArticlesBySubcategory(subcat: string) {
+  await prisma.$connect();
+
+  const articles = await prisma.article.findMany({
+    where: {
+      subcategory: subcat,
+      published: true,
+    },
+  });
+
+  prisma.$disconnect();
+
+  let data: ArticleData = {
+    slug: subcat,
+    articles: articles,
   }
+
+  return data;
 }
 
 export async function getArticlesByAuthor(author: string) {
@@ -73,5 +82,10 @@ export async function getArticlesByAuthor(author: string) {
 
   prisma.$disconnect();
 
-  return articles;
+  let data: ArticleData = {
+    slug: author,
+    articles: articles,
+  }
+
+  return data;
 }
