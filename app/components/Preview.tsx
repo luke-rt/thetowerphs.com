@@ -1,6 +1,6 @@
 import { Link } from "remix";
 import { article } from "@prisma/client";
-import { expandCategorySlug } from "~/lib/utils";
+import { expandCategorySlug, displayDate } from "~/lib/utils";
 
 interface Props {
   article: article,
@@ -8,9 +8,7 @@ interface Props {
 }
 
 export default function Preview({article, category}: Props) {
-	const date = new Date(article.date);
-
-	const sentences = article.content.substring(0, 400).split(" "); // replace 200 with better number
+	const sentences = article.content.substring(0, 400).split(" ");
 	sentences.pop();
 	const preview = sentences.join(" ").replace(/[\n\r\t\s]+/g, " ") + "...";
 
@@ -22,8 +20,8 @@ export default function Preview({article, category}: Props) {
 				}
 			</div>
 			<div>
-				<Link to={ "/articles/" + article.category + "/" + encodeURI(article.title) } className="title">{article.title}</Link>
-				<span>{ date.toDateString() }</span>
+				<Link to={ "/articles/" + article.year + "/" + article.month + "/" + article.category + "/" + encodeURI(article.title) } className="title">{article.title}</Link>
+				<span>{ displayDate(article.year, article.month) }</span>
 			</div>
 			<div className="authors">
 				{article.authors.map((author, index) => (

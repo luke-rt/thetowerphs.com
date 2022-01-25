@@ -3,6 +3,7 @@ import { article } from "@prisma/client";
 import invariant from "tiny-invariant";
 
 import { getArticle } from "~/lib/queries";
+import { displayDate } from "~/lib/utils";
 
 export const meta: MetaFunction = ({data}) => {
 	return {
@@ -13,10 +14,12 @@ export const meta: MetaFunction = ({data}) => {
 };
 
 export const loader: LoaderFunction = async({params}) => {
+	invariant(params.year, "expected params.year");
+	invariant(params.month, "expected params.month");
 	invariant(params.cat, "expected params.cat");
 	invariant(params.slug, "expected params.slug");
 
-	return getArticle(params.cat, params.slug);
+	return getArticle(params.year, params.month, params.cat, params.slug);
 };
 
 export default function Article() {
@@ -26,6 +29,7 @@ export default function Article() {
 	return (
 		<div className="article">
 			<h1 className="title">{ article.title }</h1>
+			<span>{ displayDate(article.year, article.month) }</span>
 			<div className="authors">
 				{article.authors.map((author, index) => (
 					<Link key={index} to={ "/credit/" + encodeURI(author) } >{author}</Link>
