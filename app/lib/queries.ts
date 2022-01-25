@@ -6,8 +6,19 @@ const prisma = new PrismaClient();
 export async function getFrontpageArticles() {
 	await prisma.$connect();
 
-	// TODO: fix frontpage collection to array of strings with ID, then do npx prisma db pull and npx generate
-	const articles: article[] = await prisma.article.findMany();
+	const curr = new Date();
+	const month = curr.getMonth() + 1;
+	const year = curr.getFullYear();
+
+	console.log(month + " " + year);
+
+	const articles: article[] = await prisma.article.findMany({
+		where: {
+			year: year,
+			month: month,
+			published: true,
+		}
+	});
 
 	prisma.$disconnect();
 
@@ -29,11 +40,13 @@ export async function getArticleById(id: string) {
 	return article;
 }
 
-export async function getArticle(cat: string, slug: string) {
+export async function getArticle(year: string, month: string, cat: string, slug: string) {
 	await prisma.$connect();
 
 	const article = await prisma.article.findFirst({
 		where: {
+			year: parseInt(year),
+			month: parseInt(month),
 			category: cat,
 			title: decodeURI(slug),
 			published: true,
@@ -43,6 +56,22 @@ export async function getArticle(cat: string, slug: string) {
 	prisma.$disconnect();
 
 	return article;
+}
+
+export async function getArticlesByDate(year: string, month: string) {
+	await prisma.$connect();
+
+	const articles = await prisma.article.findMany({
+		where: {
+			year: parseInt(year),
+			month: parseInt(month),
+			published: true,
+		},
+	});
+
+	prisma.$disconnect();
+
+	return articles;
 }
 
 export async function getArticlesByCategory(cat: string) {

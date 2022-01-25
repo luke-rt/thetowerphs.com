@@ -13,8 +13,9 @@ model article {
   authors     String[]
   category    String
   content     String
-  date        DateTime @db.Date
+  month       Int
   published   Boolean
   subcategory String
   title       String
+  year        Int
 }

@@ -22,7 +22,7 @@ module.exports = {
 		"react",
 		"@typescript-eslint"
 	],
-  "ignorePatterns": [".eslintrc.js"],
+  "ignorePatterns": [".eslintrc.js", "remix.config.js"],
 	"rules": {
 		"indent": [
 			"error",
