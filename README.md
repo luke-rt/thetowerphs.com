@@ -29,4 +29,4 @@ git commit -m "My commit message that you can change to explain what this change
 git push
 ```
 
-Vercel will then automatically deploy this website to thetowerphs.com
+Netlify will then automatically deploy this website to thetowerphs.com
