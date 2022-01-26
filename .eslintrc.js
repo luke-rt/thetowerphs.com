@@ -22,7 +22,7 @@ module.exports = {
 		"react",
 		"@typescript-eslint"
 	],
-  "ignorePatterns": [".eslintrc.js", "remix.config.js"],
+  "ignorePatterns": [".eslintrc.js", "remix.config.js", "netlify/*"],
 	"rules": {
 		"indent": [
 			"error",
