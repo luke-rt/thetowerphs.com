@@ -2,11 +2,12 @@ node_modules
 
 .cache
 .output
+.netlify
 .env
 
 /app/styles
 public/build
-/build
+/netlify/functions/server/build
 
 .DS_Store
 public/.DS_Store
