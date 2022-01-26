@@ -1,13 +1,12 @@
 node_modules
 
 .cache
-.vercel
 .output
 .env
 
 /app/styles
 public/build
-api/_build
+/build
 
 .DS_Store
 public/.DS_Store
