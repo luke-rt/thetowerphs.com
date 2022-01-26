@@ -12,19 +12,21 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v2
 
-      - name: Node 14
+      - name: node 14
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
 
-      - name: Deps
+      - name: build
         run: |
           npm install
-
-      - name: Deploy to GitHub Pages
-        run: |
           npm run build
-          npm start
+
+      - name: deploy
+        uses: JamesIves/github-pages-deploy-action@v4.2.2
+        with:
+          branch: gh-pages
+          folder: build
