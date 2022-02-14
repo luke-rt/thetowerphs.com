@@ -1,10 +1,16 @@
 .articlePreview {
-  display: block;
-  padding: 4px;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+	grid-gap: 3vw;
+  padding: 16px;
   margin: 1vw 4vw 1vw 4vw;
   min-height: 18vh;
   border: none;
   border-bottom: 1px solid gainsboro;
+
+	img {
+		max-height: 30vh;
+	}
 
   a {
     &:hover {
@@ -26,7 +32,7 @@
     color: #8b8b8b;
   }
 
-  .preview {
+  .preview-text {
     margin-top: 1vh;
     margin-bottom: 2vh;
   }

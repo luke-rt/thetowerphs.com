@@ -13,6 +13,7 @@ model article {
   authors     String[]
   category    String
   content     String
+  img         String
   month       Int
   published   Boolean
   subcategory String
