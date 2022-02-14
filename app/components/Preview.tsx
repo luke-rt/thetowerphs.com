@@ -18,6 +18,7 @@ export default function Preview({article, category}: Props) {
 		<div className="articlePreview">
 			<div className="left">
 				<img src={article.img} alt="Article preview"/>
+				<p>{article.img}</p>
 			</div>
 			<div className="right">
 				<div className="category">
