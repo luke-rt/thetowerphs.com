@@ -8,16 +8,32 @@ interface Props {
 export default function FrontPageArticles({articles}: Props) {
 	return(
 		<div id="fp-grid">
-			<div id="fp-left">
+			<div>
 				<ArticlePreview article ={articles[0]} style="box" size="small" category />
-
+				<ArticlePreview article ={articles[0]} style="box" size="small" category />
+				<ArticlePreview article ={articles[0]} style="box" size="small" category />
+				<ArticlePreview article ={articles[0]} style="box" size="small" category />
+				<ArticlePreview article ={articles[0]} style="box" size="small" category />
 			</div>
-			<div id="fp-center">
+			<div>
 				<ArticlePreview article ={articles[0]} style="box" size="large" category />
-			</div>
-			<div id="fp-right">
-				<ArticlePreview article ={articles[0]} style="box" size="medium" category />
 
+				<div className="column">
+					<ArticlePreview article ={articles[0]} style="box" size="medium" category />
+					<ArticlePreview article ={articles[0]} style="box" size="medium" category />
+				</div>
+
+			</div>
+			<div>
+				<ArticlePreview article ={articles[0]} style="box" size="medium" category />
+				<ArticlePreview article ={articles[0]} style="row" size="small" category />
+				<ArticlePreview article ={articles[0]} style="row" size="small" category />
+				<ArticlePreview article ={articles[0]} style="row" size="small" category />
+				<ArticlePreview article ={articles[0]} style="row" size="small" category />
+				<ArticlePreview article ={articles[0]} style="row" size="small" category />
+				<ArticlePreview article ={articles[0]} style="row" size="small" category />
+				<ArticlePreview article ={articles[0]} style="row" size="small" category />
+				<ArticlePreview article ={articles[0]} style="row" size="small" category />
 			</div>
 		</div>
 	);

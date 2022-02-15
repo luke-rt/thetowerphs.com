@@ -18,17 +18,23 @@ export default function Preview({article, category, style="row", size="medium"}:
 		switch(size) {
 			case "large":
 				charlen = 200;
+				break;
 			case "medium":
-				charlen = 150;
+				charlen = 100;
+				break;
 			case "small":
+				break;
 		}
 	} else { // ROW STYLE
 		switch(size) {
 			case "large":
 				charlen = 400;
+				break;
 			case "medium":
-				charlen = 240;
+				charlen = 300;
+				break;
 			case "small":
+				break;
 		}
 	}
 
@@ -37,7 +43,7 @@ export default function Preview({article, category, style="row", size="medium"}:
 	if(!article.img) article.img = "/assets/default.png";
 
 	return(
-		<div className={"article-preview style-" + style}>
+		<div className={"article-preview " + style + " " + size}>
 			<div>
 				<img src={article.img} className={style + " " + size} alt="Article preview"/>
 			</div>
