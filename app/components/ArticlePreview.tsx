@@ -38,8 +38,6 @@ export default function Preview({article, category, style="row", size="medium"}:
 		}
 	}
 
-	const preview = shortenText(article.content, charlen);
-
 	if(!article.img) article.img = "/assets/default.png";
 
 	return(
@@ -65,7 +63,7 @@ export default function Preview({article, category, style="row", size="medium"}:
 					))}
 				</div>
 				<div className="preview-text">
-					{preview}
+					{shortenText(article.content, charlen)}
 				</div>
 			</div>
 		</div>
