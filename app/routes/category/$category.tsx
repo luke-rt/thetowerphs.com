@@ -1,7 +1,7 @@
 import { LoaderFunction, MetaFunction, useLoaderData } from "remix";
 import { getArticlesByCategory } from "~/lib/queries";
 import invariant from "tiny-invariant";
-import Preview from "~/components/Preview";
+import ArticlePreview from "~/components/ArticlePreview";
 import { ArticleData, expandCategorySlug } from "~/lib/utils";
 
 export const meta: MetaFunction = ({params}) => {
@@ -25,7 +25,7 @@ export default function Category() {
 		<div className="category">
 			<h1>{expandCategorySlug(data.slug)}</h1>
 			{data.articles.map(article => (
-				<Preview key={article.id} article={article} />
+				<ArticlePreview key={article.id} article={article} />
 			))}
 		</div>
 	);

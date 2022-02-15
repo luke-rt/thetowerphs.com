@@ -26,3 +26,11 @@ export function expandCategorySlug(slug: string) {
 export function displayDate(year: number, month: number) {
 	return months[month] + ", " + year;
 }
+
+export function shortenText(text: string, length: number) {
+	if(length === 0) return "";
+
+	const sentences = text.substring(0, length).split(" ");
+	sentences.pop();
+	return sentences.join(" ").replace(/[\n\r\t\s]+/g, " ") + "...";
+}

@@ -1,19 +1,19 @@
 .virtual-archive {
   flex: 1;
   padding: 8px;
-  max-width: 20vw;
+  max-width: 16vw;
   margin-right: 8vw;
 
   h2 {
     text-align: center;
   }
   hr {
-    margin: 1vh;
+    margin: 0.5vh;
     height: 1px;
     background-color: gainsboro;
     border: none;
   }
   img {
-    max-width: 20vw;
+    max-width: 16vw;
   }
 }

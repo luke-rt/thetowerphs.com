@@ -1,0 +1,88 @@
+.article-preview {
+	a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+	// images
+	img {
+		object-fit: cover;
+		width: 100%;
+    height: 100%;
+		&.row {
+			&.large {
+				width: 32vw;
+				min-height: 100%;
+			}
+			&.medium {
+				width: 14vw;
+				min-height: 100%;
+			}
+			&.low {
+				width: 10vw;
+				height: 100%;
+			}
+		}
+	}
+
+	span {
+		color: #8b8b8b;
+		margin-left: 1vw;
+		&.box.small {
+			display: block;
+			margin-left: 0;
+			font-size: smaller;
+		}
+	}
+
+	// title
+	.title {
+		&.large {
+			font-weight: bolder;
+			font-size: xx-large;
+		}
+		&.medium {
+			font-weight: bolder;
+			font-size: x-large;
+		}
+		&.small {
+			font-weight: bolder;
+			font-size: large;
+		}
+	}
+
+	// authors
+	.authors a {
+		margin-right: 10px;
+		color: #8b8b8b;
+	}
+
+	.preview-text {
+		margin-top: 1vh;
+		margin-bottom: 2vh;
+	}
+}
+
+
+// layout
+.style-box {
+	display: grid;
+	padding: 1px;
+	margin: 1vw;
+	border: none;
+	border-bottom: 1px solid gainsboro;
+
+	grid-template-rows: 1fr 2fr;
+	grid-gap: 2vh
+}
+.style-row {
+	display: grid;
+	padding: 1px;
+	margin: 1vw;
+	border: none;
+	border-bottom: 1px solid gainsboro;
+
+	grid-template-columns: 1fr 3fr;
+	grid-gap: 2vw;
+}

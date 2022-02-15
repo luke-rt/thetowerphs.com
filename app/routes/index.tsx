@@ -1,23 +1,16 @@
-import { useLoaderData } from "remix";
-import { article } from "@prisma/client";
-
-import Preview from "~/components/Preview";
-import { getFrontpageArticles } from "~/lib/queries";
 import VirtualArchive from "~/components/VirtualArchive";
+import FrontPageArticles from "~/components/FrontPageArticles";
+import { article } from "@prisma/client";
+import { useLoaderData } from "remix";
+import { getFrontpageArticles } from "~/lib/queries";
 
 export const loader = async () => getFrontpageArticles();
 
 export default function Index() {
 	const articles: article[] = useLoaderData();
 	return (
-		<div id="frontPage">
-			<div className="frontpage-articles">
-				{articles.map((article, index) => (
-					<div key={index} className={"grid-item-" + index}>
-						<Preview article={article} category />
-					</div>
-				))}
-			</div>
+		<div id="front-page">
+			<FrontPageArticles articles={articles} />
 			<VirtualArchive />
 		</div>
 	);

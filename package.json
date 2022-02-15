@@ -15,7 +15,7 @@
     "dev:css": "sass styles/:app/styles/ --watch ",
     "dev": "run-p dev:css dev:netlify",
     "lint": "eslint app/**/**/*.ts app/**/**/*.tsx",
-    "postinstall": "remix setup node"
+    "postinstall": "remix setup node && prisma generate"
   },
   "dependencies": {
     "@netlify/functions": "^0.11.0",

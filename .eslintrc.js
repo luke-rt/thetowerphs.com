@@ -22,6 +22,11 @@ module.exports = {
 		"react",
 		"@typescript-eslint"
 	],
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
   "ignorePatterns": [".eslintrc.js", "remix.config.js", "netlify/*"],
 	"rules": {
 		"indent": [

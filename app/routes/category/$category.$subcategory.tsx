@@ -1,6 +1,6 @@
 import { LoaderFunction, MetaFunction, useLoaderData } from "remix";
 import invariant from "tiny-invariant";
-import Preview from "~/components/Preview";
+import ArticlePreview from "~/components/ArticlePreview";
 import { getArticlesBySubcategory } from "~/lib/queries";
 import { ArticleData, expandCategorySlug } from "~/lib/utils";
 
@@ -25,7 +25,7 @@ export default function Subcategory() {
 		<div className="category">
 			<h1>{expandCategorySlug(data.slug)}</h1>
 			{data.articles.map(article => (
-				<Preview key={article.id} article={article} />
+				<ArticlePreview key={article.id} article={article} />
 			))}
 		</div>
 	);

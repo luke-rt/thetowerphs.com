@@ -2,7 +2,7 @@ import { LoaderFunction, MetaFunction, useLoaderData } from "remix";
 import invariant from "tiny-invariant";
 
 import { getArticlesByAuthor } from "~/lib/queries";
-import Preview from "~/components/Preview";
+import ArticlePreview from "~/components/ArticlePreview";
 import { ArticleData } from "~/lib/utils";
 
 export const meta: MetaFunction = ({params}) => {
@@ -26,7 +26,7 @@ export default function Credit() {
 		<div className="credit">
 			<h1>{data.slug}&apos;s Work</h1>
 			{data.articles.map(article => (
-				<Preview key={article.id} article={article} category />
+				<ArticlePreview key={article.id} article={article} category />
 			))}
 		</div>
 	);
