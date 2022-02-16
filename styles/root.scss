@@ -9,10 +9,11 @@
 
 #footer {
   display: block;
-  margin-left: 7vw;
-  margin-right: 7vw;
   padding-top: 2vh;
+	width: 90vw;
+	margin-left: 5vw;
   hr {
+		align-self: center;
     background-color: #ccc;
     height: 3px;
     border: none;
@@ -31,6 +32,14 @@
       margin-left: 3px;
     }
   }
+	.footer-bottom {
+		margin-top: 3vh;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		div {
+
+		}
+	}
 
 }
 

@@ -1,3 +1,5 @@
+@use "globals.scss";
+
 .article-preview {
 	a {
     &:hover {
@@ -34,6 +36,10 @@
 		max-width: 100%;
 		max-height: 100%;
 
+		&.box {
+			max-width: 90%;
+		}
+
 		&.row {
 			&.large {
 				width: 32vw;
@@ -48,13 +54,8 @@
 	}
 
 	span {
-		color: #8b8b8b;
 		margin-left: 1vw;
-		&.box.small {
-			display: block;
-			margin-left: 0;
-			font-size: smaller;
-		}
+		font-size: smaller;
 	}
 
 	// title
@@ -65,7 +66,7 @@
 		}
 		&.medium {
 			font-weight: bolder;
-			font-size: large;
+			font-size: x-large;
 		}
 		&.small {
 			font-weight: bolder;
@@ -80,6 +81,7 @@
 	}
 
 	.preview-text {
+		font-family: globals.$font-text, globals.$font-stack;
 		margin-top: 1vh;
 		margin-bottom: 2vh;
 	}

@@ -71,6 +71,23 @@ function Footer() {
 					<a href="https://www.facebook.com/phstower" target="_blank" rel="noopener noreferrer"><FaFacebookSquare size="2em"/></a>
 				</span>
 			</div>
+			<div className="footer-bottom">
+				<div>
+					hi
+
+				</div>
+				<div>
+					hi
+
+				</div>
+				<div>
+					hi
+
+				</div>
+				<div>
+					hi
+				</div>
+			</div>
 		</div>
 	);
 }
