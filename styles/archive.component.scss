@@ -1,0 +1,17 @@
+.virtual-archive {
+  flex: 1;
+
+  h2 {
+    text-align: center;
+  }
+  hr {
+		max-width: 16vw;
+    margin: 0.5vh;
+    height: 1px;
+    background-color: gainsboro;
+    border: none;
+  }
+  img {
+    max-width: 90%;
+  }
+}

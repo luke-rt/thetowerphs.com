@@ -1,0 +1,88 @@
+@use "globals.scss";
+
+.article-preview {
+	a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+	&.box {
+		display: grid;
+		padding: 1px;
+		border: none;
+
+		grid-template-rows: 2fr 0.25fr;
+	}
+	&.row {
+		display: grid;
+		padding-bottom: 1vh;
+		padding-top: 2vh;
+		border: none;
+		border-bottom: 1px solid gainsboro;
+
+		grid-template-columns: 1fr 5fr;
+
+		&.small {
+			grid-template-columns: 1fr 4fr;
+			grid-gap: 1vw;
+		}
+	}
+
+
+	// images
+	.img-container {
+		position: relative;
+		max-width: 100%;
+		max-height: 100%;
+
+		&.box {
+			max-width: 90%;
+		}
+
+		&.row {
+			&.large {
+				width: 32vw;
+			}
+			&.medium {
+				width: 12vw;
+			}
+			&.small {
+				width: 10vw;
+			}
+		}
+	}
+
+	span {
+		margin-left: 1vw;
+		font-size: smaller;
+	}
+
+	// title
+	.title {
+		&.large {
+			font-weight: bolder;
+			font-size: xx-large;
+		}
+		&.medium {
+			font-weight: bolder;
+			font-size: x-large;
+		}
+		&.small {
+			font-weight: bolder;
+			font-size: large;
+		}
+	}
+
+	// authors
+	.authors a {
+		margin-right: 10px;
+		color: #8b8b8b;
+	}
+
+	.preview-text {
+		font-family: globals.$font-text, globals.$font-stack;
+		margin-top: 1vh;
+		margin-bottom: 2vh;
+	}
+}

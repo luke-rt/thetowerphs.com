@@ -1,0 +1,22 @@
+{
+  "extends": "next/core-web-vitals",
+	"ignorePatterns": [".eslintrc.cjs", "next.config.js", "netlify/*"],
+	"rules": {
+		"indent": [
+			"error",
+			"tab"
+		],
+		"linebreak-style": [
+			"error",
+			"unix"
+		],
+		"quotes": [
+			"error",
+			"double"
+		],
+		"semi": [
+			"error",
+			"always"
+		]
+	}
+}

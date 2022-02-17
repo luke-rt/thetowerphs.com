@@ -1,0 +1,20 @@
+$font-stack: system-ui, sans-serif;
+$font-header: DIN2014-Demi;
+$font-text: georgia;
+$primary-color: black;
+$bg-color: white;
+$line-height: 1.4;
+
+* {
+  font-family: $font-header, $font-stack;
+  color: $primary-color;
+  background-color: $bg-color;
+  line-height: $line-height;
+  text-decoration: none;
+  margin: 0;
+}
+span {
+	color: #8b8b8b;
+	font-family: $font-header, $font-stack;
+	text-transform: uppercase;
+}

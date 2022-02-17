@@ -1,0 +1,47 @@
+@use "globals.scss";
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  .btn {
+    color: globals.$bg-color;
+    background-color: globals.$primary-color;
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px;
+    font-size: x-large;
+
+    -o-transition: .3s ease-in;
+    -moz-transition:  .3s ease-in;
+    -webkit-transition: .3s ease-in;
+    transition: .3s ease-in;
+
+    &:hover {
+      color: globals.$primary-color;
+      background-color: globals.$bg-color;
+      display: block;
+    }
+  }
+
+  .content {
+    display: none;
+    position: absolute;
+    text-decoration: none;
+    font-size: large;
+    padding: 12px;
+
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+    &:hover a {
+      cursor: pointer;
+      color: #454545;
+    }
+  }
+
+  &:hover .content {
+    display: block;
+  }
+}

@@ -1,0 +1,22 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["mongoDb"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model article {
+  id          String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  authors     String[]
+  category    String
+  content     String
+  img         String
+  month       Int
+  published   Boolean
+  subcategory String
+  title       String
+  year        Int
+}

@@ -1,0 +1,68 @@
+@use "globals.scss";
+
+#content {
+  display: block;
+  margin-top: 4vh;
+  margin-left: 5vw;
+	margin-right: 5vw;
+}
+
+#banner {
+	display: flex;
+	align-items: center;
+	margin-left: 18vw;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+#footer {
+  display: block;
+  padding-top: 2vh;
+	width: 90vw;
+	margin-left: 5vw;
+  hr {
+		align-self: center;
+    background-color: #ccc;
+    height: 3px;
+    border: none;
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+  }
+  .footer-top {
+    h1 {
+      font-family: Canterbury;
+      font-size: xxx-large;
+      float:left;
+      padding-right: 10px;
+    }
+    span svg {
+      padding-top: 2vh;
+      margin-left: 3px;
+    }
+  }
+	.footer-bottom {
+		margin-top: 3vh;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		div {
+
+		}
+	}
+
+}
+
+#navigation-bar {
+  display: block;
+  background-color: globals.$primary-color;
+  margin-bottom: 2vh;
+  margin-left: 4vw;
+  margin-right: 4vw;
+  padding-left: 4vw;
+  padding-right: 4vw;
+
+  hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
