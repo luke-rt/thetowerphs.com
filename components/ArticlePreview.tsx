@@ -12,7 +12,7 @@ interface Props {
 	size?: "small" | "medium" | "large",
 }
 
-export default function Preview({article, category, style="row", size="medium"}: Props) {
+export default function ArticlePreview({article, category, style="row", size="medium"}: Props) {
 	var charlen = 0;
 
 	if(style === "box") { // BOX STYLE

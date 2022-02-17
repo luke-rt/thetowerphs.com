@@ -1,5 +1,6 @@
 
 import { article } from "@prisma/client";
+import Head from "next/head";
 import ArticlePreview from "~/components/ArticlePreview";
 import { getArticlesBySubcategory } from "~/lib/queries";
 import { expandCategorySlug } from "~/lib/utils";
@@ -28,6 +29,9 @@ export async function getServerSideProps({ params }: Params) {
 export default function Subcategory({subcategory, articles}: Props) {
 	return(
 		<div className="category">
+			<Head>
+				<title>{expandCategorySlug(subcategory)} | The Tower</title>
+			</Head>
 			<h1>{expandCategorySlug(subcategory)}</h1>
 			{articles.map(article => (
 				<ArticlePreview key={article.id} article={article} />

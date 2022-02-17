@@ -6,10 +6,15 @@ import Button from "~/components/Button";
 
 import "../styles/globals.scss";
 import "../styles/styles.scss";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<div>
+			<Head>
+				<title>Home | The Tower</title>
+				<link rel="icon" href="/favicon.ico" sizes="32x32" />
+			</Head>
 			<Banner />
 			<NavBar />
 			<div id="content">
@@ -26,7 +31,7 @@ function Banner() {
 	return(
 		<div id="banner">
 			<Link href="/" passHref >
-				<Image src="/logo.png" alt="Tower banner" width="1000px" height="220px" />
+				<Image src="/assets/logo.png" alt="Tower banner" width="1000px" height="220px" />
 			</Link>
 		</div>
 	);

@@ -2,11 +2,12 @@
 	min-height: 100vh;
 	display: grid;
 	grid-template-columns: 1fr 4fr 2fr;
-	grid-gap: 8px;
+	grid-column-gap: 2vw;
 
 	.column {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 2vw;
 	}
 }
 

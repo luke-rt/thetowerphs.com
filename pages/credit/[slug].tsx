@@ -1,4 +1,5 @@
 import { article } from "@prisma/client";
+import Head from "next/head";
 import ArticlePreview from "~/components/ArticlePreview";
 import { getArticlesByAuthor, getPublishedArticles } from "~/lib/queries";
 
@@ -26,6 +27,9 @@ export async function getServerSideProps({ params }: Params) {
 export default function Credit({ author, articles }: Props) {
 	return(
 		<div className="credit">
+			<Head>
+				<title>{author}&apos;s Work | The Tower</title>
+			</Head>
 			<h1>{author}&apos;s Work</h1>
 			{articles.map(article => (
 				<ArticlePreview key={article.id} article={article} category />

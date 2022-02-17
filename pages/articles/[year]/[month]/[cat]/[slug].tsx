@@ -3,6 +3,7 @@ import { article } from "@prisma/client";
 
 import { getArticle, getPublishedArticles } from "~/lib/queries";
 import { displayDate } from "~/lib/utils";
+import Head from "next/head";
 
 interface Props {
 	article: article
@@ -47,6 +48,9 @@ export default function Article({article}: Props) {
 
 	return (
 		<div className="article">
+			<Head>
+				<title>{ article.title } | The Tower</title>
+			</Head>
 			<h1 className="title">{ article.title }</h1>
 			<span>{ displayDate(article.year, article.month) }</span>
 			<div className="authors">

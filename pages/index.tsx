@@ -1,4 +1,4 @@
-import FrontPageArticles from "~/components/FrontPageArticles";
+import FrontPage from "~/components/FrontPage";
 import { article } from "@prisma/client";
 import { getFrontpageArticles } from "~/lib/queries";
 
@@ -9,7 +9,7 @@ interface Props {
 export default function Index({ articles }: Props) {
 	return (
 		<div id="front-page">
-			<FrontPageArticles articles={articles} />
+			<FrontPage articles={articles} />
 		</div>
 	);
 }
