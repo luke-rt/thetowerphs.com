@@ -1,5 +1,5 @@
 {
-  "name": "site",
+  "name": "thetowerphs.com",
   "private": true,
   "scripts": {
     "dev": "next dev",

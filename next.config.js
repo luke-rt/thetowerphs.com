@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+	swcMinify: true,
 	sassOptions: {
   },
 	images: {
-    domains: ['lh5.googleusercontent.com'],
+    domains: ['https://lh5.googleusercontent.com/'],
   },
 }
 
