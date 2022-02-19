@@ -46,6 +46,7 @@ export default class TowerDocument extends Document {
 						name="keywords"
 						content="Newspaper, PHS, Princeton, The Tower, Tower"
 					/>
+					<meta http-equiv="Content-Security-Policy" content="default-src 'self' vitals.vercel-insights.com" />
 				</Head>
 				<body>
 					<Main />
