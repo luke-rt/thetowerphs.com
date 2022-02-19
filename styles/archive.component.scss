@@ -1,6 +1,6 @@
 .virtual-archive {
-  flex: 1;
-
+	max-width: 16vw;
+	display: flexbox;
   h2 {
     text-align: center;
   }
@@ -11,7 +11,9 @@
     background-color: gainsboro;
     border: none;
   }
-  img {
-    max-width: 90%;
-  }
+	.archive-thumbnail {
+		position: relative;
+		width: 16vw;
+		height: 26vw;
+	}
 }
