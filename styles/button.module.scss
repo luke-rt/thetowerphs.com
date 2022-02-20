@@ -3,18 +3,15 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  text-decoration: none;
 
   .btn {
     color: globals.$bg-color;
     background-color: globals.$primary-color;
     display: inline-block;
-    text-decoration: none;
     padding: 15px;
     font-size: x-large;
 
-    -o-transition: .3s ease-in;
-    -moz-transition:  .3s ease-in;
-    -webkit-transition: .3s ease-in;
     transition: .3s ease-in;
 
     &:hover {
@@ -27,11 +24,10 @@
   .content {
     display: none;
     position: absolute;
-    text-decoration: none;
     font-size: large;
     padding: 12px;
 
-    min-width: 160px;
+    min-width: 14vw;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 

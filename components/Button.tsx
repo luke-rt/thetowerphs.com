@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import styles from "~/styles/button.module.scss";
+
 interface Props {
   name: string;
   href: string;
@@ -7,24 +9,16 @@ interface Props {
 }
 
 export default function Button({name, href, children}: Props) {
-	if(children) {
-		return(
-			<div className="dropdown" style={{display: "inline-block"}}>
-				<Link href={href}>
-					<a className="btn">{name}</a>
-				</Link>
-				<div className="content">
-					{children}
-				</div>
-			</div>
-		);
-	}
-
 	return(
-		<div className="dropdown" style={{display: "inline-block"}}>
+		<div className={styles.dropdown} style={{display: "inline-block"}}>
 			<Link href={href}>
-				<a className="btn">{name}</a>
+				<a className={styles.btn}>{name}</a>
 			</Link>
+			{children &&
+				<div className={styles.content}>
+				{children}
+				</div>
+			}
 		</div>
 	);
 }
