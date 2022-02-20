@@ -1,8 +1,10 @@
 import Head from "next/head";
 
+import styles from "~/styles/about.module.scss";
+
 export default function About() {
 	return(
-		<div id="about">
+		<div id={styles.about}>
 			<Head>
 				<title>About | The Tower</title>
 			</Head>
