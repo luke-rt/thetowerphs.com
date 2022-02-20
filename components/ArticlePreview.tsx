@@ -42,7 +42,7 @@ export default function ArticlePreview({article, category, style="row", size="me
 	return(
 		<div className={"article-preview " + style + " " + size}>
 			<div className={"img-container " + style + " " + size}>
-				<Image src={article.img} alt="Article preview" objectFit="cover" layout="fill"/>
+				<Image src={article.img} alt="Article preview" objectFit="cover" layout="fill" blurDataURL={article.img} placeholder="blur" />
 			</div>
 			<div>
 				<div className="category">

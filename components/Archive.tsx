@@ -11,7 +11,7 @@ export default function VirtualArchive({text, href}: Props) {
 		<div className={styles.archive}>
 			<div className={styles.thumbnail}>
 				<a href={href} target="_blank" rel="noopener noreferrer">
-					<Image src="/assets/archive.png" alt="PDF article preview" layout="fill"/>
+					<Image src="/assets/archive.png" alt="PDF article preview" layout="fill" blurDataURL="/assets/archive.png" placeholder="blur" />
 				</a>
 			</div>
 			<hr />
