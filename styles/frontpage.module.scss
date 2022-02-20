@@ -1,4 +1,4 @@
-#fp-grid {
+.frontpage {
 	min-height: 100vh;
 	display: grid;
 	grid-template-columns: 1fr 4fr 2fr;
@@ -10,4 +10,3 @@
 		grid-column-gap: 2vw;
 	}
 }
-

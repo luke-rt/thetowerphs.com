@@ -5,7 +5,7 @@ import styles from "~/styles/archives.module.scss";
 
 export default function Archives() {
 	return(
-		<div id={styles.archives}>
+		<div className={styles.archives}>
 			<Head>
 				<title>Virtual Archives | The Tower</title>
 			</Head>

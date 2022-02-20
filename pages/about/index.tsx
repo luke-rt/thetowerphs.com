@@ -4,7 +4,7 @@ import styles from "~/styles/about.module.scss";
 
 export default function About() {
 	return(
-		<div id={styles.about}>
+		<div className={styles.about}>
 			<Head>
 				<title>About | The Tower</title>
 			</Head>

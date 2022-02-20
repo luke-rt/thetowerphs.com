@@ -10,9 +10,7 @@ interface Props {
 
 export default function Index({ articles }: Props) {
 	return (
-		<div id={styles.frontPage}>
-			<FrontPage articles={articles} />
-		</div>
+		<FrontPage articles={articles} />
 	);
 }
 

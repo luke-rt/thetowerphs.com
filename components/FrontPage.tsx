@@ -1,13 +1,15 @@
 import { article } from "@prisma/client";
 import ArticlePreview from "~/components/ArticlePreview";
 
+import styles from "~/styles/frontpage.module.scss";
+
 interface Props {
 	articles: article[]
 }
 
 export default function FrontPageArticles({articles}: Props) {
 	return(
-		<div id="fp-grid">
+		<div className={styles.frontpage}>
 			<div>
 				<ArticlePreview article ={articles[0]} style="box" size="small" category />
 				<ArticlePreview article ={articles[0]} style="box" size="small" category />
@@ -16,12 +18,10 @@ export default function FrontPageArticles({articles}: Props) {
 			</div>
 			<div>
 				<ArticlePreview article ={articles[0]} style="box" size="large" category />
-
-				<div className="column">
+				<div className={styles.column}>
 					<ArticlePreview article ={articles[0]} style="box" size="medium" category />
 					<ArticlePreview article ={articles[0]} style="box" size="medium" category />
 				</div>
-
 			</div>
 			<div>
 				<ArticlePreview article ={articles[0]} style="box" size="medium" category />

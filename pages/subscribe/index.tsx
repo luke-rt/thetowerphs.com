@@ -4,7 +4,7 @@ import styles from "~/styles/subscribe.module.scss";
 
 export default function Subscribe() {
 	return(
-		<div id={styles.subscribe}>
+		<div className={styles.subscribe}>
 			<Head>
 				<title>Subscribe | The Tower</title>
 			</Head>
