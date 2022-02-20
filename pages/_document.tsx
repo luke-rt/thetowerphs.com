@@ -46,7 +46,6 @@ export default class TowerDocument extends Document {
 						name="keywords"
 						content="Newspaper, PHS, Princeton, The Tower, Tower"
 					/>
-					<link rel="stylesheet" href="https://use.typekit.net/bwo2aft.css" />
 				</Head>
 				<body>
 					<Main />
