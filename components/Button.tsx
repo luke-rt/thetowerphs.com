@@ -16,7 +16,7 @@ export default function Button({name, href, children}: Props) {
 			</Link>
 			{children &&
 				<div className={styles.content}>
-				{children}
+					{children}
 				</div>
 			}
 		</div>
