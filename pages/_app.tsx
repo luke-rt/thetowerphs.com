@@ -2,7 +2,8 @@ import type { AppProps, NextWebVitalsMetric } from "next/app";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
+import { FaFacebookSquare } from "@react-icons/all-files/fa/FaFacebookSquare";
+import { FaInstagramSquare } from "@react-icons/all-files/fa/FaInstagramSquare";
 import Button from "~/components/Button";
 import "~/styles/styles.scss";
 
@@ -27,9 +28,7 @@ function Banner() {
 	return(
 		<div id="banner">
 			<Link href="/home" >
-				<a>
-					<Image src="/assets/logo.png" alt="Tower banner" width="1000px" height="220px" priority />
-				</a>
+				<Image src="/assets/logo.png" alt="Tower banner" width="1000px" height="220px" priority />
 			</Link>
 		</div>
 	);
@@ -106,5 +105,5 @@ function NavBar() {
 }
 
 export function reportWebVitals(metric: NextWebVitalsMetric) {
-  console.log(metric)
+	console.log(metric);
 }

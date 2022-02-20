@@ -6,16 +6,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
-		"analyze": "ANALYZE=true yarn build",
+    "analyze": "ANALYZE=true yarn build",
     "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^3.9.2",
+    "@react-icons/all-files": "^4.1.0",
     "lodash": "^4.17.21",
     "next": "12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-icons": "^4.3.1",
     "sass": "^1.49.8",
     "sharp": "^0.30.1"
   },
