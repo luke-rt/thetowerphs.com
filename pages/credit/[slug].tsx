@@ -3,6 +3,8 @@ import Head from "next/head";
 import ArticlePreview from "~/components/ArticlePreview";
 import { getArticlesByAuthor, getPublishedArticles } from "~/lib/queries";
 
+import styles from "~/styles/credit.module.scss";
+
 interface Params {
 	params: {
 		slug: string
@@ -26,7 +28,7 @@ export async function getServerSideProps({ params }: Params) {
 
 export default function Credit({ author, articles }: Props) {
 	return(
-		<div className="credit">
+		<div className={styles.credit}>
 			<Head>
 				<title>{author}&apos;s Work | The Tower</title>
 			</Head>

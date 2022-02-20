@@ -1,9 +1,10 @@
-
 import { article } from "@prisma/client";
 import Head from "next/head";
 import ArticlePreview from "~/components/ArticlePreview";
-import { getArticlesByAuthor, getArticlesByCategory, getPublishedArticles } from "~/lib/queries";
+import { getArticlesByCategory } from "~/lib/queries";
 import { expandCategorySlug } from "~/lib/utils";
+
+import styles from "~/styles/category.module.scss";
 
 interface Params {
 	params: {
@@ -28,7 +29,7 @@ export async function getServerSideProps({ params }: Params) {
 
 export default function Category({category, articles}: Props) {
 	return(
-		<div className="category">
+		<div className={styles.category}>
 			<Head>
 				<title>{expandCategorySlug(category)} | The Tower</title>
 			</Head>

@@ -3,12 +3,10 @@ import Image from "next/image";
 import { article } from "@prisma/client";
 import { expandCategorySlug, displayDate, shortenText } from "~/lib/utils";
 
-// box: large has 150/125 chars, medium has 100, small has only title
-// row: large has 300 chars, medium has 150. small has only title
 interface Props {
   article: article,
   category?: boolean,
-	style?: "box" | "row", // box image on top, row image on left/right
+	style?: "box" | "row",
 	size?: "small" | "medium" | "large",
 }
 

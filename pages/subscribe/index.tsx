@@ -1,8 +1,10 @@
 import Head from "next/head";
 
+import styles from "~/styles/subscribe.module.scss";
+
 export default function Subscribe() {
 	return(
-		<div id="subscribe">
+		<div id={styles.subscribe}>
 			<Head>
 				<title>Subscribe | The Tower</title>
 			</Head>

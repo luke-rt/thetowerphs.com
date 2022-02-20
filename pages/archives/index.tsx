@@ -1,14 +1,16 @@
 import Head from "next/head";
-import VirtualArchive from "~/components/VirtualArchive";
+import VirtualArchive from "~/components/Archive";
+
+import styles from "~/styles/archives.module.scss";
 
 export default function Archives() {
 	return(
-		<div id="archives">
+		<div id={styles.archives}>
 			<Head>
 				<title>Virtual Archives | The Tower</title>
 			</Head>
 			<h1>Archives</h1>
-			<div className="archive-container">
+			<div className={styles.container}>
 				<VirtualArchive text="September 2021" href="https://thetowerphs.com"/>
 				<VirtualArchive text="October 2021" href="https://thetowerphs.com"/>
 				<VirtualArchive text="November 2021" href="https://thetowerphs.com"/>

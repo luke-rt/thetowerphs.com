@@ -1,6 +1,6 @@
 {
   "extends": "next/core-web-vitals",
-	"ignorePatterns": [".eslintrc.cjs", "next.config.js", "netlify/*"],
+	"ignorePatterns": [".eslintrc.cjs", "next.config.js"],
 	"rules": {
 		"indent": [
 			"error",
