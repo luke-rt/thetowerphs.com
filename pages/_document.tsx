@@ -4,7 +4,7 @@ import Document, {
 	Head,
 	Html,
 	Main,
-	NextScript,
+	NextScript
 } from "next/document";
 
 export default class TowerDocument extends Document {
@@ -46,6 +46,8 @@ export default class TowerDocument extends Document {
 						name="keywords"
 						content="Newspaper, PHS, Princeton, The Tower, Tower"
 					/>
+					<link href="//db.onlinewebfonts.com/c/45f5fadb3dbf0140e10b498c7cb030a6?family=Canterbury" rel="stylesheet" type="text/css"/>
+					<link href="//db.onlinewebfonts.com/c/1dd1c7d8df011c2266f33ebd5927c0ab?family=DIN2014-Demi" rel="stylesheet" type="text/css"/>
 				</Head>
 				<body>
 					<Main />

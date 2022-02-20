@@ -1,8 +1,8 @@
-import ArticlePreview from "~/components/ArticlePreview";
 import { article } from "@prisma/client";
+import ArticlePreview from "~/components/ArticlePreview";
 import { getFrontpageArticles } from "~/lib/queries";
-
 import styles from "~/styles/home.module.scss";
+
 
 export async function getStaticProps() {
 	const articles: article[] = await getFrontpageArticles();

@@ -1,11 +1,9 @@
 import type { AppProps } from "next/app";
-import Link from "next/link";
-import Image from "next/image";
 import Head from "next/head";
-import { FaInstagramSquare, FaFacebookSquare} from "react-icons/fa";
+import Image from "next/image";
+import Link from "next/link";
+import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
 import Button from "~/components/Button";
-
-import "~/styles/globals.scss";
 import "~/styles/styles.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {

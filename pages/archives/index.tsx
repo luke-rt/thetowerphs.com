@@ -1,6 +1,5 @@
 import Head from "next/head";
 import VirtualArchive from "~/components/Archive";
-
 import styles from "~/styles/archives.module.scss";
 
 export default function Archives() {

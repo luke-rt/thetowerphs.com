@@ -1,8 +1,7 @@
 import { article } from "@prisma/client";
-import startCase from "lodash/startCase";
 import camelCase from "lodash/camelCase";
+import startCase from "lodash/startCase";
 
-// Irregular category names, ie just converting to Title Case won't resolve it bc of capitalizations, or ampersands, etc
 const categories = new Map<string, string>([
 	["news-features", "News & Features"],
 	["phs-profiles", "PHS Profiles"],

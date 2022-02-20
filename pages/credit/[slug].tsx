@@ -1,8 +1,7 @@
 import { article } from "@prisma/client";
 import Head from "next/head";
 import ArticlePreview from "~/components/ArticlePreview";
-import { getArticlesByAuthor, getPublishedArticles } from "~/lib/queries";
-
+import { getArticlesByAuthor } from "~/lib/queries";
 import styles from "~/styles/credit.module.scss";
 
 interface Params {

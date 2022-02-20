@@ -1,5 +1,4 @@
 import Head from "next/head";
-
 import styles from "~/styles/subscribe.module.scss";
 
 export default function Subscribe() {

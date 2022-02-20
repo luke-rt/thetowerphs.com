@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Image from "next/image";
 import { article } from "@prisma/client";
-import { expandCategorySlug, displayDate, shortenText } from "~/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
+import { displayDate, expandCategorySlug, shortenText } from "~/lib/utils";
 
 interface Props {
   article: article,

@@ -3,7 +3,6 @@ import Head from "next/head";
 import ArticlePreview from "~/components/ArticlePreview";
 import { getArticlesByCategory } from "~/lib/queries";
 import { expandCategorySlug } from "~/lib/utils";
-
 import styles from "~/styles/category.module.scss";
 
 interface Params {
