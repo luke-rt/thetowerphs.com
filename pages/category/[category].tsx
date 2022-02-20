@@ -31,6 +31,14 @@ export default function Category({category, articles}: Props) {
 		<div className={styles.category}>
 			<Head>
 				<title>{expandCategorySlug(category)} | The Tower</title>
+				<meta
+					property="og:title"
+					content={expandCategorySlug(category) + " | The Tower"}
+				/>
+				<meta
+					property="og:description"
+					content={expandCategorySlug(category) + " at the Tower"}
+				/>
 			</Head>
 			<h1>{expandCategorySlug(category)}</h1>
 			{articles.map(article => (

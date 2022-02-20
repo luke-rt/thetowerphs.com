@@ -1,13 +1,13 @@
 @use "globals.scss";
 
-#content {
+.content {
   display: block;
   margin-top: 4vh;
   margin-left: 5vw;
 	margin-right: 5vw;
 }
 
-#banner {
+.banner {
 	display: flex;
 	align-items: center;
 	margin-left: 18vw;
@@ -16,7 +16,7 @@
 	}
 }
 
-#footer {
+.footer {
   display: block;
   padding-top: 2vh;
 	width: 90vw;
@@ -29,7 +29,7 @@
     margin-top: 3vh;
     margin-bottom: 1vh;
   }
-  .footer-top {
+  .top {
     h1 {
       font-family: Canterbury;
       font-size: xxx-large;
@@ -41,7 +41,7 @@
       margin-left: 3px;
     }
   }
-	.footer-bottom {
+	.bottom {
 		margin-top: 3vh;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -52,7 +52,7 @@
 
 }
 
-#navigation-bar {
+.navbar {
   display: block;
   background-color: globals.$primary-color;
   margin-bottom: 2vh;

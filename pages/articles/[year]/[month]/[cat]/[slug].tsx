@@ -1,6 +1,7 @@
 import { article } from "@prisma/client";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { getArticle, getPublishedArticles } from "~/lib/queries";
 import { displayDate } from "~/lib/utils";
 import styles from "~/styles/article.module.scss";
@@ -50,6 +51,14 @@ export default function Article({article}: Props) {
 		<div className={styles.article}>
 			<Head>
 				<title>{ article.title } | The Tower</title>
+				<meta
+					property="og:title"
+					content={article.title + " | The Tower"}
+				/>
+				<meta
+					property="og:description"
+					content="Read more about this article!"
+				/>
 			</Head>
 			<h1>{ article.title }</h1>
 			<span>{ displayDate(article.year, article.month) }</span>
@@ -57,6 +66,9 @@ export default function Article({article}: Props) {
 				{article.authors.map((author, index) => (
 					<Link key={index} href={ "/credit/" + encodeURI(author) } >{author}</Link>
 				))}
+			</div>
+			<div className={styles.img}>
+				<Image src={article.img} alt="Article image" objectFit="contain" layout="fill" blurDataURL={article.img} placeholder="blur" />
 			</div>
 			<div className={styles.content}>
 				{paragraphs.map((paragraph, index) => (

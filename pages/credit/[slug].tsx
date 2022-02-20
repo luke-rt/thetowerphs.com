@@ -30,6 +30,14 @@ export default function Credit({ author, articles }: Props) {
 		<div className={styles.credit}>
 			<Head>
 				<title>{author}&apos;s Work | The Tower</title>
+				<meta
+					property="og:title"
+					content={author + "&apos;s Work | The Tower"}
+				/>
+				<meta
+					property="og:description"
+					content={author + "&apos;s Work at the Tower"}
+				/>
 			</Head>
 			<h1>{author}&apos;s Work</h1>
 			{articles.map(article => (

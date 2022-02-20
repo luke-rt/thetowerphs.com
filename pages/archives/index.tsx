@@ -7,6 +7,14 @@ export default function Archives() {
 		<div className={styles.archives}>
 			<Head>
 				<title>Virtual Archives | The Tower</title>
+				<meta
+					property="og:title"
+					content="Virtual Archives | The Tower"
+				/>
+				<meta
+					property="og:description"
+					content="Read scanned PDF newspapers here"
+				/>
 			</Head>
 			<h1>Archives</h1>
 			<div className={styles.container}>

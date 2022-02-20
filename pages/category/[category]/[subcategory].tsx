@@ -31,6 +31,14 @@ export default function Subcategory({subcategory, articles}: Props) {
 		<div className={styles.category}>
 			<Head>
 				<title>{expandCategorySlug(subcategory)} | The Tower</title>
+				<meta
+					property="og:title"
+					content={expandCategorySlug(subcategory) + " | The Tower"}
+				/>
+				<meta
+					property="og:description"
+					content={expandCategorySlug(subcategory) + " at the Tower"}
+				/>
 			</Head>
 			<h1>{expandCategorySlug(subcategory)}</h1>
 			{articles.map(article => (

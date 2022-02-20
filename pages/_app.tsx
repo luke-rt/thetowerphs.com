@@ -5,7 +5,9 @@ import Link from "next/link";
 import { FaFacebookSquare } from "@react-icons/all-files/fa/FaFacebookSquare";
 import { FaInstagramSquare } from "@react-icons/all-files/fa/FaInstagramSquare";
 import Button from "~/components/Button";
+
 import "~/styles/styles.scss";
+import styles from "~/styles/root.module.scss";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
 	return (
@@ -16,9 +18,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 			</Head>
 			<Banner />
 			<NavBar />
-			<div id="content">
+			<main className={styles.content}>
 				<Component {...pageProps} />
-			</div>
+			</main>
 			<Footer />
 		</div>
 	);
@@ -26,7 +28,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
 function Banner() {
 	return(
-		<div id="banner">
+		<div className={styles.banner}>
 			<Link href="/home" >
 				<Image src="/assets/logo.png" alt="Tower banner" width="1000px" height="220px" priority />
 			</Link>
@@ -36,16 +38,16 @@ function Banner() {
 
 function Footer() {
 	return(
-		<div id="footer">
+		<div className={styles.footer}>
 			<hr />
-			<div className="footer-top">
+			<div className={styles.top}>
 				<h1>The Tower</h1>
 				<span>
 					<a href="https://www.instagram.com/thetowerphs/" target="_blank" rel="noopener noreferrer"><FaInstagramSquare size="2em"/></a>
 					<a href="https://www.facebook.com/phstower" target="_blank" rel="noopener noreferrer"><FaFacebookSquare size="2em"/></a>
 				</span>
 			</div>
-			<div className="footer-bottom">
+			<div className={styles.bottom}>
 				<div>
 					hi
 
@@ -68,7 +70,7 @@ function Footer() {
 
 function NavBar() {
 	return(
-		<div id="navigation-bar">
+		<div className={styles.navbar}>
 			<Button name="News & Features" href="/category/news-features">
 				<Link href="/category/news-features/phs-profiles">PHS Profiles</Link>
 				<hr />
