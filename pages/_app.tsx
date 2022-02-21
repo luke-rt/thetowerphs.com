@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaFacebookSquare } from "@react-icons/all-files/fa/FaFacebookSquare";
 import { FaInstagramSquare } from "@react-icons/all-files/fa/FaInstagramSquare";
-import Button from "~/components/Button";
+import Button from "~/components/button.client";
 
 import "~/styles/styles.scss";
 import styles from "~/styles/root.module.scss";

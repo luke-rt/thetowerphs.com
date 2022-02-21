@@ -1,12 +1,12 @@
 import { article } from "@prisma/client";
 import Head from "next/head";
-import ArticlePreview from "~/components/ArticlePreview";
+import ArticlePreview from "~/components/preview.client";
 import { getArticlesByAuthor } from "~/lib/queries";
 import styles from "~/styles/credit.module.scss";
 
 interface Params {
 	params: {
-		slug: string
+		author: string
 	}
 }
 
@@ -19,8 +19,8 @@ export async function getServerSideProps({ params }: Params) {
 	// runs server side, maybe switch to static props later
 	return {
 		props: {
-			author: decodeURI(params.slug),
-			articles: await getArticlesByAuthor(params.slug)
+			author: decodeURI(params.author),
+			articles: await getArticlesByAuthor(params.author)
 		},
 	};
 }
