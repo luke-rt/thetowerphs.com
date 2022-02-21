@@ -22,7 +22,6 @@ export async function getFrontpageArticles() {
 	return articles;
 }
 
-
 export async function getPublishedArticles() {
 	await prisma.$connect();
 
@@ -37,21 +36,6 @@ export async function getPublishedArticles() {
 	return articles;
 }
 
-export async function getArticleById(id: string) {
-	await prisma.$connect();
-
-	const article = await prisma.article.findFirst({
-		where: {
-			id: id,
-			published: true,
-		},
-	});
-
-	prisma.$disconnect();
-
-	return article;
-}
-
 export async function getArticle(year: string, month: string, cat: string, slug: string) {
 	await prisma.$connect();
 
@@ -61,6 +45,21 @@ export async function getArticle(year: string, month: string, cat: string, slug:
 			month: parseInt(month),
 			category: cat,
 			title: decodeURI(slug),
+			published: true,
+		},
+	});
+
+	prisma.$disconnect();
+
+	return article;
+}
+
+export async function getArticleById(id: string) {
+	await prisma.$connect();
+
+	const article = await prisma.article.findFirst({
+		where: {
+			id: id,
 			published: true,
 		},
 	});
