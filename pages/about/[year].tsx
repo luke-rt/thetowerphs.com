@@ -17,7 +17,7 @@ interface Props {
 
 export async function getStaticPaths() {
 	const years = readdirSync(aboutDir);
-  return {
+	return {
 		paths: years.map((year) => ({
 			params: {
 				year: year.replace(/\.[^/.]+$/, "")
