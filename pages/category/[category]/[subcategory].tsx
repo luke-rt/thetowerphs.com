@@ -1,6 +1,6 @@
 import { article } from "@prisma/client";
 import Head from "next/head";
-import ArticlePreview from "~/components/ArticlePreview";
+import ArticlePreview from "~/components/preview.client";
 import { getArticlesBySubcategory } from "~/lib/queries";
 import { expandCategorySlug } from "~/lib/utils";
 import styles from "~/styles/category.module.scss";

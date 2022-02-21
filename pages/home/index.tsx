@@ -1,6 +1,6 @@
 import { article } from "@prisma/client";
 import Head from "next/head";
-import ArticlePreview from "~/components/ArticlePreview";
+import ArticlePreview from "~/components/preview.client";
 import { getFrontpageArticles } from "~/lib/queries";
 import styles from "~/styles/home.module.scss";
 
