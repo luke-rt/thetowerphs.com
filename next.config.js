@@ -13,6 +13,11 @@ const nextConfig = {
         destination: '/home',
         permanent: true,
       },
+			{
+				source: '/about',
+				destination: `/about/${new Date().getFullYear()}`,
+				permanent: true,
+			}
     ]
   },
 	async headers() {
