@@ -54,21 +54,6 @@ export async function getArticle(year: string, month: string, cat: string, slug:
 	return article;
 }
 
-export async function getArticleById(id: string) {
-	await prisma.$connect();
-
-	const article = await prisma.article.findFirst({
-		where: {
-			id: id,
-			published: true,
-		},
-	});
-
-	prisma.$disconnect();
-
-	return article;
-}
-
 export async function getArticlesByDate(year: string, month: string) {
 	await prisma.$connect();
 
