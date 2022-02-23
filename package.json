@@ -13,7 +13,7 @@
 		"e2e:open": "cypress open"
   },
   "dependencies": {
-    "@prisma/client": "^3.9.2",
+    "@prisma/client": "^3.10.0",
     "@react-icons/all-files": "^4.1.0",
     "lodash": "^4.17.21",
     "next": "^12.1.1-canary.1",
