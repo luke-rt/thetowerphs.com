@@ -16,7 +16,7 @@ interface Props {
 }
 
 export async function getStaticPaths() {
-	let years = readdirSync(aboutDir).filter(e => e !== "template");
+	let years = readdirSync(aboutDir).filter(e => e !== "template.json");
 
 	return {
 		paths: years.map((year) => ({
