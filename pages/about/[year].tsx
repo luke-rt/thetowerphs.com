@@ -37,7 +37,6 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export default function About({ data }: Props) {
-	console.log(data);
 	return(
 		<div className={styles.about}>
 			<Head>
