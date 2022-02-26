@@ -5,6 +5,8 @@ import { getArticlesBySubcategory } from "~/lib/queries";
 import { expandCategorySlug } from "~/lib/utils";
 import styles from "~/styles/category.module.scss";
 
+import { subcategories } from "~/lib/constants";
+
 interface Params {
 	params: {
 		subcategory: string
@@ -16,8 +18,19 @@ interface Props {
 	articles: article[]
 }
 
-export async function getServerSideProps({ params }: Params) {
-	// runs server side, maybe switch to static props later
+export async function getStaticPaths() {
+	return {
+		paths: subcategories.map((subcategory) => ({
+			params: {
+				category: subcategory[0],
+				subcategory: subcategory[1],
+			},
+		})),
+		fallback: "blocking",
+	};
+}
+
+export async function getStaticProps({ params }: Params) {
 	return {
 		props: {
 			subcategory: params.subcategory,

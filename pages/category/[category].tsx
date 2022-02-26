@@ -5,6 +5,8 @@ import { getArticlesByCategory } from "~/lib/queries";
 import { expandCategorySlug } from "~/lib/utils";
 import styles from "~/styles/category.module.scss";
 
+import { categories } from "~/lib/constants";
+
 interface Params {
 	params: {
 		category: string
@@ -16,7 +18,18 @@ interface Props {
 	articles: article[]
 }
 
-export async function getServerSideProps({ params }: Params) {
+export async function getStaticPaths() {
+	return {
+		paths: categories.map((category) => ({
+			params: {
+				category: category,
+			},
+		})),
+		fallback: "blocking",
+	};
+}
+
+export async function getStaticProps({ params }: Params) {
 	// runs server side, maybe switch to static props later
 	return {
 		props: {
