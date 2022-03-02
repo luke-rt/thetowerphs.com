@@ -6,16 +6,31 @@ export async function getFrontpageArticles() {
 	await prisma.$connect();
 
 	const curr = new Date();
-	const month = curr.getMonth() + 1;
-	const year = curr.getFullYear();
+	let month = curr.getMonth() + 1;
+	let year = curr.getFullYear();
 
-	const articles: article[] = await prisma.article.findMany({
+	let articles: article[] = await prisma.article.findMany({
 		where: {
 			year: year,
 			month: month,
 			published: true,
 		}
 	});
+
+	if(articles.length === 0) {
+		month = month - 1;
+		if(month === 0) {
+			month = 12;
+			year = year - 1;
+		}
+		articles = await prisma.article.findMany({
+			where: {
+				year: year,
+				month: month,
+				published: true,
+			}
+		})
+	}
 
 	prisma.$disconnect();
 
