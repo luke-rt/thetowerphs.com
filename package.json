@@ -16,7 +16,7 @@
     "@prisma/client": "^3.10.0",
     "@react-icons/all-files": "^4.1.0",
     "lodash": "^4.17.21",
-    "next": "^12.1.1-canary.4",
+    "next": "^12.1.1-canary.6",
     "react": "^18.0.0-rc.1",
     "react-dom": "^18.0.0-rc.0",
     "sass": "^1.49.9",
