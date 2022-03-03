@@ -9,8 +9,9 @@
 
 .banner {
 	display: flex;
-	align-items: center;
-	margin-left: 18vw;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 	&:hover {
 		cursor: pointer;
 	}
@@ -23,11 +24,11 @@
 	margin-left: 5vw;
   hr {
 		align-self: center;
-    background-color: #ccc;
-    height: 3px;
-    border: none;
-    margin-top: 3vh;
-    margin-bottom: 1vh;
+		background-color: #ccc;
+		border: none;
+		margin-top: 3vh;
+		margin-bottom: 1vh;
+		height: 3px;
   }
   .top {
     h1 {
@@ -42,14 +43,19 @@
     }
   }
 	.bottom {
+		font-family: sans-serif;
+		margin: 8vh;
 		margin-top: 3vh;
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		div {
-
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		b {
+			font-size: 1.1em;
+			font-weight: bolder;
+		}
+		a {
+			font-size: 0.9em;
 		}
 	}
-
 }
 
 .navbar {

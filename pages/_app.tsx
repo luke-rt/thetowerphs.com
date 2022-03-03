@@ -30,7 +30,7 @@ function Banner() {
 	return(
 		<div className={styles.banner}>
 			<Link href="/home" >
-				<Image src="/assets/logo.png" alt="Tower banner" width="1000px" height="220px" priority />
+				<Image src="/assets/logo.png" alt="Tower banner" width="1500px" height="330px" priority />
 			</Link>
 		</div>
 	);
@@ -49,21 +49,41 @@ function Footer() {
 			</div>
 			<div className={styles.bottom}>
 				<div>
-					hi
-
+					<b>
+						<Link href="/category/news-features">News & Features</Link><br></br>
+					</b>
+					<Link href="/category/news-features/phs-profiles">PHS Profiles</Link><br></br>
+					<Link href="/category/news-features/meanwhile-in-princeton">Meanwhile In Princeton</Link><br></br>
 				</div>
 				<div>
-					hi
-
+					<b>
+						<Link href="/category/opinions">Opinions</Link><br></br>
+					</b>
+					<Link href="/category/opinions/editorials">Editorials</Link><br></br>
+					<Link href="/category/opinions/cheers-jeers">Cheers & Jeers</Link><br></br>
 				</div>
 				<div>
-					hi
-
+					<b>
+						<Link href="/category/vanguard">Vanguard</Link><br></br>
+					</b>
+					<Link href="/category/vanguard/random-musings">Random Musings</Link><br></br>
+					<Link href="/category/vanguard/spreads">Spreads</Link><br></br>
 				</div>
 				<div>
-					hi
+					<b>
+						<Link href="/category/arts-entertainment">Arts & Entertainment</Link><br></br>
+					</b>
+					<Link href="/category/arts-entertainment/recipes">Recipes</Link><br></br>
+					<Link href="/category/arts-entertainment/student-artists">Student Artists</Link><br></br>
+				</div>
+				<div>
+					<b>
+						<Link href="/category/sports">Sports</Link><br></br>
+					</b>
+					<Link href="/category/sports/student-athletes">Student Athletes</Link>
 				</div>
 			</div>
+			<hr />
 		</div>
 	);
 }
