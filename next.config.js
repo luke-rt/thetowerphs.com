@@ -6,6 +6,7 @@ const nextConfig = {
 	images: {
     domains: ['lh5.googleusercontent.com'],
   },
+	pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
 	async redirects() {
     return [
       {
@@ -38,4 +39,12 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
-module.exports = withBundleAnalyzer(nextConfig)
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+})
+
+module.exports = withBundleAnalyzer(withMDX(nextConfig))

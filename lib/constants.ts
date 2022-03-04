@@ -23,6 +23,6 @@ export const subcategories = [
 	["arts-entertainment", "recipes"],
 	["arts-entertainment", "student-artists"],
 	["sports", "student-athletes"],
-]
+];
 
 export const months: string[] = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];

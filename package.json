@@ -8,11 +8,13 @@
     "lint": "next lint --fix",
     "analyze": "ANALYZE=true yarn build",
     "postinstall": "prisma generate",
-		"prepare": "npm run lint",
-		"e2e": "cypress run",
-		"e2e:open": "cypress open"
+    "prepare": "npm run lint",
+    "e2e": "cypress run",
+    "e2e:open": "cypress open"
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.0.0",
+    "@next/mdx": "^12.1.0",
     "@prisma/client": "^3.10.0",
     "@react-icons/all-files": "^4.1.0",
     "lodash": "^4.17.21",

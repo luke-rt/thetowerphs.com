@@ -29,7 +29,7 @@ export async function getFrontpageArticles() {
 				month: month,
 				published: true,
 			}
-		})
+		});
 	}
 
 	prisma.$disconnect();

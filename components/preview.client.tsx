@@ -11,7 +11,7 @@ interface Props {
 }
 
 export default function ArticlePreview({article, category, style="row", size="medium"}: Props) {
-	if(!article) return <></>
+	if(!article) return <></>;
 
 	var charlen = 0;
 
