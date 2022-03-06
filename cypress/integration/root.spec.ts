@@ -1,10 +1,6 @@
-describe('Root', () => {
+describe('Navbar', () => {
 	beforeEach(() => {
-		cy.visit("/");
-		cy.wait(1000); // wait for web components
+		cy.visit('/');
+		cy.wait(500); // wait for web components
 	});
-
-  it('should navigate', () => {
-
-  })
 })

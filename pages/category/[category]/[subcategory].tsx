@@ -54,9 +54,35 @@ export default function Subcategory({subcategory, articles}: Props) {
 				/>
 			</Head>
 			<h1>{expandCategorySlug(subcategory)}</h1>
-			{articles.map(article => (
-				<ArticlePreview key={article.id} article={article} />
-			))}
+			<hr />
+			<div className={styles.grid}>
+				<div>
+					{articles.map(article => (
+						<ArticlePreview key={article.id} article={article} />
+					))}
+				</div>
+				<div className={styles.sidebar}>
+					<SidebarArticles articles={articles} />
+				</div>
+			</div>
 		</div>
+	);
+}
+
+
+interface SidebarProps {
+	articles: article[],
+}
+
+function SidebarArticles({ articles }: SidebarProps) {
+	return(
+		<>
+			<ArticlePreview article ={articles[0]} style="row" size="small" category />
+			<ArticlePreview article ={articles[0]} style="row" size="small" category />
+			<ArticlePreview article ={articles[0]} style="row" size="small" category />
+			<ArticlePreview article ={articles[0]} style="row" size="small" category />
+			<ArticlePreview article ={articles[0]} style="row" size="small" category />
+			<ArticlePreview article ={articles[0]} style="row" size="small" category />
+		</>
 	);
 }

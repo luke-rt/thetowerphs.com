@@ -17,7 +17,7 @@ export default function Subscribe() {
 			</Head>
 			<h1>Subscribe</h1>
 			<div>
-				<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSecUsLEFTSQgTzZxExuPOWIArPXi6t11ILcUNLxmewakzRtYA/viewform?embedded=true" width="640" height="1821" >Loading…</iframe>
+				<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSecUsLEFTSQgTzZxExuPOWIArPXi6t11ILcUNLxmewakzRtYA/viewform?embedded=true" width="800" height="600" >Loading…</iframe>
 			</div>
 		</div>
 	);

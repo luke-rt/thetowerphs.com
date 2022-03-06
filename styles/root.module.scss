@@ -54,6 +54,9 @@
 		}
 		a {
 			font-size: 0.9em;
+			&:hover {
+				color: #474747
+			}
 		}
 	}
 }
