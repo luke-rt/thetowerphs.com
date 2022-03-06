@@ -2,6 +2,7 @@ import { article } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import { displayDate, expandCategorySlug, shortenText } from "~/lib/utils";
+import CreditLink from "./credit.client";
 
 interface Props {
   article: article,
@@ -13,8 +14,7 @@ interface Props {
 export default function ArticlePreview({article, category, style="row", size="medium"}: Props) {
 	if(!article) return <></>;
 
-	var charlen = 0;
-
+	let charlen = 0;
 	if(style === "box") { // BOX STYLE
 		switch(size) {
 		case "large":
@@ -62,7 +62,7 @@ export default function ArticlePreview({article, category, style="row", size="me
 				</div>
 				<div className="authors">
 					{article.authors.map((author, index) => (
-						<Link key={index} href={ "/credit/" + encodeURI(author) } >{author}</Link>
+						<CreditLink key={index} author={author} />
 					))}
 				</div>
 				<div className="preview-text">

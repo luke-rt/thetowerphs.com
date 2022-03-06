@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
-    "analyze": "ANALYZE=true yarn build",
+    "analyze": "ANALYZE=true npm run build",
     "postinstall": "prisma generate",
     "prepare": "npm run lint",
     "e2e": "cypress run",
