@@ -39,12 +39,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
-  },
-})
 
-module.exports = withBundleAnalyzer(withMDX(nextConfig))
+
+module.exports = withBundleAnalyzer(nextConfig)

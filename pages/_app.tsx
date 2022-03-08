@@ -29,7 +29,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 function Banner() {
 	return(
 		<div className={styles.banner}>
-			<Link href="/home" >
+			<Link href="/home" passHref >
 				<Image src="/assets/logo.png" alt="Tower banner" width="1500px" height="330px" priority />
 			</Link>
 		</div>
