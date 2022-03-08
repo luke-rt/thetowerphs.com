@@ -2,7 +2,7 @@
   "name": "thetowerphs.com",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 2000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
