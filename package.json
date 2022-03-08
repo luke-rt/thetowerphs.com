@@ -20,8 +20,8 @@
     "@react-icons/all-files": "^4.1.0",
     "lodash": "^4.17.21",
     "next": "^12.1.1-canary.7",
-    "react": "^18.0.0-rc.1",
-    "react-dom": "^18.0.0-rc.1",
+    "react": "^18.0.0-rc.1-next-f468816ef-20220225",
+    "react-dom": "^18.0.0-rc.1-next-f468816ef-20220225",
     "sass": "^1.49.9",
     "sharp": "^0.30.2"
   },

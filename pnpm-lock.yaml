@@ -16,22 +16,22 @@ specifiers:
   lodash: ^4.17.21
   next: ^12.1.1-canary.7
   prisma: ^3.10.0
-  react: ^18.0.0-rc.1
-  react-dom: ^18.0.0-rc.1
+  react: ^18.0.0-rc.1-next-f468816ef-20220225
+  react-dom: ^18.0.0-rc.1-next-f468816ef-20220225
   sass: ^1.49.9
   sharp: ^0.30.2
   typescript: 4.6.2
 
 dependencies:
   '@mdx-js/loader': 2.0.0
-  '@mdx-js/react': 2.0.0_react@18.0.0-rc.1
+  '@mdx-js/react': 2.0.0_a28f1fd517be1d2b056a3673720bd102
   '@next/mdx': 12.1.0_8c5c6202914de859be0951dbfd8e248d
   '@prisma/client': 3.10.0_prisma@3.10.0
-  '@react-icons/all-files': 4.1.0_react@18.0.0-rc.1
+  '@react-icons/all-files': 4.1.0_a28f1fd517be1d2b056a3673720bd102
   lodash: 4.17.21
-  next: 12.1.1-canary.7_78a4600981d541cf9dee2e9c86c67910
-  react: 18.0.0-rc.1
-  react-dom: 18.0.0-rc.1_react@18.0.0-rc.1
+  next: 12.1.1-canary.7_6a98185468d75ba3464acb53f1249d27
+  react: 18.0.0-rc.1-next-f468816ef-20220225
+  react-dom: 18.0.0-rc.1-next-f468816ef-20220225_a28f1fd517be1d2b056a3673720bd102
   sass: 1.49.9
   sharp: 0.30.2
 
@@ -161,14 +161,14 @@ packages:
       - supports-color
     dev: false
 
-  /@mdx-js/react/2.0.0_react@18.0.0-rc.1:
+  /@mdx-js/react/2.0.0_a28f1fd517be1d2b056a3673720bd102:
     resolution: {integrity: sha512-icpMd43xqORnHSVRwALZv3ELN3IS7VS3BL+FyH2FFergQPSQ21FX0lN+OMIs0X+3dGY1L0DLhBCkMfPO+yDG7Q==}
     peerDependencies:
       react: '>=16'
     dependencies:
       '@types/mdx': 2.0.1
       '@types/react': 17.0.39
-      react: 18.0.0-rc.1
+      react: 18.0.0-rc.1-next-f468816ef-20220225
     dev: false
 
   /@next/bundle-analyzer/12.1.0:
@@ -197,7 +197,7 @@ packages:
       '@mdx-js/react': '*'
     dependencies:
       '@mdx-js/loader': 2.0.0
-      '@mdx-js/react': 2.0.0_react@18.0.0-rc.1
+      '@mdx-js/react': 2.0.0_a28f1fd517be1d2b056a3673720bd102
     dev: false
 
   /@next/swc-android-arm-eabi/12.1.1-canary.7:
@@ -356,12 +356,12 @@ packages:
     requiresBuild: true
     dev: true
 
-  /@react-icons/all-files/4.1.0_react@18.0.0-rc.1:
+  /@react-icons/all-files/4.1.0_a28f1fd517be1d2b056a3673720bd102:
     resolution: {integrity: sha512-hxBI2UOuVaI3O/BhQfhtb4kcGn9ft12RWAFVMUeNjqqhLsHvFtzIkFaptBJpFDANTKoDfdVoHTKZDlwKCACbMQ==}
     peerDependencies:
       react: '*'
     dependencies:
-      react: 18.0.0-rc.1
+      react: 18.0.0-rc.1-next-f468816ef-20220225
     dev: false
 
   /@rushstack/eslint-patch/1.1.0:
@@ -1261,7 +1261,7 @@ packages:
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.10.0
       eslint-plugin-react: 7.29.3_eslint@8.10.0
       eslint-plugin-react-hooks: 4.3.0_eslint@8.10.0
-      next: 12.1.1-canary.7_78a4600981d541cf9dee2e9c86c67910
+      next: 12.1.1-canary.7_6a98185468d75ba3464acb53f1249d27
       typescript: 4.6.2
     transitivePeerDependencies:
       - supports-color
@@ -2764,7 +2764,7 @@ packages:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
     dev: true
 
-  /next/12.1.1-canary.7_78a4600981d541cf9dee2e9c86c67910:
+  /next/12.1.1-canary.7_6a98185468d75ba3464acb53f1249d27:
     resolution: {integrity: sha512-LKlpX9KiSuwl1iOA4MCRZqWG4qejX6bWAjAao1TBsxEbYYtc7FYSz0bXRgtKafFg3/+FfmlKv2Eec61NwHuBkw==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -2785,11 +2785,11 @@ packages:
       '@next/env': 12.1.1-canary.7
       caniuse-lite: 1.0.30001314
       postcss: 8.4.5
-      react: 18.0.0-rc.1
-      react-dom: 18.0.0-rc.1_react@18.0.0-rc.1
+      react: 18.0.0-rc.1-next-f468816ef-20220225
+      react-dom: 18.0.0-rc.1-next-f468816ef-20220225_a28f1fd517be1d2b056a3673720bd102
       sass: 1.49.9
-      styled-jsx: 5.0.0_react@18.0.0-rc.1
-      use-subscription: 1.5.1_react@18.0.0-rc.1
+      styled-jsx: 5.0.0_a28f1fd517be1d2b056a3673720bd102
+      use-subscription: 1.5.1_a28f1fd517be1d2b056a3673720bd102
     optionalDependencies:
       '@next/swc-android-arm-eabi': 12.1.1-canary.7
       '@next/swc-android-arm64': 12.1.1-canary.7
@@ -3135,13 +3135,13 @@ packages:
       strip-json-comments: 2.0.1
     dev: false
 
-  /react-dom/18.0.0-rc.1_react@18.0.0-rc.1:
-    resolution: {integrity: sha512-BZ9NEwUp56MEguEwAzuh3u4bYE9Jv3QrzjaTmu11PV4C/lJCARTELEI16vjnHLq184GoJcCHMBrDILqlCrkZFQ==}
+  /react-dom/18.0.0-rc.1-next-f468816ef-20220225_a28f1fd517be1d2b056a3673720bd102:
+    resolution: {integrity: sha512-GDr1pMmH6bMjv571SAVdsW9C99zkx5xJ6tG4Mu5vhOBApV2LZkvrAy9eUS1l3W/ZGp6hTrTUzrnKJ2PIA/g00Q==}
     peerDependencies:
-      react: ^18.0.0-rc.1
+      react: 18.0.0-rc.1-next-f468816ef-20220225
     dependencies:
       loose-envify: 1.4.0
-      react: 18.0.0-rc.1
+      react: 18.0.0-rc.1-next-f468816ef-20220225
       scheduler: 0.21.0-rc.1-next-f468816ef-20220225
     dev: false
 
@@ -3149,8 +3149,8 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
 
-  /react/18.0.0-rc.1:
-    resolution: {integrity: sha512-IdvjOtyeFhITZwDrj+GMvY7kbWnGklRzNByO7/pOVIt0o3VZi++BUybpK3Fen1gDPkOZDP/rag7lSh6RZuWOeQ==}
+  /react/18.0.0-rc.1-next-f468816ef-20220225:
+    resolution: {integrity: sha512-KTEaxCdleZPZtCfxhrSEYHohZRo0W1FWt5s28OsmwpPfIiDaQksoUf5bvMSn4wgfyt1gAM1Ot+wM74s4lTbNtA==}
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
@@ -3564,7 +3564,7 @@ packages:
       inline-style-parser: 0.1.1
     dev: false
 
-  /styled-jsx/5.0.0_react@18.0.0-rc.1:
+  /styled-jsx/5.0.0_a28f1fd517be1d2b056a3673720bd102:
     resolution: {integrity: sha512-qUqsWoBquEdERe10EW8vLp3jT25s/ssG1/qX5gZ4wu15OZpmSMFI2v+fWlRhLfykA5rFtlJ1ME8A8pm/peV4WA==}
     engines: {node: '>= 12.0.0'}
     peerDependencies:
@@ -3577,7 +3577,7 @@ packages:
       babel-plugin-macros:
         optional: true
     dependencies:
-      react: 18.0.0-rc.1
+      react: 18.0.0-rc.1-next-f468816ef-20220225
     dev: false
 
   /supports-color/7.2.0:
@@ -3824,13 +3824,13 @@ packages:
       punycode: 2.1.1
     dev: true
 
-  /use-subscription/1.5.1_react@18.0.0-rc.1:
+  /use-subscription/1.5.1_a28f1fd517be1d2b056a3673720bd102:
     resolution: {integrity: sha512-Xv2a1P/yReAjAbhylMfFplFKj9GssgTwN7RlcTxBujFQcloStWNDQdc4g4NRWH9xS4i/FDk04vQBptAXoF3VcA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0
     dependencies:
       object-assign: 4.1.1
-      react: 18.0.0-rc.1
+      react: 18.0.0-rc.1-next-f468816ef-20220225
     dev: false
 
   /util-deprecate/1.0.2:
