@@ -6,7 +6,6 @@ const nextConfig = {
 	images: {
     domains: ['lh5.googleusercontent.com'],
   },
-	webpack5: false,
 	pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
 	async redirects() {
     return [
