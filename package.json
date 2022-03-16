@@ -1,6 +1,5 @@
 {
   "name": "thetowerphs.com",
-  "private": true,
   "scripts": {
     "dev": "next dev --port 2000",
     "build": "next build",
