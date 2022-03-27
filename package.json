@@ -1,5 +1,10 @@
 {
   "name": "thetowerphs.com",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/luketio/thetowerphs.com.git"
+	},
   "scripts": {
     "dev": "next dev --port 2000",
     "build": "next build",

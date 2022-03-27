@@ -35,5 +35,5 @@ export default function Year({ year }: Props) {
 			</Head>
 			<h1>About</h1>
 		</div>
-	)
+	);
 }
