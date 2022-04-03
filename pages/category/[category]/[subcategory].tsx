@@ -17,19 +17,7 @@ interface Props {
 	subcategory: string,
 	articles: article[]
 }
-/*
-export async function getStaticPaths() {
-	return {
-		paths: subcategories.map((subcategory) => ({
-			params: {
-				category: subcategory[0],
-				subcategory: subcategory[1],
-			},
-		})),
-		fallback: "blocking",
-	};
-}
-*/
+
 export async function getServerSideProps({ params }: Params) {
 	return {
 		props: {

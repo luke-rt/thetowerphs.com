@@ -19,24 +19,7 @@ interface Params {
 	},
 }
 
-export async function getStaticPaths() {
-	const articles: article[] = await getPublishedArticles();
-
-	return {
-		paths: articles.map((article) => ({
-			params: {
-				year: article.year.toString(),
-				month: article.month.toString(),
-				cat: article.category,
-				slug: encodeURI(article.title),
-			},
-		})),
-		fallback: "blocking",
-	};
-}
-
-
-export async function getStaticProps({ params }: Params) {
+export async function getServerSideProps({ params }: Params) {
 	return {
 		props: {
 			article: await getArticle(params.year, params.month, params.cat, params.slug)

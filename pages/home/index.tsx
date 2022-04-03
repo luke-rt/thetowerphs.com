@@ -5,7 +5,7 @@ import { getFrontpageArticles } from "~/lib/queries";
 import styles from "~/styles/home.module.scss";
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const articles: article[] = await getFrontpageArticles();
 
 	return {
