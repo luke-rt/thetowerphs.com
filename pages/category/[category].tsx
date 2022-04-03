@@ -18,6 +18,7 @@ interface Props {
 	articles: article[]
 }
 
+/*
 export async function getStaticPaths() {
 	return {
 		paths: categories.map((category) => ({
@@ -28,8 +29,9 @@ export async function getStaticPaths() {
 		fallback: "blocking",
 	};
 }
+*/
 
-export async function getStaticProps({ params }: Params) {
+export async function getServerSideProps({ params }: Params) {
 	// runs server side, maybe switch to static props later
 	return {
 		props: {
