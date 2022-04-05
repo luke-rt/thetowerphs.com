@@ -5,8 +5,6 @@ import { getArticlesBySubcategory } from "~/lib/queries";
 import { expandCategorySlug } from "~/lib/utils";
 import styles from "~/styles/category.module.scss";
 
-import { subcategories } from "~/lib/constants";
-
 interface Params {
 	params: {
 		subcategory: string
