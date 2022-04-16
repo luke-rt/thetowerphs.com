@@ -20,6 +20,7 @@ export function getServerSideProps({ params }: Params) {
 }
 
 export default function Year({ year }: Props) {
+	// about pages
 	return(
 		<div className={styles.about}>
 			<Head>

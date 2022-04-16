@@ -3,6 +3,7 @@ import VirtualArchive from "~/components/archive.client";
 import styles from "~/styles/archives.module.scss";
 
 export default function Archives() {
+	// TODO get actual virtual archives
 	return(
 		<div className={styles.archives}>
 			<Head>

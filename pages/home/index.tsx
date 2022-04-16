@@ -42,6 +42,7 @@ interface FrontPageProps {
 }
 
 function FrontPageArticles({articles}: FrontPageProps) {
+	// TODO
 	return(
 		<div className={styles.frontpage}>
 			<div>
