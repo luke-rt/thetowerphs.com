@@ -2,7 +2,7 @@ import { article } from "@prisma/client";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import { getArticle, getPublishedArticles } from "~/lib/queries";
+import { getArticle } from "~/lib/queries";
 import { displayDate } from "~/lib/utils";
 import styles from "~/styles/article.module.scss";
 

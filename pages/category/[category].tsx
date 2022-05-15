@@ -17,7 +17,6 @@ interface Props {
 }
 
 export async function getServerSideProps({ params }: Params) {
-	// runs server side, maybe switch to static props later
 	return {
 		props: {
 			category: params.category,
@@ -28,7 +27,7 @@ export async function getServerSideProps({ params }: Params) {
 
 export default function Category({category, articles}: Props) {
 	return(
-		<div className={styles.category}>
+		<div className="category">
 			<Head>
 				<title>{expandCategorySlug(category)} | The Tower</title>
 				<meta
@@ -40,15 +39,39 @@ export default function Category({category, articles}: Props) {
 					content={expandCategorySlug(category) + " at the Tower"}
 				/>
 			</Head>
+			<style jsx>{`
+				.category {
+					max-width: 85vw;
+					min-height: 100vh;
+				}
+				.category h1 {
+					text-align: center;
+					border: none;
+					border-bottom: 1px solid gainsboro;
+				}
+				.category .grid {
+					display: grid;
+					grid-template-columns: 5fr 2fr;
+					grid-column-gap: 2vw;
+				}
+				.category .grid .sidebar {
+					margin-top: 2vh;
+					padding-left: 1vw;
+					padding-right: 1vw;
+					border: none;
+					border-left: 1px solid gainsboro;
+					border-right: 1px solid gainsboro;
+				}
+			`}</style>
 			<h1>{expandCategorySlug(category)}</h1>
 			<hr />
-			<div className={styles.grid}>
+			<div className="grid">
 				<div>
 					{articles.map(article => (
 						<ArticlePreview key={article.id} article={article} />
 					))}
 				</div>
-				<div className={styles.sidebar}>
+				<div className="sidebar">
 					<SidebarArticles articles={articles} />
 				</div>
 			</div>

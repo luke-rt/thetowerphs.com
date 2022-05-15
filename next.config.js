@@ -4,7 +4,10 @@ const nextConfig = {
   reactStrictMode: true,
 	swcMinify: true,
 	images: {
-    domains: ['lh5.googleusercontent.com'],
+    domains: [
+			'lh5.googleusercontent.com',
+			'yusjougmsdnhcsksadaw.supabase.co'
+		],
   },
 	pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
 	async redirects() {

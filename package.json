@@ -17,24 +17,25 @@
     "e2e:open": "cypress open"
   },
   "dependencies": {
-    "@prisma/client": "^3.12.0",
+    "@prisma/client": "^3.14.0",
     "@react-icons/all-files": "^4.1.0",
     "lodash": "^4.17.21",
-    "next": "^12.1.5",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "sharp": "^0.30.3"
+    "next": "^12.1.6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "sharp": "^0.30.4"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^12.1.5",
-    "@types/lodash": "^4.14.181",
+    "@next/bundle-analyzer": "^12.1.6",
+    "@types/lodash": "^4.14.182",
     "@types/node": "17.0.24",
     "@types/react": "18.0.5",
-    "cypress": "^9.5.4",
+    "cypress": "^9.6.1",
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.5",
-    "prisma": "^3.12.0",
-    "sass": "^1.50.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prisma": "^3.14.0",
+    "sass": "^1.51.0",
     "typescript": "4.6.3"
   }
 }

@@ -7,7 +7,7 @@ import { FaInstagramSquare } from "@react-icons/all-files/fa/FaInstagramSquare";
 import Button from "~/components/button.client";
 
 import "~/styles/styles.scss";
-import styles from "~/styles/root.module.scss";
+import styles from "~/lib/styles";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
 	return (
@@ -18,7 +18,15 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 			</Head>
 			<Banner />
 			<NavBar />
-			<main className={styles.content}>
+			<main className="content">
+				<style jsx>{`
+					main {
+						display: block;
+						margin-top: 4vh;
+						margin-left: 5vw;
+						margin-right: 5vw;
+					}
+				`}</style>
 				<Component {...pageProps} />
 			</main>
 			<Footer />
@@ -28,7 +36,18 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
 function Banner() {
 	return(
-		<div className={styles.banner}>
+		<div className="banner">
+			<style jsx>{`
+				.banner {
+					display: flex;
+					margin-left: auto;
+					margin-right: auto;
+					width: 50%;
+				}
+				.banner:hover {
+					cursor: pointer;
+				}
+			`}</style>
 			<Link href="/home" passHref >
 				<Image src="/assets/logo.png" alt="Tower banner" width="1500px" height="330px" priority />
 			</Link>
@@ -38,16 +57,59 @@ function Banner() {
 
 function Footer() {
 	return(
-		<div className={styles.footer}>
+		<div className="footer">
+			<style jsx>{`
+				.footer {
+					display: block;
+					padding-top: 2vh;
+					width: 90vw;
+					margin-left: 5vw;
+				}
+				hr {
+					align-self: center;
+					background-color: #ccc;
+					border: none;
+					margin-top: 3vh;
+					margin-bottom: 1vh;
+					height: 3px;
+				}
+				.top span svg {
+					padding-top: 2vh;
+					margin-left: 3px;
+				}
+				.top h1 {
+					font-family: Canterbury;
+					font-size: xxx-large;
+					float:left;
+					padding-right: 10px;
+				}
+				.bottom {
+					font-family: sans-serif;
+					margin: 8vh;
+					margin-top: 3vh;
+					display: grid;
+					grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+				}
+				.bottom b {
+					font-size: 1.1em;
+					font-weight: bolder;
+				}
+				.bottom a {
+					font-size: 0.9em;
+				}
+				.button a:hover {
+					color: #474747
+				}
+			`}</style>
 			<hr />
-			<div className={styles.top}>
+			<div className="top">
 				<h1>The Tower</h1>
 				<span>
 					<a href="https://www.instagram.com/thetowerphs/" target="_blank" rel="noopener noreferrer"><FaInstagramSquare size="2em"/></a>
 					<a href="https://www.facebook.com/phstower" target="_blank" rel="noopener noreferrer"><FaFacebookSquare size="2em"/></a>
 				</span>
 			</div>
-			<div className={styles.bottom}>
+			<div className="bottom">
 				<div>
 					<b>
 						<Link href="/category/news-features">News & Features</Link><br></br>
@@ -90,7 +152,22 @@ function Footer() {
 
 function NavBar() {
 	return(
-		<div className={styles.navbar}>
+		<div className="navbar">
+			<style jsx>{`
+				.navbar {
+					display: block;
+					background-color: ${styles.color.primary};
+					margin-bottom: 2vh;
+					margin-left: 4vw;
+					margin-right: 4vw;
+					padding-left: 4vw;
+					padding-right: 4vw;
+				}
+				.navbar hr {
+					margin-top: 5px;
+					margin-bottom: 5px;
+				}
+			`}</style>
 			<Button name="News & Features" href="/category/news-features">
 				<Link href="/category/news-features/phs-profiles">PHS Profiles</Link>
 				<hr />

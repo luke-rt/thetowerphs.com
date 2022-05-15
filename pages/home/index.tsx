@@ -2,7 +2,6 @@ import { article } from "@prisma/client";
 import Head from "next/head";
 import ArticlePreview from "~/components/preview.client";
 import { getFrontpageArticles } from "~/lib/queries";
-import styles from "~/styles/home.module.scss";
 
 
 export async function getServerSideProps() {
@@ -44,7 +43,20 @@ interface FrontPageProps {
 function FrontPageArticles({articles}: FrontPageProps) {
 	// TODO
 	return(
-		<div className={styles.frontpage}>
+		<div className="front-page">
+			<style jsx>{`
+				.front-page {
+					min-height: 100vh;
+					display: grid;
+					grid-template-columns: 1fr 4fr 2fr;
+					grid-column-gap: 2vw;
+				}
+				.column {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					grid-column-gap: 2vw;
+				}
+			`}</style>
 			<div>
 				<ArticlePreview article ={articles[0]} style="box" size="small" category />
 				<ArticlePreview article ={articles[0]} style="box" size="small" category />
@@ -54,7 +66,7 @@ function FrontPageArticles({articles}: FrontPageProps) {
 			</div>
 			<div>
 				<ArticlePreview article ={articles[0]} style="box" size="large" category />
-				<div className={styles.column}>
+				<div className="column">
 					<ArticlePreview article ={articles[0]} style="box" size="medium" category />
 					<ArticlePreview article ={articles[0]} style="box" size="medium" category />
 				</div>

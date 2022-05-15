@@ -2,7 +2,6 @@ import { article } from "@prisma/client";
 import Head from "next/head";
 import ArticlePreview from "~/components/preview.client";
 import { getArticlesByAuthor } from "~/lib/queries";
-import styles from "~/styles/credit.module.scss";
 
 interface Params {
 	params: {
@@ -16,7 +15,6 @@ interface Props {
 }
 
 export async function getServerSideProps({ params }: Params) {
-	// runs server side, maybe switch to static props later
 	return {
 		props: {
 			author: decodeURI(params.author),
@@ -27,7 +25,7 @@ export async function getServerSideProps({ params }: Params) {
 
 export default function Credit({ author, articles }: Props) {
 	return(
-		<div className={styles.credit}>
+		<div className="credit">
 			<Head>
 				<title>{author}&apos;s Work | The Tower</title>
 				<meta
@@ -39,6 +37,14 @@ export default function Credit({ author, articles }: Props) {
 					content={author + "&apos;s Work at the Tower"}
 				/>
 			</Head>
+			<style jsx>{`
+				.credit {
+  				max-width: 85vw;
+				}
+				h1 {
+					text-align: center;
+				}
+			`}</style>
 			<h1>{author}&apos;s Work</h1>
 			{articles.map(article => (
 				<ArticlePreview key={article.id} article={article} category />

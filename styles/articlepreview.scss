@@ -20,12 +20,11 @@
 		padding-top: 2vh;
 		border: none;
 		border-bottom: 1px solid gainsboro;
-
 		grid-template-columns: 1fr 5fr;
+		grid-gap: 1vw;
 
 		&.small {
 			grid-template-columns: 1fr 4fr;
-			grid-gap: 1vw;
 		}
 	}
 
@@ -34,7 +33,7 @@
 	.img-container {
 		position: relative;
 		max-width: 100%;
-		height: 100%;
+		max-height: 100%;
 
 		&.box {
 			&.large {
