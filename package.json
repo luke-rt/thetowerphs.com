@@ -7,11 +7,12 @@
 	},
 	"scripts": {
 		"dev": "next dev --port 2000",
-		"build": "next build",
-		"analyze": "ANALYZE=true npm run build",
+		"start": "next build && next start",
+		"analyze": "ANALYZE=true next build",
 		"lint": "next lint --fix && prettier --write '**/*.{ts,tsx}'",
-		"e2e": "cypress run",
-		"e2e:open": "cypress open",
+		"e2e": "start-server-and-test start http://localhost:3000 cy:run",
+		"cy:run": "cypress run",
+		"cy:open": "cypress open",
 		"postinstall": "prisma generate",
 		"prepare": "husky install"
 	},
@@ -39,6 +40,7 @@
 		"pretty-quick": "^3.1.3",
 		"prisma": "^3.14.0",
 		"sass": "^1.51.0",
+		"start-server-and-test": "^1.14.0",
 		"typescript": "4.6.3"
 	}
 }
