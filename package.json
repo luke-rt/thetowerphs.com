@@ -8,13 +8,12 @@
   "scripts": {
     "dev": "next dev --port 2000",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint --fix",
     "analyze": "ANALYZE=true npm run build",
-    "postinstall": "prisma generate",
-    "prepare": "npm run lint",
+    "lint": "next lint --fix && prettier --write '**/*.{ts,tsx}'",
     "e2e": "cypress run",
-    "e2e:open": "cypress open"
+    "e2e:open": "cypress open",
+    "postinstall": "prisma generate",
+		"prepare": "husky install"
   },
   "dependencies": {
     "@prisma/client": "^3.14.0",
@@ -34,6 +33,9 @@
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.5",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.6.2",
     "prisma": "^3.14.0",
     "sass": "^1.51.0",
     "typescript": "4.6.3"

@@ -1,6 +1,8 @@
-describe('Navbar', () => {
+/** @format */
+
+describe("Navbar", () => {
 	beforeEach(() => {
-		cy.visit('/');
+		cy.visit("/");
 		cy.wait(500); // wait for web components
 	});
-})
+});

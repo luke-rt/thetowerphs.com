@@ -1,3 +1,5 @@
+/** @format */
+
 const styles = {
 	font: {
 		stack: "system-ui, sans-serif",
@@ -9,6 +11,6 @@ const styles = {
 		primary: "black",
 	},
 	lineHeight: 1.4,
-}
+};
 
 export default styles;

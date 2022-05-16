@@ -1,18 +1,14 @@
+/** @format */
+
 import Head from "next/head";
 
 export default function Subscribe() {
-	return(
+	return (
 		<div className="subscribe">
 			<Head>
 				<title>Subscribe | The Tower</title>
-				<meta
-					property="og:title"
-					content="Subscribe | The Tower"
-				/>
-				<meta
-					property="og:description"
-					content="Subscribe to the Tower"
-				/>
+				<meta property="og:title" content="Subscribe | The Tower" />
+				<meta property="og:description" content="Subscribe to the Tower" />
 			</Head>
 			<style jsx>{`
 				.subscribe {
@@ -31,7 +27,13 @@ export default function Subscribe() {
 			`}</style>
 			<h1>Subscribe</h1>
 			<div>
-				<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSecUsLEFTSQgTzZxExuPOWIArPXi6t11ILcUNLxmewakzRtYA/viewform?embedded=true" width="800" height="600" >Loading…</iframe>
+				<iframe
+					src="https://docs.google.com/forms/d/e/1FAIpQLSecUsLEFTSQgTzZxExuPOWIArPXi6t11ILcUNLxmewakzRtYA/viewform?embedded=true"
+					width="800"
+					height="600"
+				>
+					Loading…
+				</iframe>
 			</div>
 		</div>
 	);

@@ -1,14 +1,16 @@
+/** @format */
+
 import Link from "next/link";
 import styles from "~/lib/styles";
 
 interface Props {
-  name: string;
-  href: string;
-  children?: any;
+	name: string;
+	href: string;
+	children?: any;
 }
 
-export default function Button({name, href, children}: Props) {
-	return(
+export default function Button({ name, href, children }: Props) {
+	return (
 		<div className="dropdown">
 			<style jsx>{`
 				.dropdown {
@@ -26,12 +28,12 @@ export default function Button({name, href, children}: Props) {
 					padding: 15px;
 					font-size: x-large;
 
-					transition: .3s ease-in;
+					transition: 0.3s ease-in;
 				}
 				.btn:hover {
-						color: ${styles.color.primary};
-						background-color: ${styles.color.background};
-						display: block;
+					color: ${styles.color.primary};
+					background-color: ${styles.color.background};
+					display: block;
 				}
 				.content {
 					display: none;
@@ -40,10 +42,10 @@ export default function Button({name, href, children}: Props) {
 					padding: 12px;
 
 					min-width: 14vw;
-					box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+					box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 					z-index: 1;
 				}
-				.content a:hover{
+				.content a:hover {
 					cursor: pointer;
 					color: #474747;
 				}
@@ -52,11 +54,7 @@ export default function Button({name, href, children}: Props) {
 			<Link href={href}>
 				<a className="btn">{name}</a>
 			</Link>
-			{children &&
-				<div className="content">
-					{children}
-				</div>
-			}
+			{children && <div className="content">{children}</div>}
 		</div>
 	);
 }

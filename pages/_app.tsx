@@ -1,3 +1,5 @@
+/** @format */
+
 import type { AppProps, NextWebVitalsMetric } from "next/app";
 import Head from "next/head";
 import Image from "next/image";
@@ -35,7 +37,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 }
 
 function Banner() {
-	return(
+	return (
 		<div className="banner">
 			<style jsx>{`
 				.banner {
@@ -48,7 +50,7 @@ function Banner() {
 					cursor: pointer;
 				}
 			`}</style>
-			<Link href="/home" passHref >
+			<Link href="/home" passHref>
 				<Image src="/assets/logo.png" alt="Tower banner" width="1500px" height="330px" priority />
 			</Link>
 		</div>
@@ -56,7 +58,7 @@ function Banner() {
 }
 
 function Footer() {
-	return(
+	return (
 		<div className="footer">
 			<style jsx>{`
 				.footer {
@@ -80,7 +82,7 @@ function Footer() {
 				.top h1 {
 					font-family: Canterbury;
 					font-size: xxx-large;
-					float:left;
+					float: left;
 					padding-right: 10px;
 				}
 				.bottom {
@@ -98,49 +100,70 @@ function Footer() {
 					font-size: 0.9em;
 				}
 				.button a:hover {
-					color: #474747
+					color: #474747;
 				}
 			`}</style>
 			<hr />
 			<div className="top">
 				<h1>The Tower</h1>
 				<span>
-					<a href="https://www.instagram.com/thetowerphs/" target="_blank" rel="noopener noreferrer"><FaInstagramSquare size="2em"/></a>
-					<a href="https://www.facebook.com/phstower" target="_blank" rel="noopener noreferrer"><FaFacebookSquare size="2em"/></a>
+					<a
+						href="https://www.instagram.com/thetowerphs/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FaInstagramSquare size="2em" />
+					</a>
+					<a href="https://www.facebook.com/phstower" target="_blank" rel="noopener noreferrer">
+						<FaFacebookSquare size="2em" />
+					</a>
 				</span>
 			</div>
 			<div className="bottom">
 				<div>
 					<b>
-						<Link href="/category/news-features">News & Features</Link><br></br>
+						<Link href="/category/news-features">News & Features</Link>
+						<br></br>
 					</b>
-					<Link href="/category/news-features/phs-profiles">PHS Profiles</Link><br></br>
-					<Link href="/category/news-features/meanwhile-in-princeton">Meanwhile In Princeton</Link><br></br>
+					<Link href="/category/news-features/phs-profiles">PHS Profiles</Link>
+					<br></br>
+					<Link href="/category/news-features/meanwhile-in-princeton">Meanwhile In Princeton</Link>
+					<br></br>
 				</div>
 				<div>
 					<b>
-						<Link href="/category/opinions">Opinions</Link><br></br>
+						<Link href="/category/opinions">Opinions</Link>
+						<br></br>
 					</b>
-					<Link href="/category/opinions/editorials">Editorials</Link><br></br>
-					<Link href="/category/opinions/cheers-jeers">Cheers & Jeers</Link><br></br>
+					<Link href="/category/opinions/editorials">Editorials</Link>
+					<br></br>
+					<Link href="/category/opinions/cheers-jeers">Cheers & Jeers</Link>
+					<br></br>
 				</div>
 				<div>
 					<b>
-						<Link href="/category/vanguard">Vanguard</Link><br></br>
+						<Link href="/category/vanguard">Vanguard</Link>
+						<br></br>
 					</b>
-					<Link href="/category/vanguard/random-musings">Random Musings</Link><br></br>
-					<Link href="/category/vanguard/spreads">Spreads</Link><br></br>
+					<Link href="/category/vanguard/random-musings">Random Musings</Link>
+					<br></br>
+					<Link href="/category/vanguard/spreads">Spreads</Link>
+					<br></br>
 				</div>
 				<div>
 					<b>
-						<Link href="/category/arts-entertainment">Arts & Entertainment</Link><br></br>
+						<Link href="/category/arts-entertainment">Arts & Entertainment</Link>
+						<br></br>
 					</b>
-					<Link href="/category/arts-entertainment/recipes">Recipes</Link><br></br>
-					<Link href="/category/arts-entertainment/student-artists">Student Artists</Link><br></br>
+					<Link href="/category/arts-entertainment/recipes">Recipes</Link>
+					<br></br>
+					<Link href="/category/arts-entertainment/student-artists">Student Artists</Link>
+					<br></br>
 				</div>
 				<div>
 					<b>
-						<Link href="/category/sports">Sports</Link><br></br>
+						<Link href="/category/sports">Sports</Link>
+						<br></br>
 					</b>
 					<Link href="/category/sports/student-athletes">Student Athletes</Link>
 				</div>
@@ -151,7 +174,7 @@ function Footer() {
 }
 
 function NavBar() {
-	return(
+	return (
 		<div className="navbar">
 			<style jsx>{`
 				.navbar {

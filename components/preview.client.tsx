@@ -1,3 +1,5 @@
+/** @format */
+
 import { article } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,69 +7,92 @@ import { displayDate, expandCategorySlug, shortenText } from "~/lib/utils";
 import CreditLink from "./credit.client";
 
 interface Props {
-  article: article,
-  category?: boolean,
-	style?: "box" | "row",
-	size?: "small" | "medium" | "large",
+	article: article;
+	category?: boolean;
+	style?: "box" | "row";
+	size?: "small" | "medium" | "large";
 }
 
-export default function ArticlePreview({article, category, style="row", size="medium"}: Props) {
-	if(!article) return <></>;
+export default function ArticlePreview({
+	article,
+	category,
+	style = "row",
+	size = "medium",
+}: Props) {
+	if (!article) return <></>;
 
 	let charlen = 0;
-	if(style === "box") { // BOX STYLE
-		switch(size) {
-		case "large":
-			charlen = 200;
-			break;
-		case "medium":
-			charlen = 100;
-			break;
-		case "small":
-			break;
+	if (style === "box") {
+		// BOX STYLE
+		switch (size) {
+			case "large":
+				charlen = 200;
+				break;
+			case "medium":
+				charlen = 100;
+				break;
+			case "small":
+				break;
 		}
-	} else { // ROW STYLE
-		switch(size) {
-		case "large":
-			charlen = 400;
-			break;
-		case "medium":
-			charlen = 300;
-			break;
-		case "small":
-			break;
+	} else {
+		// ROW STYLE
+		switch (size) {
+			case "large":
+				charlen = 400;
+				break;
+			case "medium":
+				charlen = 300;
+				break;
+			case "small":
+				break;
 		}
 	}
 
-	if(!article.img) article.img = "/assets/default.png";
+	if (!article.img) article.img = "/assets/default.png";
 
-	return(
+	return (
 		<div className={"article-preview " + style + " " + size}>
 			<div className={"img-container " + style + " " + size}>
-				<Image src={article.img} alt="Article preview" objectFit="cover" layout="fill" blurDataURL={article.img} placeholder="blur" />
+				<Image
+					src={article.img}
+					alt="Article preview"
+					objectFit="cover"
+					layout="fill"
+					blurDataURL={article.img}
+					placeholder="blur"
+				/>
 			</div>
 			<div>
 				<div className="category">
-					{category &&
-						<Link href={ "/category/" + article.category }>{expandCategorySlug(article.category)}</Link>
-					}
+					{category && (
+						<Link href={"/category/" + article.category}>
+							{expandCategorySlug(article.category)}
+						</Link>
+					)}
 				</div>
 				<div>
-					<Link href={ "/articles/" + article.year + "/" + article.month + "/" + article.category + "/" + encodeURI(article.title)}>
+					<Link
+						href={
+							"/articles/" +
+							article.year +
+							"/" +
+							article.month +
+							"/" +
+							article.category +
+							"/" +
+							encodeURI(article.title)
+						}
+					>
 						<a className={"title " + size}>{article.title}</a>
 					</Link>
-					{!(size === "small") &&
-						<span>{ displayDate(article.year, article.month) }</span>
-					}
+					{!(size === "small") && <span>{displayDate(article.year, article.month)}</span>}
 				</div>
 				<div className="authors">
 					{article.authors.map((author, index) => (
 						<CreditLink key={index} author={author} />
 					))}
 				</div>
-				<div className="preview-text">
-					{shortenText(article.content, charlen)}
-				</div>
+				<div className="preview-text">{shortenText(article.content, charlen)}</div>
 			</div>
 		</div>
 	);

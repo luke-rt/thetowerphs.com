@@ -1,3 +1,5 @@
+/** @format */
+
 import { article, PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
@@ -14,12 +16,12 @@ export async function getFrontpageArticles() {
 			year: year,
 			month: month,
 			published: true,
-		}
+		},
 	});
 
-	if(articles.length === 0) {
+	if (articles.length === 0) {
 		month = month - 1;
-		if(month === 0) {
+		if (month === 0) {
 			month = 12;
 			year = year - 1;
 		}
@@ -28,7 +30,7 @@ export async function getFrontpageArticles() {
 				year: year,
 				month: month,
 				published: true,
-			}
+			},
 		});
 	}
 
@@ -43,7 +45,7 @@ export async function getPublishedArticles() {
 	const articles = await prisma.article.findMany({
 		where: {
 			published: true,
-		}
+		},
 	});
 
 	prisma.$disconnect();
@@ -121,7 +123,7 @@ export async function getArticlesByAuthor(author: string) {
 	const articles = await prisma.article.findMany({
 		where: {
 			authors: {
-				has: decodeURI(author)
+				has: decodeURI(author),
 			},
 			published: true,
 		},

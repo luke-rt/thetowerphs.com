@@ -1,13 +1,15 @@
+/** @format */
+
 import Head from "next/head";
 
 interface Props {
-	year: number,
+	year: number;
 }
 
 interface Params {
 	params: {
-		year: number,
-	}
+		year: number;
+	};
 }
 
 export function getServerSideProps({ params }: Params) {
@@ -20,18 +22,12 @@ export function getServerSideProps({ params }: Params) {
 
 export default function Year({ year }: Props) {
 	// about pages
-	return(
+	return (
 		<div className="about">
 			<Head>
 				<title>About the {year} staff | The Tower</title>
-				<meta
-					property="og:title"
-					content="About | The Tower"
-				/>
-				<meta
-					property="og:description"
-					content="About the Tower"
-				/>
+				<meta property="og:title" content="About | The Tower" />
+				<meta property="og:description" content="About the Tower" />
 			</Head>
 			<style jsx>{`
 				.about {

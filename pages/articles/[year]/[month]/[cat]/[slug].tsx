@@ -1,3 +1,5 @@
+/** @format */
+
 import { article } from "@prisma/client";
 import Head from "next/head";
 import Link from "next/link";
@@ -7,51 +9,54 @@ import { displayDate } from "~/lib/utils";
 import styles from "~/styles/article.module.scss";
 
 interface Props {
-	article: article
+	article: article;
 }
 
 interface Params {
 	params: {
-		year: string,
-		month: string,
-		cat: string,
-		slug: string,
-	},
+		year: string;
+		month: string;
+		cat: string;
+		slug: string;
+	};
 }
 
 export async function getServerSideProps({ params }: Params) {
 	return {
 		props: {
-			article: await getArticle(params.year, params.month, params.cat, params.slug)
+			article: await getArticle(params.year, params.month, params.cat, params.slug),
 		},
 	};
 }
 
-export default function Article({article}: Props) {
+export default function Article({ article }: Props) {
 	const paragraphs = article.content.split("\n");
 
 	return (
 		<div className={styles.article}>
 			<Head>
-				<title>{ article.title } | The Tower</title>
-				<meta
-					property="og:title"
-					content={article.title + " | The Tower"}
-				/>
-				<meta
-					property="og:description"
-					content="Read more about this article!"
-				/>
+				<title>{article.title} | The Tower</title>
+				<meta property="og:title" content={article.title + " | The Tower"} />
+				<meta property="og:description" content="Read more about this article!" />
 			</Head>
-			<h1>{ article.title }</h1>
-			<span>{ displayDate(article.year, article.month) }</span>
+			<h1>{article.title}</h1>
+			<span>{displayDate(article.year, article.month)}</span>
 			<div className={styles.authors}>
 				{article.authors.map((author, index) => (
-					<Link key={index} href={ "/credit/" + encodeURI(author) } >{author}</Link>
+					<Link key={index} href={"/credit/" + encodeURI(author)}>
+						{author}
+					</Link>
 				))}
 			</div>
 			<div className={styles.img}>
-				<Image src={article.img} alt="Article image" objectFit="contain" layout="fill" blurDataURL={article.img} placeholder="blur" />
+				<Image
+					src={article.img}
+					alt="Article image"
+					objectFit="contain"
+					layout="fill"
+					blurDataURL={article.img}
+					placeholder="blur"
+				/>
 			</div>
 			<div className={styles.content}>
 				{paragraphs.map((paragraph, index) => (

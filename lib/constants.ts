@@ -1,3 +1,5 @@
+/** @format */
+
 export const categorySlugs = new Map<string, string>([
 	["news-features", "News & Features"],
 	["phs-profiles", "PHS Profiles"],
@@ -5,13 +7,7 @@ export const categorySlugs = new Map<string, string>([
 	["arts-entertainment", "Arts & Entertainment"],
 ]);
 
-export const categories = [
-	"news-features",
-	"opinions",
-	"vanguard",
-	"arts-entertainment",
-	"sports",
-];
+export const categories = ["news-features", "opinions", "vanguard", "arts-entertainment", "sports"];
 
 export const subcategories = [
 	["news-features", "phs-profiles"],
@@ -25,4 +21,18 @@ export const subcategories = [
 	["sports", "student-athletes"],
 ];
 
-export const months: string[] = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+export const months: string[] = [
+	"",
+	"January",
+	"February",
+	"March",
+	"April",
+	"May",
+	"June",
+	"July",
+	"August",
+	"September",
+	"October",
+	"November",
+	"December",
+];

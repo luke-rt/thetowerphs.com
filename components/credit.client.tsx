@@ -1,3 +1,5 @@
+/** @format */
+
 import Link from "next/link";
 
 interface Props {
@@ -5,5 +7,5 @@ interface Props {
 }
 
 export default function CreditLink({ author }: Props) {
-	return <Link href={ "/credit/" + encodeURI(author) }>{author}</Link>;
+	return <Link href={"/credit/" + encodeURI(author)}>{author}</Link>;
 }

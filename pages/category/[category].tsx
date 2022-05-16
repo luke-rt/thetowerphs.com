@@ -1,3 +1,5 @@
+/** @format */
+
 import { article } from "@prisma/client";
 import Head from "next/head";
 import ArticlePreview from "~/components/preview.client";
@@ -7,37 +9,31 @@ import styles from "~/styles/category.module.scss";
 
 interface Params {
 	params: {
-		category: string
-	}
+		category: string;
+	};
 }
 
 interface Props {
-	category: string,
-	articles: article[]
+	category: string;
+	articles: article[];
 }
 
 export async function getServerSideProps({ params }: Params) {
 	return {
 		props: {
 			category: params.category,
-			articles: await getArticlesByCategory(params.category)
+			articles: await getArticlesByCategory(params.category),
 		},
 	};
 }
 
-export default function Category({category, articles}: Props) {
-	return(
+export default function Category({ category, articles }: Props) {
+	return (
 		<div className="category">
 			<Head>
 				<title>{expandCategorySlug(category)} | The Tower</title>
-				<meta
-					property="og:title"
-					content={expandCategorySlug(category) + " | The Tower"}
-				/>
-				<meta
-					property="og:description"
-					content={expandCategorySlug(category) + " at the Tower"}
-				/>
+				<meta property="og:title" content={expandCategorySlug(category) + " | The Tower"} />
+				<meta property="og:description" content={expandCategorySlug(category) + " at the Tower"} />
 			</Head>
 			<style jsx>{`
 				.category {
@@ -80,18 +76,18 @@ export default function Category({category, articles}: Props) {
 }
 
 interface SidebarProps {
-	articles: article[],
+	articles: article[];
 }
 
 function SidebarArticles({ articles }: SidebarProps) {
-	return(
+	return (
 		<>
-			<ArticlePreview article ={articles[0]} style="row" size="small" category />
-			<ArticlePreview article ={articles[0]} style="row" size="small" category />
-			<ArticlePreview article ={articles[0]} style="row" size="small" category />
-			<ArticlePreview article ={articles[0]} style="row" size="small" category />
-			<ArticlePreview article ={articles[0]} style="row" size="small" category />
-			<ArticlePreview article ={articles[0]} style="row" size="small" category />
+			<ArticlePreview article={articles[0]} style="row" size="small" category />
+			<ArticlePreview article={articles[0]} style="row" size="small" category />
+			<ArticlePreview article={articles[0]} style="row" size="small" category />
+			<ArticlePreview article={articles[0]} style="row" size="small" category />
+			<ArticlePreview article={articles[0]} style="row" size="small" category />
+			<ArticlePreview article={articles[0]} style="row" size="small" category />
 		</>
 	);
 }
