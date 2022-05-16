@@ -1,3 +1,5 @@
+# @format
+
 {
   "printWidth": 100,
   "tabWidth": 2,
@@ -6,8 +8,7 @@
   "singleQuote": false,
   "trailingComma": "es5",
   "bracketSpacing": true,
-  "jsxBracketSameLine": true,
   "arrowParens": "avoid",
   "requirePragma": false,
-  "insertPragma": true
+  "insertPragma": true,
 }
