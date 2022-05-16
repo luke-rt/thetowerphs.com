@@ -28,7 +28,7 @@
 		"@next/bundle-analyzer": "^12.1.6",
 		"@types/lodash": "^4.14.182",
 		"@types/node": "17.0.24",
-		"@types/react": "18.0.5",
+		"@types/react": "18.0.9",
 		"cypress": "^9.6.1",
 		"eslint": "8.13.0",
 		"eslint-config-next": "12.1.5",
