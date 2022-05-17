@@ -107,11 +107,7 @@ function Footer() {
 			<div className="top">
 				<h1>The Tower</h1>
 				<span>
-					<a
-						href="https://www.instagram.com/thetowerphs/"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
+					<a href="https://www.instagram.com/thetowerphs/" target="_blank" rel="noopener noreferrer">
 						<FaInstagramSquare size="2em" />
 					</a>
 					<a href="https://www.facebook.com/phstower" target="_blank" rel="noopener noreferrer">

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { displayDate, expandCategorySlug, shortenText } from "~/lib/utils";
 import CreditLink from "./credit.client";
+import styles from "~/lib/styles";
 
 interface Props {
 	article: article;
@@ -13,12 +14,7 @@ interface Props {
 	size?: "small" | "medium" | "large";
 }
 
-export default function ArticlePreview({
-	article,
-	category,
-	style = "row",
-	size = "medium",
-}: Props) {
+export default function ArticlePreview({ article, category, style = "row", size = "medium" }: Props) {
 	if (!article) return <></>;
 
 	let charlen = 0;
@@ -52,47 +48,90 @@ export default function ArticlePreview({
 
 	return (
 		<div className={"article-preview " + style + " " + size}>
+			<style jsx>{`
+				.article-preview a:hover {
+					text-decoration: underline;
+				}
+				.article-preview.box {
+					display: grid;
+					padding: 1px;
+					border: none;
+					grid-template-rows: 2fr 0.25fr;
+				}
+				.article-preview.row {
+					display: grid;
+					padding-bottom: 1vh;
+					padding-top: 2vh;
+					border: none;
+					border-bottom: 1px solid gainsboro;
+					grid-template-columns: 1fr 5fr;
+					grid-gap: 1vw;
+				}
+				.article-preview.row.small {
+					grid-template-columns: 1fr 4fr;
+				}
+				.article-preview .img-container {
+					position: relative;
+					max-width: 100%;
+					max-height: 100%;
+				}
+				.article-preview .img-container.box.large {
+					height: 90vh;
+				}
+				.article-preview .img-container.row.large {
+					width: 32vw;
+				}
+				.article-preview .img-container.row.medium {
+					width: 12vw;
+				}
+				.article-preview .img-container.row.small {
+					width: 10vw;
+				}
+				.article-preview span {
+					margin-left: 1vw;
+					font-size: smaller;
+				}
+				.article-preview .title .large {
+					font-weight: bolder;
+					font-size: xx-large;
+				}
+				.article-preview .title .medium {
+					font-weight: bolder;
+					font-size: x-large;
+				}
+				.article-preview .title .small {
+					font-weight: bolder;
+					font-size: large;
+				}
+				.article-preview .preview-text {
+					font-family: ${styles.font.text}, ${styles.font.stack};
+					margin-top: 1vh;
+					margin-bottom: 2vh;
+				}
+			`}</style>
 			<div className={"img-container " + style + " " + size}>
-				<Image
-					src={article.img}
-					alt="Article preview"
-					objectFit="cover"
-					layout="fill"
-					blurDataURL={article.img}
-					placeholder="blur"
-				/>
+				<Image src={article.img} alt="Article preview" objectFit="cover" layout="fill" blurDataURL={article.img} placeholder="blur" />
 			</div>
+
 			<div>
-				<div className="category">
-					{category && (
-						<Link href={"/category/" + article.category}>
-							{expandCategorySlug(article.category)}
-						</Link>
-					)}
-				</div>
-				<div>
-					<Link
-						href={
-							"/articles/" +
-							article.year +
-							"/" +
-							article.month +
-							"/" +
-							article.category +
-							"/" +
-							encodeURI(article.title)
-						}
-					>
-						<a className={"title " + size}>{article.title}</a>
+				<section className="category">
+					{category && <Link href={"/category/" + article.category}>{expandCategorySlug(article.category)}</Link>}
+				</section>
+
+				<section className="title">
+					<Link href={"/articles/" + article.year + "/" + article.month + "/" + article.category + "/" + encodeURI(article.title)}>
+						<a className={size}>{article.title}</a>
 					</Link>
 					{!(size === "small") && <span>{displayDate(article.year, article.month)}</span>}
-				</div>
-				<div className="authors">
+				</section>
+
+				<section className="authors">
 					{article.authors.map((author, index) => (
-						<CreditLink key={index} author={author} />
+						<CreditLink key={index} author={author} small />
 					))}
-				</div>
-				<div className="preview-text">{shortenText(article.content, charlen)}</div>
+				</section>
+
+				<section className="preview-text">{shortenText(article.content, charlen)}</section>
 			</div>
 		</div>
 	);

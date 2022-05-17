@@ -1,7 +1,6 @@
 /** @format */
 
 import Image from "next/image";
-import styles from "~/styles/archive.module.scss";
 
 interface Props {
 	text: string;
@@ -36,13 +35,7 @@ export default function VirtualArchive({ text, href }: Props) {
 			`}</style>
 			<div className="thumbnail">
 				<a href={href} target="_blank" rel="noopener noreferrer">
-					<Image
-						src={img}
-						alt="PDF article preview"
-						layout="fill"
-						blurDataURL={img}
-						placeholder="blur"
-					/>
+					<Image src={img} alt="PDF article preview" layout="fill" blurDataURL={img} placeholder="blur" />
 				</a>
 			</div>
 			<hr />

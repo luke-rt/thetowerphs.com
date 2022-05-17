@@ -24,10 +24,7 @@ export default function Index({ articles }: Props) {
 		<div>
 			<Head>
 				<meta property="og:title" content="Home | The Tower" />
-				<meta
-					property="og:description"
-					content="The Tower is Princeton High School's newspaper club."
-				/>
+				<meta property="og:description" content="The Tower is Princeton High School's newspaper club." />
 			</Head>
 			<FrontPageArticles articles={articles} />
 		</div>

@@ -5,7 +5,6 @@ import Head from "next/head";
 import ArticlePreview from "~/components/preview.client";
 import { getArticlesBySubcategory } from "~/lib/queries";
 import { expandCategorySlug } from "~/lib/utils";
-import styles from "~/styles/category.module.scss";
 
 interface Params {
 	params: {
@@ -33,10 +32,7 @@ export default function Subcategory({ subcategory, articles }: Props) {
 			<Head>
 				<title>{expandCategorySlug(subcategory)} | The Tower</title>
 				<meta property="og:title" content={expandCategorySlug(subcategory) + " | The Tower"} />
-				<meta
-					property="og:description"
-					content={expandCategorySlug(subcategory) + " at the Tower"}
-				/>
+				<meta property="og:description" content={expandCategorySlug(subcategory) + " at the Tower"} />
 			</Head>
 			<style jsx>{`
 				.subcategory {
@@ -65,14 +61,14 @@ export default function Subcategory({ subcategory, articles }: Props) {
 			<h1>{expandCategorySlug(subcategory)}</h1>
 			<hr />
 			<div className="grid">
-				<div>
+				<section>
 					{articles.map(article => (
 						<ArticlePreview key={article.id} article={article} />
 					))}
-				</div>
-				<div className="sidebar">
+				</section>
+				<section className="sidebar">
 					<SidebarArticles articles={articles} />
-				</div>
+				</section>
 			</div>
 		</div>
 	);

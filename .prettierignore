@@ -1,0 +1,8 @@
+node_modules/
+.next/
+package.json
+pnpm-lock.yaml
+.prettierrc
+tsconfig.json
+.eslintrc.json
+LICENSE

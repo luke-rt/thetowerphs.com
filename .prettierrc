@@ -1,7 +1,5 @@
-# @format
-
 {
-  "printWidth": 100,
+  "printWidth": 150,
   "tabWidth": 2,
   "useTabs": true,
   "semi": true,
@@ -10,5 +8,5 @@
   "bracketSpacing": true,
   "arrowParens": "avoid",
   "requirePragma": false,
-  "insertPragma": true,
+  "insertPragma": true
 }

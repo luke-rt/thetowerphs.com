@@ -5,7 +5,6 @@ import Head from "next/head";
 import ArticlePreview from "~/components/preview.client";
 import { getArticlesByCategory } from "~/lib/queries";
 import { expandCategorySlug } from "~/lib/utils";
-import styles from "~/styles/category.module.scss";
 
 interface Params {
 	params: {
@@ -62,14 +61,14 @@ export default function Category({ category, articles }: Props) {
 			<h1>{expandCategorySlug(category)}</h1>
 			<hr />
 			<div className="grid">
-				<div>
+				<section>
 					{articles.map(article => (
 						<ArticlePreview key={article.id} article={article} />
 					))}
-				</div>
-				<div className="sidebar">
+				</section>
+				<section className="sidebar">
 					<SidebarArticles articles={articles} />
-				</div>
+				</section>
 			</div>
 		</div>
 	);
