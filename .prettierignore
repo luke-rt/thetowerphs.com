@@ -1,8 +1,9 @@
-node_modules/
-.next/
+.prettierrc
+.eslintrc.json
+tsconfig.json
+next-env.d.ts
+next.config.js
 package.json
 pnpm-lock.yaml
-.prettierrc
-tsconfig.json
-.eslintrc.json
-LICENSE
+cypress.json
+*.md
