@@ -1,0 +1,34 @@
+{
+	"sections": [
+		{
+			"name": "Senior Editors",
+			"members": [
+				{
+					"name": "Christopher Bao",
+					"position": "Co-Editor-in-Chief"
+				},
+				{
+					"name": "Julie Liu",
+					"position": "Co-Editor-in-Chief"
+				},
+				{
+					"name": "Cherie Sun",
+					"position": "Managing Editor"
+				}
+			]
+		},
+		{
+			"name": "Online",
+			"members": [
+				{
+					"name": "Bella Cui",
+					"position": "Online Co-Editor"
+				},
+				{
+					"name": "Luke Tong",
+					"position": "Online Co-Editor"
+				}
+			]
+		}
+	]
+}

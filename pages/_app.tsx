@@ -42,16 +42,15 @@ function Banner() {
 			<style jsx>{`
 				.banner {
 					display: flex;
-					margin-left: auto;
-					margin-right: auto;
-					width: 50%;
+					justify-content: center;
+					margin: auto;
 				}
 				.banner:hover {
 					cursor: pointer;
 				}
 			`}</style>
 			<Link href="/home" passHref>
-				<Image src="/assets/logo.png" alt="Tower banner" width="1500px" height="330px" priority />
+				<Image src="/assets/logo.png" alt="Tower banner" width="420px" height="128px" priority />
 			</Link>
 		</div>
 	);
@@ -116,7 +115,7 @@ function Footer() {
 					<FaFacebookSquare size="2.2em" />
 				</a>
 				<Link href="/home">
-					<a className="home-btn">Go to home page</a>
+					<a className="home-btn">Go to home page »</a>
 				</Link>
 			</div>
 			<div className="bottom">

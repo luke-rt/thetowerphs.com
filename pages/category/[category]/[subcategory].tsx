@@ -40,8 +40,8 @@ export default function Subcategory({ subcategory, articles }: Props) {
 				}
 				.subcategory h1 {
 					text-align: center;
-					border: none;
-					border-bottom: 1px solid gainsboro;
+					border-bottom: 3px double black;
+					margin-bottom: 1vh;
 				}
 				.subcategory .grid {
 					display: grid;
@@ -58,7 +58,6 @@ export default function Subcategory({ subcategory, articles }: Props) {
 				}
 			`}</style>
 			<h1>{expandCategorySlug(subcategory)}</h1>
-			<hr />
 			<div className="grid">
 				<section>
 					{articles.map(article => (

@@ -40,8 +40,8 @@ export default function Category({ category, articles }: Props) {
 				}
 				.category h1 {
 					text-align: center;
-					border: none;
-					border-bottom: 1px solid gainsboro;
+					border-bottom: 3px double black;
+					margin-bottom: 1vh;
 				}
 				.category .grid {
 					display: grid;
@@ -58,7 +58,6 @@ export default function Category({ category, articles }: Props) {
 				}
 			`}</style>
 			<h1>{expandCategorySlug(category)}</h1>
-			<hr />
 			<div className="grid">
 				<section>
 					{articles.map(article => (
