@@ -58,6 +58,12 @@ export default function ArticlePreview({ article, category, style = "row", size 
 					border: none;
 					grid-template-rows: 2fr 0.25fr;
 				}
+				.article-preview.box.small {
+					display: grid;
+					padding: 1px;
+					border: none;
+					grid-template-rows: 2fr 0.25fr;
+				}
 				.article-preview.row {
 					display: grid;
 					padding-bottom: 1vh;
@@ -91,17 +97,20 @@ export default function ArticlePreview({ article, category, style = "row", size 
 					margin-left: 1vw;
 					font-size: smaller;
 				}
-				.article-preview .title .large {
+				.article-preview .title {
 					font-weight: bolder;
+				}
+				.article-preview .title .large {
 					font-size: xx-large;
 				}
 				.article-preview .title .medium {
-					font-weight: bolder;
-					font-size: x-large;
+					font-size: large;
 				}
 				.article-preview .title .small {
-					font-weight: bolder;
-					font-size: large;
+					font-size: medium;
+				}
+				.article-preview .category {
+					font-size: small;
 				}
 				.article-preview .preview-text {
 					font-family: ${styles.font.text}, ${styles.font.stack};

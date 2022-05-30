@@ -43,27 +43,30 @@ function FrontPageArticles({ articles }: FrontPageProps) {
 				.front-page {
 					min-height: 100vh;
 					display: grid;
-					grid-template-columns: 1fr 4fr 2fr;
-					grid-column-gap: 2vw;
+					grid-template-columns: 4fr 2fr;
+					grid-column-gap: 1vw;
 				}
 				.column {
 					display: grid;
-					grid-template-columns: 1fr 1fr;
 					grid-column-gap: 2vw;
+				}
+				.column.two {
+					grid-template-columns: 1fr 1fr;
+				}
+				.column.three {
+					grid-template-columns: 1fr 1fr 1fr;
 				}
 			`}</style>
 			<div>
-				<ArticlePreview article={articles[0]} style="box" size="small" category />
-				<ArticlePreview article={articles[0]} style="box" size="small" category />
-				<ArticlePreview article={articles[0]} style="box" size="small" category />
-				<ArticlePreview article={articles[0]} style="box" size="small" category />
-				<ArticlePreview article={articles[0]} style="box" size="small" category />
-			</div>
-			<div>
 				<ArticlePreview article={articles[0]} style="box" size="large" category />
-				<div className="column">
+				<div className="column two">
 					<ArticlePreview article={articles[0]} style="box" size="medium" category />
 					<ArticlePreview article={articles[0]} style="box" size="medium" category />
+				</div>
+				<div className="column three">
+					<ArticlePreview article={articles[0]} style="box" size="small" category />
+					<ArticlePreview article={articles[0]} style="box" size="small" category />
+					<ArticlePreview article={articles[0]} style="box" size="small" category />
 				</div>
 			</div>
 			<div>

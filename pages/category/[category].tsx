@@ -36,7 +36,6 @@ export default function Category({ category, articles }: Props) {
 			</Head>
 			<style jsx>{`
 				.category {
-					max-width: 85vw;
 					min-height: 100vh;
 				}
 				.category h1 {
@@ -46,7 +45,7 @@ export default function Category({ category, articles }: Props) {
 				}
 				.category .grid {
 					display: grid;
-					grid-template-columns: 5fr 2fr;
+					grid-template-columns: 2fr 1fr;
 					grid-column-gap: 2vw;
 				}
 				.category .grid .sidebar {

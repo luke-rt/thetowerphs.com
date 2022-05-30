@@ -36,7 +36,6 @@ export default function Subcategory({ subcategory, articles }: Props) {
 			</Head>
 			<style jsx>{`
 				.subcategory {
-					max-width: 85vw;
 					min-height: 100vh;
 				}
 				.subcategory h1 {

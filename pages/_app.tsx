@@ -62,7 +62,7 @@ function Footer() {
 		<div className="footer">
 			<style jsx>{`
 				.footer {
-					display: block;
+					display: grid;
 					padding-top: 2vh;
 					width: 90vw;
 					margin-left: 5vw;
@@ -75,20 +75,26 @@ function Footer() {
 					margin-bottom: 1vh;
 					height: 3px;
 				}
-				.top span svg {
-					padding-top: 2vh;
-					margin-left: 3px;
-				}
 				.top h1 {
 					font-family: Canterbury;
 					font-size: xxx-large;
 					float: left;
 					padding-right: 10px;
 				}
+				.top a {
+					display: inline-block;
+					position: relative;
+					padding-top: 2.5vh;
+				}
+				.top .home-btn {
+					font-size: small;
+					color: #274370;
+					float: right;
+					margin-right: 2.5vh;
+				}
 				.bottom {
 					font-family: sans-serif;
-					margin: 8vh;
-					margin-top: 3vh;
+					margin: 1vh;
 					display: grid;
 					grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 				}
@@ -99,67 +105,65 @@ function Footer() {
 				.bottom a {
 					font-size: 0.9em;
 				}
-				.button a:hover {
-					color: #474747;
-				}
 			`}</style>
 			<hr />
 			<div className="top">
 				<h1>The Tower</h1>
-				<span>
-					<a href="https://www.instagram.com/thetowerphs/" target="_blank" rel="noopener noreferrer">
-						<FaInstagramSquare size="2em" />
-					</a>
-					<a href="https://www.facebook.com/phstower" target="_blank" rel="noopener noreferrer">
-						<FaFacebookSquare size="2em" />
-					</a>
-				</span>
+				<a href="https://www.instagram.com/thetowerphs/" target="_blank" rel="noopener noreferrer">
+					<FaInstagramSquare size="2.2em" />
+				</a>
+				<a href="https://www.facebook.com/phstower" target="_blank" rel="noopener noreferrer">
+					<FaFacebookSquare size="2.2em" />
+				</a>
+				<Link href="/home">
+					<a className="home-btn">Go to home page</a>
+				</Link>
 			</div>
 			<div className="bottom">
 				<div>
 					<b>
 						<Link href="/category/news-features">News & Features</Link>
-						<br></br>
+						<br />
 					</b>
 					<Link href="/category/news-features/phs-profiles">PHS Profiles</Link>
-					<br></br>
+					<br />
 					<Link href="/category/news-features/meanwhile-in-princeton">Meanwhile In Princeton</Link>
-					<br></br>
+					<br />
 				</div>
 				<div>
 					<b>
 						<Link href="/category/opinions">Opinions</Link>
-						<br></br>
+						<br />
 					</b>
 					<Link href="/category/opinions/editorials">Editorials</Link>
-					<br></br>
+					<br />
 					<Link href="/category/opinions/cheers-jeers">Cheers & Jeers</Link>
-					<br></br>
+					<br />
 				</div>
 				<div>
 					<b>
 						<Link href="/category/vanguard">Vanguard</Link>
-						<br></br>
+						<br />
 					</b>
 					<Link href="/category/vanguard/random-musings">Random Musings</Link>
-					<br></br>
+					<br />
 					<Link href="/category/vanguard/spreads">Spreads</Link>
-					<br></br>
+					<br />
 				</div>
 				<div>
 					<b>
 						<Link href="/category/arts-entertainment">Arts & Entertainment</Link>
-						<br></br>
+						<br />
 					</b>
 					<Link href="/category/arts-entertainment/recipes">Recipes</Link>
-					<br></br>
+					<br />
 					<Link href="/category/arts-entertainment/student-artists">Student Artists</Link>
-					<br></br>
+					<br />
 				</div>
 				<div>
 					<b>
 						<Link href="/category/sports">Sports</Link>
-						<br></br>
+						<br />
 					</b>
 					<Link href="/category/sports/student-athletes">Student Athletes</Link>
 				</div>
