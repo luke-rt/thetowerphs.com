@@ -50,13 +50,12 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export default function Year({ year, sections }: Props) {
-	console.log(sections);
 	return (
 		<div className="about">
 			<Head>
 				<title>About the {year} staff | The Tower</title>
-				<meta property="og:title" content="About | The Tower" />
-				<meta property="og:description" content="About the Tower" />
+				<meta property="og:title" content={`About the ${year} staff | The Tower`} />
+				<meta property="og:description" content={`About the ${year} staff of the Tower`} />
 			</Head>
 			<style jsx>{`
 				.about {
@@ -70,7 +69,7 @@ export default function Year({ year, sections }: Props) {
 					margin-bottom: 1vh;
 				}
 			`}</style>
-			<h1>About</h1>
+			<h1>About the {year} Staff</h1>
 			{sections.map(section => (
 				<>
 					<h2>{section.name}</h2>

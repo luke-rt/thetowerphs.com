@@ -1,4 +1,4 @@
 {
 	"extends": ["next/core-web-vitals", "prettier"],
-	"ignorePatterns": [".eslintrc.cjs", "next.config.js"]
+	"ignorePatterns": [".eslintrc.json", "next.config.js"]
 }

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { FaFacebookSquare } from "@react-icons/all-files/fa/FaFacebookSquare";
 import { FaInstagramSquare } from "@react-icons/all-files/fa/FaInstagramSquare";
 import Button from "~/components/button.client";
+import { years } from "~/lib/constants";
 
 import "~/styles/styles.scss";
 import styles from "~/lib/styles";
@@ -186,6 +187,9 @@ function NavBar() {
 					padding-right: 4vw;
 				}
 				.navbar hr {
+					background-color: #ccc;
+					border: none;
+					height: 1px;
 					margin-top: 5px;
 					margin-bottom: 5px;
 				}
@@ -218,7 +222,9 @@ function NavBar() {
 				<Link href="/category/sports/student-athletes">Student Athletes</Link>
 			</Button>
 
-			<Button name="About" href="/about" />
+			<Button name="About" href="/about">
+				{years.map(year => (year ? <Link href={`/about/${year}`}>{`${year} Staff`}</Link> : <hr />))}
+			</Button>
 			<Button name="Subscribe" href="/subscribe" />
 			<Button name="Archives" href="/archives" />
 		</div>

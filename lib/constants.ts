@@ -1,5 +1,7 @@
 /** @format */
 
+export const years = ["2022", "", "2021"];
+
 export const categorySlugs = new Map<string, string>([
 	["news-features", "News & Features"],
 	["phs-profiles", "PHS Profiles"],
