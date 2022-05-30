@@ -1,0 +1,39 @@
+.articlePreview {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+	grid-gap: 3vw;
+  padding: 16px;
+  margin: 1vw 4vw 1vw 4vw;
+  min-height: 18vh;
+  border: none;
+  border-bottom: 1px solid gainsboro;
+
+	img {
+		max-height: 30vh;
+	}
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  span {
+    margin-left: 1vw;
+    color: #8b8b8b;
+  }
+
+  .title {
+    font-size: xx-large;
+  }
+
+  .authors a {
+    margin-right: 10px;
+    color: #8b8b8b;
+  }
+
+  .preview-text {
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+  }
+}
