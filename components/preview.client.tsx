@@ -66,8 +66,8 @@ export default function ArticlePreview({ article, category, style = "row", size 
 				}
 				.article-preview.row {
 					display: grid;
-					padding-bottom: 1vh;
-					margin-bottom: 1vh;
+					padding-bottom: 2vh;
+					margin-bottom: 2vh;
 					border: none;
 					border-bottom: 1px solid gainsboro;
 					grid-template-columns: 1fr 5fr;

@@ -70,12 +70,12 @@ export default function Year({ year, sections }: Props) {
 				}
 			`}</style>
 			<h1>About the {year} Staff</h1>
-			{sections.map(section => (
+			{sections.map((section, index) => (
 				<>
-					<h2>{section.name}</h2>
-					{section.members.map(member => (
+					<h2 key={index}>{section.name}</h2>
+					{section.members.map((member, index) => (
 						<>
-							<CreditLink author={member.name} />
+							<CreditLink key={index} author={member.name} />
 							<span>{member.position}</span>
 							<br />
 						</>

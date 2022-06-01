@@ -8,6 +8,7 @@ specifiers:
   '@types/node': ^17.0.36
   '@types/react': ^18.0.9
   cypress: ^9.7.0
+  dayjs: ^1.11.2
   eslint: ^8.16.0
   eslint-config-next: ^12.1.6
   eslint-config-prettier: ^8.5.0
@@ -28,6 +29,7 @@ specifiers:
 dependencies:
   '@prisma/client': 3.14.0_prisma@3.14.0
   '@react-icons/all-files': 4.1.0_react@18.1.0
+  dayjs: 1.11.2
   lodash: 4.17.21
   next: 12.1.6_r4x3shsibbhjfvhxzsevzwdixm
   react: 18.1.0
@@ -959,7 +961,6 @@ packages:
 
   /dayjs/1.11.2:
     resolution: {integrity: sha512-F4LXf1OeU9hrSYRPTTj/6FbO4HTjPKXvEIC1P2kcnFurViINCVk3ZV0xAS3XVx9MkMsXbbqlK6hjseaYbgKEHw==}
-    dev: true
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}

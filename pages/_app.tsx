@@ -4,6 +4,7 @@ import type { AppProps, NextWebVitalsMetric } from "next/app";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import dayjs from "dayjs";
 import { FaFacebookSquare } from "@react-icons/all-files/fa/FaFacebookSquare";
 import { FaInstagramSquare } from "@react-icons/all-files/fa/FaInstagramSquare";
 import Button from "~/components/button.client";
@@ -41,18 +42,27 @@ function Banner() {
 	return (
 		<div className="banner">
 			<style jsx>{`
-				.banner {
+				.image {
 					display: flex;
-					justify-content: center;
-					margin: auto;
+					margin-left: 36vw;
 				}
-				.banner:hover {
+				.image:hover {
 					cursor: pointer;
 				}
+				.sub {
+					position: absolute;
+					left: 5vw;
+					top: 100px;
+				}
 			`}</style>
-			<Link href="/home" passHref>
-				<Image src="/assets/logo.png" alt="Tower banner" width="420px" height="128px" priority />
-			</Link>
+			<div className="sub">
+				<span>{dayjs().format("dddd, MMMM D, YYYY ").toUpperCase()}</span>
+			</div>
+			<div className="image">
+				<Link href="/home" passHref>
+					<Image src="/assets/logo.png" alt="Tower banner" width="420px" height="128px" priority />
+				</Link>
+			</div>
 		</div>
 	);
 }
@@ -104,6 +114,9 @@ function Footer() {
 				}
 				.bottom a {
 					font-size: 0.9em;
+				}
+				span {
+					padding-bottom: 2vh;
 				}
 			`}</style>
 			<hr />
@@ -169,6 +182,7 @@ function Footer() {
 				</div>
 			</div>
 			<hr />
+			<span>© 2022 The Tower</span>
 		</div>
 	);
 }
@@ -223,7 +237,7 @@ function NavBar() {
 			</Button>
 
 			<Button name="About" href="/about">
-				{years.map(year => (year ? <Link href={`/about/${year}`}>{`${year} Staff`}</Link> : <hr />))}
+				{years.map((year, index) => (year ? <Link key={index} href={`/about/${year}`}>{`${year} Staff`}</Link> : <hr />))}
 			</Button>
 			<Button name="Subscribe" href="/subscribe" />
 			<Button name="Archives" href="/archives" />
