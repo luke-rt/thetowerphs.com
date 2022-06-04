@@ -45,12 +45,18 @@ export default function Article({ article }: Props) {
 					flex-direction: column;
 					align-items: center;
 				}
-				.article .img {
+				.article .main-img {
 					width: 55vw;
 					height: 70vh;
 					position: relative;
 				}
+				.article .img {
+					width: 48vw;
+					height: 60vh;
+					position: relative;
+				}
 				.article .content {
+					margin-top: 5vh;
 					max-width: 50vw;
 				}
 				.article .content p {
@@ -71,14 +77,27 @@ export default function Article({ article }: Props) {
 				))}
 			</section>
 
-			<section className="img">
+			<section className="main-img">
 				<Image src={article.img} alt="Article image" objectFit="contain" layout="fill" blurDataURL={article.img} placeholder="blur" />
 			</section>
 
 			<section className="content">
-				{paragraphs.map((paragraph, index) => (
-					<p key={index}>{paragraph}</p>
-				))}
+				{paragraphs.map((paragraph, index) =>
+					paragraph.startsWith("@img=") ? (
+						<div className="img">
+							<Image
+								src={paragraph.substring(5)}
+								alt="Article image"
+								objectFit="contain"
+								layout="fill"
+								blurDataURL={article.img}
+								placeholder="blur"
+							/>
+						</div>
+					) : (
+						<p key={index}>{paragraph}</p>
+					)
+				)}
 			</section>
 		</div>
 	);
