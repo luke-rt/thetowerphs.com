@@ -19,11 +19,11 @@ export async function getFrontpageArticles() {
 		},
 	});
 
-	if (articles.length === 0) {
-		month = month - 1;
+	while (articles.length === 0) {
+		month--;
 		if (month === 0) {
 			month = 12;
-			year = year - 1;
+			year--;
 		}
 		articles = await prisma.article.findMany({
 			where: {
