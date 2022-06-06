@@ -1,6 +1,7 @@
 /** @format */
 
-export const years = ["2022", "", "2021"];
+export const years = ["2022"];
+// add an empty string "" between every year so a line seperator appears
 
 export const categorySlugs = new Map<string, string>([
 	["news-features", "News & Features"],

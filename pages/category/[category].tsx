@@ -3,8 +3,9 @@
 import { article } from "@prisma/client";
 import Head from "next/head";
 import ArticlePreview from "~/components/preview.client";
-import { getArticlesByCategory } from "~/lib/queries";
+import { getArticlesByCategory, getFrontpageArticles } from "~/lib/queries";
 import { expandCategorySlug } from "~/lib/utils";
+import shuffle from "lodash/shuffle";
 
 interface Params {
 	params: {
@@ -15,6 +16,7 @@ interface Params {
 interface Props {
 	category: string;
 	articles: article[];
+	sidebar: article[];
 }
 
 export async function getServerSideProps({ params }: Params) {
@@ -22,11 +24,12 @@ export async function getServerSideProps({ params }: Params) {
 		props: {
 			category: params.category,
 			articles: await getArticlesByCategory(params.category),
+			sidebar: await getFrontpageArticles(),
 		},
 	};
 }
 
-export default function Category({ category, articles }: Props) {
+export default function Category({ category, articles, sidebar }: Props) {
 	return (
 		<div className="category">
 			<Head>
@@ -65,7 +68,7 @@ export default function Category({ category, articles }: Props) {
 					))}
 				</section>
 				<section className="sidebar">
-					<SidebarArticles articles={articles} />
+					<SidebarArticles sidebar={sidebar} />
 				</section>
 			</div>
 		</div>
@@ -73,18 +76,19 @@ export default function Category({ category, articles }: Props) {
 }
 
 interface SidebarProps {
-	articles: article[];
+	sidebar: article[];
 }
 
-function SidebarArticles({ articles }: SidebarProps) {
+function SidebarArticles({ sidebar }: SidebarProps) {
+	let articles = shuffle(sidebar);
 	return (
 		<>
 			<ArticlePreview article={articles[0]} style="row" size="small" category />
-			<ArticlePreview article={articles[0]} style="row" size="small" category />
-			<ArticlePreview article={articles[0]} style="row" size="small" category />
-			<ArticlePreview article={articles[0]} style="row" size="small" category />
-			<ArticlePreview article={articles[0]} style="row" size="small" category />
-			<ArticlePreview article={articles[0]} style="row" size="small" category />
+			<ArticlePreview article={articles[1]} style="row" size="small" category />
+			<ArticlePreview article={articles[2]} style="row" size="small" category />
+			<ArticlePreview article={articles[3]} style="row" size="small" category />
+			<ArticlePreview article={articles[4]} style="row" size="small" category />
+			<ArticlePreview article={articles[5]} style="row" size="small" category />
 		</>
 	);
 }
