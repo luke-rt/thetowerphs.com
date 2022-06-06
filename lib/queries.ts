@@ -16,6 +16,9 @@ export async function getFrontpageArticles() {
 			year: year,
 			month: month,
 			published: true,
+			img: {
+				contains: ".",
+			},
 		},
 	});
 
@@ -30,6 +33,9 @@ export async function getFrontpageArticles() {
 				year: year,
 				month: month,
 				published: true,
+				img: {
+					contains: ".",
+				},
 			},
 		});
 	}
