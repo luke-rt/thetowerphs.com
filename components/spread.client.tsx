@@ -15,9 +15,9 @@ export default function Spread({ spread }: Props) {
 			<style jsx>{`
 				.spread {
 					max-height: 50vh;
-					display: grid;
 					padding: 1px;
 					border: none;
+					display: grid;
 					grid-template-rows: 2fr 0.25fr;
 				}
 				a:hover {
@@ -31,15 +31,22 @@ export default function Spread({ spread }: Props) {
 					font-weight: bolder;
 					font-size: x-large;
 				}
-				.img-container {
+				.img {
 					position: relative;
 				}
 			`}</style>
-			<div className="img-container">
-				<Image src="/assets/default.png" alt="Spread preview" objectFit="cover" layout="fill" blurDataURL="/assets/default.png" placeholder="blur" />
-			</div>
+			<section className="img">
+				<Image
+					src="/assets/default.png"
+					alt="Spread preview"
+					objectFit="contain"
+					layout="fill"
+					blurDataURL="/assets/default.png"
+					placeholder="blur"
+				/>
+			</section>
 			<section className="title">
-				<Link href={"/spreads/" + spread.year + "/" + spread.month + "/vangaurd/" + encodeURI(spread.title)}>
+				<Link href={"/spreads/" + spread.year + "/" + spread.month + "/vanguard/" + encodeURI(spread.title)}>
 					<a>{spread.title}</a>
 				</Link>
 				<span>{displayDate(spread.year, spread.month)}</span>

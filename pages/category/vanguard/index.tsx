@@ -30,28 +30,25 @@ export default function Category({ spreads, sidebar }: Props) {
 				<meta property="og:description" content="Vanguard at the Tower" />
 			</Head>
 			<style jsx>{`
-				.vangaurd {
+				.vanguard {
 					min-height: 100vh;
-					display: grid;
-					grid-template-columns: 4fr 2fr;
-					grid-column-gap: 1vw;
 				}
 				h1 {
 					text-align: center;
 					border-bottom: 3px double black;
 					margin-bottom: 1vh;
 				}
-				.vanguard .grid {
+				.grid {
 					display: grid;
 					grid-template-columns: 2fr 1fr;
 					grid-column-gap: 2vw;
 				}
-				.grid .spreads {
+				.spreads {
 					display: grid;
 					grid-template-columns: 1fr 1fr;
 					grid-column-gap: 1vw;
 				}
-				.grid .sidebar {
+				.sidebar {
 					margin-top: 2vh;
 					padding-left: 1vw;
 					padding-right: 1vw;
@@ -83,8 +80,8 @@ function SidebarArticles({ sidebar }: SidebarProps) {
 	let articles = shuffle(sidebar);
 	return (
 		<>
-			{articles.forEach(article => (
-				<ArticlePreview article={article} style="row" size="small" category />
+			{articles.map(article => (
+				<ArticlePreview key={article.id} article={article} style="row" size="small" category />
 			))}
 		</>
 	);

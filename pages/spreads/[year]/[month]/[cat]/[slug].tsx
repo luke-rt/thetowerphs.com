@@ -26,9 +26,12 @@ export default function SpreadPage({ spread }: Props) {
 		<div className="spread">
 			<style jsx>{`
 				.spread {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
 				}
 			`}</style>
-			<h1>{spread.src}</h1>
+			<h1>{spread.title}</h1>
 		</div>
 	);
 }

@@ -7,6 +7,7 @@ specifiers:
   '@types/lodash': ^4.14.182
   '@types/node': ^17.0.38
   '@types/react': ^18.0.10
+  '@types/react-pdf': ^5.7.2
   cypress: ^9.7.0
   dayjs: ^1.11.2
   eslint: ^8.16.0
@@ -41,6 +42,7 @@ devDependencies:
   '@types/lodash': 4.14.182
   '@types/node': 17.0.38
   '@types/react': 18.0.10
+  '@types/react-pdf': 5.7.2
   cypress: 9.7.0
   eslint: 8.16.0
   eslint-config-next: 12.1.6_k6khgwrcmlpd2kpaxkviqw2zii
@@ -362,6 +364,15 @@ packages:
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
+    dev: true
+
+  /@types/react-pdf/5.7.2:
+    resolution: {integrity: sha512-6cUselXlQSNd9pMswJGvHqki3Lq0cnls/3hNwrFizdDeHBAfTFXTScEBObfGPznEmtO2LvmZMeced43BV9Wbog==}
+    dependencies:
+      '@types/react': 18.0.10
+      pdfjs-dist: 2.12.313
+    transitivePeerDependencies:
+      - worker-loader
     dev: true
 
   /@types/react/18.0.10:
@@ -2652,6 +2663,15 @@ packages:
     resolution: {integrity: sha1-/lo0sMvOErWqaitAPuLnO2AvFEU=}
     dependencies:
       through: 2.3.8
+    dev: true
+
+  /pdfjs-dist/2.12.313:
+    resolution: {integrity: sha512-1x6iXO4Qnv6Eb+YFdN5JdUzt4pAkxSp3aLAYPX93eQCyg/m7QFzXVWJHJVtoW48CI8HCXju4dSkhQZwoheL5mA==}
+    peerDependencies:
+      worker-loader: ^3.0.8
+    peerDependenciesMeta:
+      worker-loader:
+        optional: true
     dev: true
 
   /pend/1.2.0:

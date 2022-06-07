@@ -83,8 +83,8 @@ function SidebarArticles({ sidebar }: SidebarProps) {
 	let articles = shuffle(sidebar);
 	return (
 		<>
-			{articles.forEach(article => (
-				<ArticlePreview key={article.id} article={article} />
+			{articles.map(article => (
+				<ArticlePreview key={article.id} article={article} style="row" size="small" category />
 			))}
 		</>
 	);
