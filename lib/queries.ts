@@ -1,6 +1,6 @@
 /** @format */
 
-import { article, PrismaClient } from "@prisma/client";
+import { article, PrismaClient, spreads } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -138,4 +138,28 @@ export async function getArticlesByAuthor(author: string) {
 	prisma.$disconnect();
 
 	return articles;
+}
+
+export async function getSpreads() {
+	await prisma.$connect();
+
+	const spreads = await prisma.spreads.findMany();
+
+	prisma.$disconnect();
+
+	return spreads;
+}
+
+export async function getSpread(slug: string) {
+	await prisma.$connect();
+
+	const spreads = await prisma.spreads.findFirst({
+		where: {
+			title: decodeURI(slug),
+		},
+	});
+
+	prisma.$disconnect();
+
+	return spreads;
 }

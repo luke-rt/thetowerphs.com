@@ -71,15 +71,19 @@ export default function Article({ article }: Props) {
 
 			<span>{displayDate(article.year, article.month)}</span>
 
-			<section className="authors">
-				{article.authors.map((author, index) => (
-					<CreditLink key={index} author={author} />
-				))}
-			</section>
+			{article.authors.length > 0 && (
+				<section className="authors">
+					{article.authors.map((author, index) => (
+						<CreditLink key={index} author={author} />
+					))}
+				</section>
+			)}
 
-			<section className="main-img">
-				<Image src={article.img} alt="Article image" objectFit="contain" layout="fill" blurDataURL={article.img} placeholder="blur" />
-			</section>
+			{article.img && (
+				<section className="main-img">
+					<Image src={article.img} alt="Article image" objectFit="contain" layout="fill" blurDataURL={article.img} placeholder="blur" />
+				</section>
+			)}
 
 			<section className="content">
 				{paragraphs.map((paragraph, index) =>

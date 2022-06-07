@@ -1,55 +1,55 @@
 /** @format */
 
-import { article } from "@prisma/client";
+import { article, spreads } from "@prisma/client";
+import shuffle from "lodash/shuffle";
 import Head from "next/head";
 import ArticlePreview from "~/components/preview.client";
-import { getArticlesByCategory, getFrontpageArticles } from "~/lib/queries";
-import { expandCategorySlug } from "~/lib/utils";
-import shuffle from "lodash/shuffle";
-
-interface Params {
-	params: {
-		category: string;
-	};
-}
+import Spread from "~/components/spread.client";
+import { getFrontpageArticles, getSpreads } from "~/lib/queries";
 
 interface Props {
-	category: string;
-	articles: article[];
+	spreads: spreads[];
 	sidebar: article[];
 }
 
-export async function getServerSideProps({ params }: Params) {
+export async function getServerSideProps() {
 	return {
 		props: {
-			category: params.category,
-			articles: await getArticlesByCategory(params.category),
+			spreads: await getSpreads(),
 			sidebar: await getFrontpageArticles(),
 		},
 	};
 }
 
-export default function Category({ category, articles, sidebar }: Props) {
+export default function Category({ spreads, sidebar }: Props) {
 	return (
-		<div className="category">
+		<div className="vanguard">
 			<Head>
-				<title>{expandCategorySlug(category)} | The Tower</title>
-				<meta property="og:title" content={expandCategorySlug(category) + " | The Tower"} />
-				<meta property="og:description" content={expandCategorySlug(category) + " at the Tower"} />
+				<title>Vanguard | The Tower</title>
+				<meta property="og:title" content="Vanguard | The Tower" />
+				<meta property="og:description" content="Vanguard at the Tower" />
 			</Head>
 			<style jsx>{`
-				.category {
+				.vangaurd {
 					min-height: 100vh;
+					display: grid;
+					grid-template-columns: 4fr 2fr;
+					grid-column-gap: 1vw;
 				}
 				h1 {
 					text-align: center;
 					border-bottom: 3px double black;
 					margin-bottom: 1vh;
 				}
-				.grid {
+				.vanguard .grid {
 					display: grid;
 					grid-template-columns: 2fr 1fr;
 					grid-column-gap: 2vw;
+				}
+				.grid .spreads {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					grid-column-gap: 1vw;
 				}
 				.grid .sidebar {
 					margin-top: 2vh;
@@ -60,11 +60,11 @@ export default function Category({ category, articles, sidebar }: Props) {
 					border-right: 1px solid gainsboro;
 				}
 			`}</style>
-			<h1>{expandCategorySlug(category)}</h1>
+			<h1>Vanguard</h1>
 			<div className="grid">
-				<section>
-					{articles.map(article => (
-						<ArticlePreview key={article.id} article={article} />
+				<section className="spreads">
+					{spreads.map(spread => (
+						<Spread key={spread.id} spread={spread} />
 					))}
 				</section>
 				<section className="sidebar">
@@ -84,7 +84,7 @@ function SidebarArticles({ sidebar }: SidebarProps) {
 	return (
 		<>
 			{articles.forEach(article => (
-				<ArticlePreview key={article.id} article={article} />
+				<ArticlePreview article={article} style="row" size="small" category />
 			))}
 		</>
 	);

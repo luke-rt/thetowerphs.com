@@ -19,3 +19,11 @@ model article {
   year        Int      @db.SmallInt
   img         String   @db.VarChar
 }
+
+model spreads {
+  id    Int    @id @default(autoincrement())
+  title String @db.VarChar
+  src   String @db.VarChar
+  month Int    @db.SmallInt
+  year  Int    @db.SmallInt
+}

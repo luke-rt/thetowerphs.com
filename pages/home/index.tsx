@@ -75,7 +75,10 @@ function FrontPageArticles({ articles }: FrontPageProps) {
 				<ArticlePreview article={articles[8]} style="row" size="small" category />
 				<ArticlePreview article={articles[9]} style="row" size="small" category />
 				<ArticlePreview article={articles[10]} style="row" size="small" category />
-				<ArticlePreview article={articles[11]} style="box" size="medium" category />
+				<ArticlePreview article={articles[11]} style="row" size="small" category />
+				<ArticlePreview article={articles[12]} style="row" size="small" category />
+				<ArticlePreview article={articles[14]} style="row" size="small" category />
+				<ArticlePreview article={articles[15]} style="box" size="medium" category />
 			</div>
 		</div>
 	);

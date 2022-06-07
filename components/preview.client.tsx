@@ -76,43 +76,43 @@ export default function ArticlePreview({ article, category, style = "row", size 
 				.article-preview.row.small {
 					grid-template-columns: 1fr 4fr;
 				}
-				.article-preview .img-container {
+				.img-container {
 					position: relative;
 					max-width: 100%;
 					max-height: 100%;
 				}
-				.article-preview .img-container.box.large {
+				.img-container.box.large {
 					height: 90vh;
 				}
-				.article-preview .img-container.row.large {
+				.img-container.row.large {
 					width: 32vw;
 				}
-				.article-preview .img-container.row.medium {
+				.img-container.row.medium {
 					width: 12vw;
 				}
-				.article-preview .img-container.row.small {
+				.img-container.row.small {
 					width: 10vw;
 				}
-				.article-preview span {
+				span {
 					margin-left: 1vw;
 					font-size: smaller;
 				}
-				.article-preview .title {
+				.title {
 					font-weight: bolder;
 				}
-				.article-preview .title .large {
+				.title .large {
 					font-size: xx-large;
 				}
-				.article-preview .title .medium {
+				.title .medium {
 					font-size: large;
 				}
-				.article-preview .title .small {
+				.title .small {
 					font-size: medium;
 				}
-				.article-preview .category {
+				.category {
 					font-size: small;
 				}
-				.article-preview .preview-text {
+				.preview-text {
 					font-family: ${styles.font.text}, ${styles.font.stack};
 					margin-top: 1vh;
 					margin-bottom: 2vh;

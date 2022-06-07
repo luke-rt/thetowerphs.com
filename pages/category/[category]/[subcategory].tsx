@@ -41,17 +41,17 @@ export default function Subcategory({ subcategory, articles, sidebar }: Props) {
 				.subcategory {
 					min-height: 100vh;
 				}
-				.subcategory h1 {
+				h1 {
 					text-align: center;
 					border-bottom: 3px double black;
 					margin-bottom: 1vh;
 				}
-				.subcategory .grid {
+				.grid {
 					display: grid;
 					grid-template-columns: 5fr 2fr;
 					grid-column-gap: 2vw;
 				}
-				.subcategory .grid .sidebar {
+				.grid .sidebar {
 					margin-top: 2vh;
 					padding-left: 1vw;
 					padding-right: 1vw;
@@ -83,12 +83,9 @@ function SidebarArticles({ sidebar }: SidebarProps) {
 	let articles = shuffle(sidebar);
 	return (
 		<>
-			<ArticlePreview article={articles[0]} style="row" size="small" category />
-			<ArticlePreview article={articles[1]} style="row" size="small" category />
-			<ArticlePreview article={articles[2]} style="row" size="small" category />
-			<ArticlePreview article={articles[3]} style="row" size="small" category />
-			<ArticlePreview article={articles[4]} style="row" size="small" category />
-			<ArticlePreview article={articles[5]} style="row" size="small" category />
+			{articles.forEach(article => (
+				<ArticlePreview key={article.id} article={article} />
+			))}
 		</>
 	);
 }
