@@ -30,8 +30,15 @@ export default function SpreadPage({ spread }: Props) {
 					flex-direction: column;
 					align-items: center;
 				}
+				object {
+					width: 60vw;
+					height: 100vh;
+				}
 			`}</style>
 			<h1>{spread.title}</h1>
+			<object data={spread.src} type="application/pdf">
+				<a href={spread.src}>to the PDF!</a>
+			</object>
 		</div>
 	);
 }
