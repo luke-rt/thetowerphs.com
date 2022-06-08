@@ -6,7 +6,7 @@
 		"url": "git+https://github.com/luketio/thetowerphs.com.git"
 	},
 	"scripts": {
-		"dev": "next dev --port 2000",
+		"dev": "next dev",
 		"start": "next build && next start",
 		"analyze": "ANALYZE=true next build",
 		"lint": "next lint --fix && prettier --write '**/*.{ts,tsx}'",
@@ -31,7 +31,7 @@
 		"@types/lodash": "^4.14.182",
 		"@types/node": "^17.0.41",
 		"@types/react": "^18.0.12",
-		"cypress": "^9.7.0",
+		"cypress": "^10.0.3",
 		"eslint": "^8.17.0",
 		"eslint-config-next": "^12.1.6",
 		"eslint-config-prettier": "^8.5.0",

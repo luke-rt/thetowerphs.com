@@ -7,7 +7,7 @@ specifiers:
   '@types/lodash': ^4.14.182
   '@types/node': ^17.0.41
   '@types/react': ^18.0.12
-  cypress: ^9.7.0
+  cypress: ^10.0.3
   dayjs: ^1.11.3
   eslint: ^8.17.0
   eslint-config-next: ^12.1.6
@@ -41,7 +41,7 @@ devDependencies:
   '@types/lodash': 4.14.182
   '@types/node': 17.0.41
   '@types/react': 18.0.12
-  cypress: 9.7.0
+  cypress: 10.0.3
   eslint: 8.17.0
   eslint-config-next: 12.1.6_qwqcuvhue6diaz4jqbkm5dp3pa
   eslint-config-prettier: 8.5.0_eslint@8.17.0
@@ -869,8 +869,8 @@ packages:
     resolution: {integrity: sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==}
     dev: true
 
-  /cypress/9.7.0:
-    resolution: {integrity: sha512-+1EE1nuuuwIt/N1KXRR2iWHU+OiIt7H28jJDyyI4tiUftId/DrXYEwoDa5+kH2pki1zxnA0r6HrUGHV5eLbF5Q==}
+  /cypress/10.0.3:
+    resolution: {integrity: sha512-8C82XTybsEmJC9POYSNITGUhMLCRwB9LadP0x33H+52QVoBjhsWvIzrI+ybCe0+TyxaF0D5/9IL2kSTgjqCB9A==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     requiresBuild: true
