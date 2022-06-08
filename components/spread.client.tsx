@@ -14,43 +14,31 @@ export default function Spread({ spread }: Props) {
 		<div className="spread">
 			<style jsx>{`
 				.spread {
-					max-height: 50vh;
+					min-width: 50vh;
+					justify-content: left;
 					padding: 1px;
 					border: none;
-					display: grid;
-					grid-template-rows: 2fr 0.25fr;
 				}
 				a:hover {
 					text-decoration: underline;
 				}
-				span {
-					margin-left: 1vw;
-					font-size: smaller;
-				}
 				.title {
 					font-weight: bolder;
-					font-size: x-large;
+					font-size: large;
 				}
-				.img {
-					position: relative;
+				span {
+					font-size: smaller;
 				}
 			`}</style>
 			<section className="img">
-				<Image
-					src="/assets/default.png"
-					alt="Spread preview"
-					objectFit="contain"
-					layout="fill"
-					blurDataURL="/assets/default.png"
-					placeholder="blur"
-				/>
+				<Image src="/assets/default.png" alt="Spread preview" width={800} height={500} blurDataURL="/assets/default.png" placeholder="blur" />
 			</section>
 			<section className="title">
 				<Link href={"/spreads/" + spread.year + "/" + spread.month + "/vanguard/" + encodeURI(spread.title)}>
 					<a>{spread.title}</a>
 				</Link>
-				<span>{displayDate(spread.year, spread.month)}</span>
 			</section>
+			<span>{displayDate(spread.year, spread.month)}</span>
 		</div>
 	);
 }

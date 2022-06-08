@@ -31,7 +31,6 @@ export default function Category({ spreads, sidebar }: Props) {
 			</Head>
 			<style jsx>{`
 				.vanguard {
-					min-height: 100vh;
 				}
 				h1 {
 					text-align: center;
@@ -40,13 +39,10 @@ export default function Category({ spreads, sidebar }: Props) {
 				}
 				.grid {
 					display: grid;
-					grid-template-columns: 2fr 1fr;
+					grid-template-columns: 3fr 2fr;
 					grid-column-gap: 2vw;
 				}
 				.spreads {
-					display: grid;
-					grid-template-columns: 1fr 1fr;
-					grid-column-gap: 1vw;
 				}
 				.sidebar {
 					margin-top: 2vh;
