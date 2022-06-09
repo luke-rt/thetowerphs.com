@@ -68,6 +68,9 @@ export default function Year({ year, sections }: Props) {
 					margin-top: 4vh;
 					margin-bottom: 1vh;
 				}
+				p {
+					font-size: larger;
+				}
 			`}</style>
 			<h1>About the {year} Staff</h1>
 			{sections.map((section, index) => (
@@ -82,6 +85,9 @@ export default function Year({ year, sections }: Props) {
 					))}
 				</>
 			))}
+			<h2>Advisors</h2>
+			<p>Lauren King</p>
+			<p>Doug Levandowski</p>
 		</div>
 	);
 }
