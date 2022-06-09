@@ -1,27 +1,30 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
+import { months } from "~/lib/constants";
 
 interface Props {
-	text: string;
-	href: string;
+	month: number;
+	year: number;
 }
 
-export default function VirtualArchive({ text, href }: Props) {
-	const img = "/assets/archive.png";
+export default function VirtualArchive({ month, year }: Props) {
+	const img = "/assets/default.png";
 
 	return (
 		<div className="archive">
 			<style jsx>{`
 				.archive {
-					max-width: 16vw;
+					max-width: 26vw;
 					display: flexbox;
+					cursor: pointer;
 				}
 				h2 {
 					text-align: center;
 				}
 				hr {
-					max-width: 16vw;
+					max-width: 26vw;
 					margin: 0.5vh;
 					height: 1px;
 					background-color: gainsboro;
@@ -29,17 +32,17 @@ export default function VirtualArchive({ text, href }: Props) {
 				}
 				.thumbnail {
 					position: relative;
-					width: 16vw;
-					height: 26vw;
+					width: 25vw;
+					height: 20vw;
 				}
 			`}</style>
 			<div className="thumbnail">
-				<a href={href} target="_blank" rel="noopener noreferrer">
+				<Link href={`/archives/${year}/${month}`}>
 					<Image src={img} alt="PDF article preview" layout="fill" blurDataURL={img} placeholder="blur" />
-				</a>
+				</Link>
 			</div>
 			<hr />
-			<h2>{text}</h2>
+			<h2>{`${months[month]} ${year}`}</h2>
 		</div>
 	);
 }

@@ -3,10 +3,17 @@
 import { article } from "@prisma/client";
 import Head from "next/head";
 import Mosaic from "~/components/mosaic.client";
-import { getFrontpageArticles } from "~/lib/queries";
+import { getArticlesByDate } from "~/lib/queries";
 
-export async function getServerSideProps() {
-	const articles: article[] = await getFrontpageArticles();
+interface Params {
+	params: {
+		year: string;
+		month: string;
+	};
+}
+
+export async function getServerSideProps({ params }: Params) {
+	const articles: article[] = await getArticlesByDate(params.year, params.month);
 
 	return {
 		props: {
@@ -23,7 +30,7 @@ export default function Index({ articles }: Props) {
 	return (
 		<div>
 			<Head>
-				<meta property="og:title" content="Home | The Tower" />
+				<meta property="og:title" content="Archives | The Tower" />
 				<meta property="og:description" content="The Tower is Princeton High School's newspaper club." />
 			</Head>
 			<Mosaic articles={articles} />
