@@ -97,6 +97,11 @@ export async function getArticlesByCategory(cat: string) {
 	await prisma.$connect();
 
 	const articles = await prisma.article.findMany({
+		orderBy: [
+			{
+				month: "desc",
+			},
+		],
 		where: {
 			category: cat,
 			published: true,
@@ -112,6 +117,11 @@ export async function getArticlesBySubcategory(subcat: string) {
 	await prisma.$connect();
 
 	const articles = await prisma.article.findMany({
+		orderBy: [
+			{
+				month: "desc",
+			},
+		],
 		where: {
 			subcategory: subcat,
 			published: true,
@@ -127,6 +137,11 @@ export async function getArticlesByAuthor(author: string) {
 	await prisma.$connect();
 
 	const articles = await prisma.article.findMany({
+		orderBy: [
+			{
+				month: "desc",
+			},
+		],
 		where: {
 			authors: {
 				has: decodeURI(author),
