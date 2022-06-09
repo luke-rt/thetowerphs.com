@@ -50,7 +50,6 @@ export default function Button({ name, href, children }: Props) {
 					color: #474747;
 				}
 			`}</style>
-
 			<Link href={href}>
 				<a className="btn">{name}</a>
 			</Link>
