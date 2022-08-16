@@ -140,8 +140,6 @@ function Footer() {
 					</b>
 					<Link href="/category/news-features/phs-profiles">PHS Profiles</Link>
 					<br />
-					<Link href="/category/news-features/meanwhile-in-princeton">Meanwhile In Princeton</Link>
-					<br />
 				</div>
 				<div>
 					<b>
@@ -168,8 +166,6 @@ function Footer() {
 						<Link href="/category/arts-entertainment">Arts & Entertainment</Link>
 						<br />
 					</b>
-					<Link href="/category/arts-entertainment/recipes">Recipes</Link>
-					<br />
 					<Link href="/category/arts-entertainment/student-artists">Student Artists</Link>
 					<br />
 				</div>
@@ -210,8 +206,6 @@ function NavBar() {
 			`}</style>
 			<Button name="News & Features" href="/category/news-features">
 				<Link href="/category/news-features/phs-profiles">PHS Profiles</Link>
-				<hr />
-				<Link href="/category/news-features/meanwhile-in-princeton">Meanwhile In Princeton</Link>
 			</Button>
 
 			<Button name="Opinions" href="/category/opinions">
@@ -227,8 +221,6 @@ function NavBar() {
 			</Button>
 
 			<Button name="Arts & Entertainment" href="/category/arts-entertainment">
-				<Link href="/category/arts-entertainment/recipes">Recipes</Link>
-				<hr />
 				<Link href="/category/arts-entertainment/student-artists">Student Artists</Link>
 			</Button>
 

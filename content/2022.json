@@ -44,6 +44,19 @@
 			]
 		},
 		{
+			"name": "Opinions",
+			"members": [
+				{
+					"name": "Alexander Margulis",
+					"position": "Opinions Co-Editor"
+				},
+				{
+					"name": "Thomas Zhang",
+					"position": "Opinions Co-Editor"
+				}
+			]
+		},
+		{
 			"name": "Vanguard",
 			"members": [
 				{
@@ -91,6 +104,10 @@
 				},
 				{
 					"name": "Emily Qian",
+					"position": "Visuals Co-Editor"
+				},
+				{
+					"name": "Lydia Madamopoulou",
 					"position": "Visuals Co-Editor"
 				}
 			]

@@ -14,12 +14,10 @@ export const categories = ["news-features", "opinions", "vanguard", "arts-entert
 
 export const subcategories = [
 	["news-features", "phs-profiles"],
-	["news-features", "meanwhile-in-princeton"],
 	["opinions", "editorials"],
 	["opinions", "cheers-jeers"],
 	["vanguard", "random-musings"],
 	["vanguard", "spreads"],
-	["arts-entertainment", "recipes"],
 	["arts-entertainment", "student-artists"],
 	["sports", "student-athletes"],
 ];
