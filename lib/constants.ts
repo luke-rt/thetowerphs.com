@@ -8,9 +8,11 @@ export const categorySlugs = new Map<string, string>([
 	["phs-profiles", "PHS Profiles"],
 	["cheers-jeers", "Cheers & Jeers"],
 	["arts-entertainment", "Arts & Entertainment"],
+	["special", "Special Issues"],
+	["nsi", "New Student Issues"],
 ]);
 
-export const categories = ["news-features", "opinions", "vanguard", "arts-entertainment", "sports"];
+export const categories = ["news-features", "opinions", "vanguard", "arts-entertainment", "sports", "special"];
 
 export const subcategories = [
 	["news-features", "phs-profiles"],
@@ -20,6 +22,7 @@ export const subcategories = [
 	["vanguard", "spreads"],
 	["arts-entertainment", "student-artists"],
 	["sports", "student-athletes"],
+	["special", "nsi"],
 ];
 
 export const months: string[] = [

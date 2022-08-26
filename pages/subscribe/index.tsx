@@ -25,7 +25,7 @@ export default function Subscribe() {
 					height: 150vh;
 				}
 			`}</style>
-			<h1>Subscribe</h1>
+			<h1>Subscribe to The Tower</h1>
 			<div>
 				<iframe
 					src="https://docs.google.com/forms/d/e/1FAIpQLSecUsLEFTSQgTzZxExuPOWIArPXi6t11ILcUNLxmewakzRtYA/viewform?embedded=true"

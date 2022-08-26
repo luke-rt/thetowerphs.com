@@ -15,7 +15,7 @@ interface Props {
 export async function getServerSideProps() {
 	return {
 		props: {
-			spreads: await getSpreadsByCategory("VANGUARD"),
+			spreads: await getSpreadsByCategory("NEW STUDENT ISSUE"),
 			sidebar: await getFrontpageArticles(),
 		},
 	};
@@ -23,15 +23,13 @@ export async function getServerSideProps() {
 
 export default function Category({ spreads, sidebar }: Props) {
 	return (
-		<div className="vanguard">
+		<div className="nsi">
 			<Head>
-				<title>Vanguard | The Tower</title>
-				<meta property="og:title" content="Vanguard | The Tower" />
-				<meta property="og:description" content="Vanguard at the Tower" />
+				<title>New Student Issue | The Tower</title>
+				<meta property="og:title" content="New Student Issue | The Tower" />
+				<meta property="og:description" content="New Student Issue at the Tower" />
 			</Head>
 			<style jsx>{`
-				.vanguard {
-				}
 				h1 {
 					text-align: center;
 					border-bottom: 3px double black;
@@ -53,7 +51,7 @@ export default function Category({ spreads, sidebar }: Props) {
 					border-right: 1px solid gainsboro;
 				}
 			`}</style>
-			<h1>Vanguard</h1>
+			<h1>New Student Issue</h1>
 			<div className="grid">
 				<section className="spreads">
 					{spreads.map(spread => (

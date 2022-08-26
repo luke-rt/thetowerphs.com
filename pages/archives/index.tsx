@@ -4,7 +4,6 @@ import Head from "next/head";
 import VirtualArchive from "~/components/archive.client";
 
 export default function Archives() {
-	// TODO get actual virtual archives
 	return (
 		<div className="archives">
 			<Head>
@@ -30,6 +29,7 @@ export default function Archives() {
 			<div className="container">
 				<VirtualArchive month={2} year={2022} />
 				<VirtualArchive month={3} year={2022} />
+				<VirtualArchive month={4} year={2022} />
 			</div>
 		</div>
 	);

@@ -52,10 +52,12 @@ function Banner() {
 				.sub {
 					position: absolute;
 					left: 5vw;
-					top: 100px;
+					top: 80px;
 				}
 			`}</style>
 			<div className="sub">
+				<Link href="/subscribe">SUBSCRIBE</Link>
+				<br />
 				<span>{dayjs().format("dddd, MMMM D, YYYY ").toUpperCase()}</span>
 			</div>
 			<div className="image">
@@ -193,8 +195,8 @@ function NavBar() {
 					margin-bottom: 2vh;
 					margin-left: 4vw;
 					margin-right: 4vw;
-					padding-left: 4vw;
-					padding-right: 4vw;
+					padding-left: 3vw;
+					padding-right: 2vw;
 				}
 				.navbar hr {
 					background-color: #ccc;
@@ -214,11 +216,7 @@ function NavBar() {
 				<Link href="/category/opinions/cheers-jeers">Cheers & Jeers</Link>
 			</Button>
 
-			<Button name="Vanguard" href="/category/vanguard">
-				<Link href="/category/vanguard/random-musings">Random Musings</Link>
-				<hr />
-				<Link href="/category/vanguard/spreads">Spreads</Link>
-			</Button>
+			<Button name="Vanguard" href="/category/vanguard" />
 
 			<Button name="Arts & Entertainment" href="/category/arts-entertainment">
 				<Link href="/category/arts-entertainment/student-artists">Student Artists</Link>
@@ -228,10 +226,14 @@ function NavBar() {
 				<Link href="/category/sports/student-athletes">Student Athletes</Link>
 			</Button>
 
+			<Button name="Special Issues" href="/category/special/nsi">
+				<Link href="/category/special/nsi">New Student Issues</Link>
+			</Button>
+
 			<Button name="About" href="/about">
 				{years.map((year, index) => (year ? <Link key={index} href={`/about/${year}`}>{`${year} Staff`}</Link> : <hr />))}
 			</Button>
-			<Button name="Subscribe" href="/subscribe" />
+
 			<Button name="Archives" href="/archives" />
 		</div>
 	);

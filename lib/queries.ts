@@ -155,10 +155,16 @@ export async function getArticlesByAuthor(author: string) {
 	return articles;
 }
 
-export async function getSpreads() {
+export async function getSpreadsByCategory(category: string) {
 	await prisma.$connect();
 
-	const spreads = await prisma.spreads.findMany();
+	const spreads = await prisma.spreads.findMany({
+		where: {
+			title: {
+				startsWith: category,
+			},
+		},
+	});
 
 	prisma.$disconnect();
 
