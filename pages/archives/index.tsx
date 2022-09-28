@@ -27,6 +27,8 @@ export default function Archives() {
 			`}</style>
 			<h1>Archives</h1>
 			<div className="container">
+				<VirtualArchive month={2} year={2021} />
+				<VirtualArchive month={3} year={2021} />
 				<VirtualArchive month={2} year={2022} />
 				<VirtualArchive month={3} year={2022} />
 				<VirtualArchive month={4} year={2022} />
