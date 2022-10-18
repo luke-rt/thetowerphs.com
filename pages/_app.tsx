@@ -51,7 +51,7 @@ function Banner() {
 				}
 				.sub {
 					position: absolute;
-					left: 5vw;
+					left: 1vw;
 					top: 80px;
 				}
 			`}</style>
@@ -193,10 +193,7 @@ function NavBar() {
 					display: block;
 					background-color: ${styles.color.primary};
 					margin-bottom: 2vh;
-					margin-left: 4vw;
-					margin-right: 4vw;
-					padding-left: 3vw;
-					padding-right: 2vw;
+					padding-left: 8vw;
 				}
 				.navbar hr {
 					background-color: #ccc;

@@ -8,7 +8,7 @@ import CreditLink from "./credit.client";
 import styles from "~/lib/styles";
 
 interface Props {
-	article: article;
+	article?: article;
 	category?: boolean;
 	style?: "box" | "row";
 	size?: "small" | "medium" | "large";
@@ -62,7 +62,7 @@ export default function ArticlePreview({ article, category, style = "row", size 
 					display: grid;
 					padding: 1px;
 					border: none;
-					grid-template-rows: 2fr 0.25fr;
+					grid-template-rows: 2.5fr 0.5fr;
 				}
 				.article-preview.row {
 					display: grid;
@@ -82,7 +82,7 @@ export default function ArticlePreview({ article, category, style = "row", size 
 					max-height: 100%;
 				}
 				.img-container.box.large {
-					height: 90vh;
+					height: 70vh;
 				}
 				.img-container.row.large {
 					width: 32vw;
