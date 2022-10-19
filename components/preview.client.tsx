@@ -8,7 +8,7 @@ import CreditLink from "./credit.client";
 import styles from "~/lib/styles";
 
 interface Props {
-	article?: article;
+	article: article;
 	category?: boolean;
 	style?: "box" | "row";
 	size?: "small" | "medium" | "large";
@@ -44,7 +44,7 @@ export default function ArticlePreview({ article, category, style = "row", size 
 		}
 	}
 
-	if (!article.img) article.img = "/assets/default.png";
+	if (!article.img?.includes(".")) article.img = "/assets/default.png";
 
 	return (
 		<div className={"article-preview " + style + " " + size}>
@@ -135,7 +135,7 @@ export default function ArticlePreview({ article, category, style = "row", size 
 				</section>
 
 				<section className="authors">
-					{article.authors.map((author, index) => (
+					{article.authors?.map((author, index) => (
 						<CreditLink key={index} author={author} small />
 					))}
 				</section>

@@ -3,7 +3,7 @@
 import { article } from "@prisma/client";
 import Head from "next/head";
 import ArticlePreview from "~/components/preview.client";
-import { getArticlesByCategory, getFrontpageArticles } from "~/lib/queries";
+import { getArticlesByCategory, getCurrArticles, getFrontpageArticles } from "~/lib/queries";
 import { expandCategorySlug } from "~/lib/utils";
 import shuffle from "lodash/shuffle";
 
@@ -24,7 +24,7 @@ export async function getServerSideProps({ params }: Params) {
 		props: {
 			category: params.category,
 			articles: await getArticlesByCategory(params.category),
-			sidebar: await getFrontpageArticles(),
+			sidebar: await getCurrArticles(),
 		},
 	};
 }

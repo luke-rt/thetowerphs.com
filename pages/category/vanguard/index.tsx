@@ -5,7 +5,7 @@ import shuffle from "lodash/shuffle";
 import Head from "next/head";
 import ArticlePreview from "~/components/preview.client";
 import Spread from "~/components/spread.client";
-import { getFrontpageArticles, getSpreadsByCategory } from "~/lib/queries";
+import { getCurrArticles, getSpreadsByCategory } from "~/lib/queries";
 
 interface Props {
 	spreads: spreads[];
@@ -16,7 +16,7 @@ export async function getServerSideProps() {
 	return {
 		props: {
 			spreads: await getSpreadsByCategory("VANGUARD"),
-			sidebar: await getFrontpageArticles(),
+			sidebar: await getCurrArticles(),
 		},
 	};
 }

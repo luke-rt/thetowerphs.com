@@ -85,6 +85,28 @@ export async function getArticle(year: string, month: string, cat: string, slug:
 	return article;
 }
 
+export async function getCurrArticles() {
+	await prisma.$connect();
+
+	const curr = new Date();
+	let month = curr.getMonth() + 1;
+	let year = curr.getFullYear();
+
+	let articles = await getArticlesByDate(curr.getFullYear().toString(), (curr.getMonth() + 1).toString());
+	while (articles.length === 0) {
+		month--;
+		if (month === 0) {
+			month = 12;
+			year--;
+		}
+		articles = await getArticlesByDate(year.toString(), month.toString());
+	}
+
+	prisma.$disconnect();
+
+	return articles;
+}
+
 export async function getArticlesByDate(year: string, month: string) {
 	await prisma.$connect();
 
@@ -106,6 +128,9 @@ export async function getArticlesByCategory(cat: string) {
 
 	const articles = await prisma.article.findMany({
 		orderBy: [
+			{
+				year: "desc",
+			},
 			{
 				month: "desc",
 			},

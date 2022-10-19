@@ -4,7 +4,7 @@ import { article } from "@prisma/client";
 import shuffle from "lodash/shuffle";
 import Head from "next/head";
 import ArticlePreview from "~/components/preview.client";
-import { getArticlesBySubcategory, getFrontpageArticles } from "~/lib/queries";
+import { getArticlesBySubcategory, getCurrArticles, getFrontpageArticles } from "~/lib/queries";
 import { expandCategorySlug } from "~/lib/utils";
 
 interface Params {
@@ -24,7 +24,7 @@ export async function getServerSideProps({ params }: Params) {
 		props: {
 			subcategory: params.subcategory,
 			articles: await getArticlesBySubcategory(params.subcategory),
-			sidebar: await getFrontpageArticles(),
+			sidebar: await getCurrArticles(),
 		},
 	};
 }
