@@ -32,6 +32,14 @@ export default function FrontPage({ articles }: Props) {
 					grid-gap: 10px;
 					grid-template-columns: 1fr 1fr;
 				}
+				.one {
+					padding-bottom: 10px;
+					border-bottom: 1px solid gainsboro;
+				}
+				.three {
+					padding-top: 10px;
+					border-top: 1px solid gainsboro;
+				}
 			`}</style>
 			<Head>
 				<meta property="og:title" content="Home | The Tower" />
@@ -55,6 +63,10 @@ export function NewsFeatures(articles: article[]) {
 	return (
 		<div className="newfe">
 			<style jsx>{`
+				.newfe {
+					padding-right: 10px;
+					border-right: 1px solid gainsboro;
+				}
 				.double {
 					display: grid;
 					grid-gap: 10px;
@@ -89,12 +101,15 @@ export function Opinions(articles: article[]) {
 export function ArtsEntertainment(articles: article[]) {
 	return (
 		<div className="ane">
-			<style jsx>{``}</style>
-			<div className="ane">
-				<ArticlePreview article={articles[0]} style="box" size="large" category />
-				<div>
-					<ArticlePreview article={articles[1]} style="row" size="medium" category />
-				</div>
+			<style jsx>{`
+				.ane {
+					padding-right: 10px;
+					border-right: 1px solid gainsboro;
+				}
+			`}</style>
+			<ArticlePreview article={articles[0]} style="box" size="large" category />
+			<div>
+				<ArticlePreview article={articles[1]} style="row" size="medium" category />
 			</div>
 		</div>
 	);
