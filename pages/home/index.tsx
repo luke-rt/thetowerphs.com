@@ -26,7 +26,6 @@ export default function FrontPage({ articles }: Props) {
 				.mosaic {
 					display: grid;
 					grid-gap: 10px;
-					grid-template-rows: 3fr 3fr;
 				}
 				.double {
 					display: grid;
@@ -78,9 +77,9 @@ export function Opinions(articles: article[]) {
 			<div className="opinons">
 				<ArticlePreview article={articles[0]} style="box" size="medium" category />
 				<div>
+					<ArticlePreview article={articles[1]} style="row" size="medium" category />
 					<ArticlePreview article={articles[2]} style="row" size="medium" category />
 					<ArticlePreview article={articles[3]} style="row" size="medium" category />
-					<ArticlePreview article={articles[4]} style="row" size="medium" category />
 				</div>
 			</div>
 		</div>
@@ -95,7 +94,6 @@ export function ArtsEntertainment(articles: article[]) {
 				<ArticlePreview article={articles[0]} style="box" size="large" category />
 				<div>
 					<ArticlePreview article={articles[1]} style="row" size="medium" category />
-					<ArticlePreview article={articles[2]} style="row" size="medium" category />
 				</div>
 			</div>
 		</div>
