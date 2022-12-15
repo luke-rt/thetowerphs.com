@@ -37,6 +37,7 @@ export default function Archives() {
 				<VirtualArchive month={3} year={2022} />
 				<VirtualArchive month={4} year={2022} />
 				<VirtualArchive month={5} year={2022} />
+				<VirtualArchive month={9} year={2022} />
 			</div>
 		</div>
 	);

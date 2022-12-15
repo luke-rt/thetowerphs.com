@@ -5,48 +5,33 @@ import { article, PrismaClient, spreads } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export async function getFrontpageArticles() {
-	await prisma.$connect();
-
 	const curr = new Date();
-	// let month = curr.getMonth() + 1;
-	let month = 9; // TODO FOR TESTING
+	let month = curr.getMonth() + 2;
 	let year = curr.getFullYear();
 
 	let articles: Record<string, article[]> = { "news-features": [], opinions: [], "arts-entertainment": [], sports: [] };
 	const categories = Object.keys(articles);
+	let restart = true;
 
-	for (let i = 0; i < categories.length; i++) {
-		let temp = await prisma.article.findMany({
-			where: {
-				year: year,
-				month: month,
-				category: categories[i],
-				published: true,
-			},
-		});
+	await prisma.$connect();
 
-		articles[categories[i]] = temp;
-	}
-
-	/*
-	while (articles.length === 0) {
+	while (restart) {
 		month--;
-		if (month === 0) {
-			month = 12;
-			year--;
-		}
-		articles = await prisma.article.findMany({
-			where: {
-				year: year,
-				month: month,
-				published: true,
-				img: {
-					contains: ".",
+		for (let i = 0; i < categories.length; i++) {
+			let temp = await prisma.article.findMany({
+				where: {
+					year: year,
+					month: month,
+					category: categories[i],
+					published: true,
 				},
-			},
-		});
+			});
+
+			articles[categories[i]] = temp;
+		}
+
+		restart = articles[categories[0]].length === 0;
 	}
-	*/
 
 	prisma.$disconnect();
 
