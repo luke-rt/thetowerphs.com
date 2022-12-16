@@ -27,6 +27,7 @@ export default function Button({ name, href, children }: Props) {
 					display: inline-block;
 					padding: 15px;
 					font-size: x-large;
+					font-weight: bold;
 
 					transition: 0.3s ease-in;
 				}
