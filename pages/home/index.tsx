@@ -3,23 +3,32 @@
 import { article } from "@prisma/client";
 import Head from "next/head";
 import ArticlePreview from "~/components/preview.client";
-import { getFrontpageArticles } from "~/lib/queries";
+import { getArticlesByCategory, getFrontpageArticles } from "~/lib/queries";
 
 export async function getServerSideProps() {
-	const articles = await getFrontpageArticles();
+	const newfe = await getArticlesByCategory("news-features");
+	const opinions = await getArticlesByCategory("opinions");
+	const ane = await getArticlesByCategory("arts-entertainment");
+	const sports = await getArticlesByCategory("sports");
 
 	return {
 		props: {
-			articles,
+			newfe,
+			opinions,
+			ane,
+			sports,
 		},
 	};
 }
 
 interface Props {
-	articles: { [name: string]: article[] };
+	newfe: article[];
+	opinions: article[];
+	ane: article[];
+	sports: article[];
 }
 
-export default function FrontPage({ articles }: Props) {
+export default function FrontPage({ newfe, opinions, ane, sports }: Props) {
 	return (
 		<div>
 			<style jsx>{`
@@ -47,12 +56,14 @@ export default function FrontPage({ articles }: Props) {
 			</Head>
 			<div className="mosaic">
 				<div className="one double">
-					<NewsFeatures {...articles["news-features"]} />
-					<Opinions {...articles["opinions"]} />
-				</div>
-				<div className="three double">
-					<ArtsEntertainment {...articles["arts-entertainment"]} />
-					<Sports {...articles["sports"]} />
+					<div>
+						<NewsFeatures {...newfe} />
+						<Opinions {...opinions} />
+					</div>
+					<div className="three double">
+						<ArtsEntertainment {...ane} />
+						<Sports {...sports} />
+					</div>
 				</div>
 			</div>
 		</div>
@@ -86,7 +97,7 @@ export function Opinions(articles: article[]) {
 	return (
 		<div className="opinions">
 			<style jsx>{``}</style>
-			<div className="opinons">
+			<div className="opinions">
 				<ArticlePreview article={articles[0]} style="box" size="medium" category />
 				<div>
 					<ArticlePreview article={articles[1]} style="row" size="medium" category />

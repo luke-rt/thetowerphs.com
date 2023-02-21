@@ -114,10 +114,10 @@ export async function getArticlesByCategory(cat: string) {
 	const articles = await prisma.article.findMany({
 		orderBy: [
 			{
-				year: "desc",
+				month: "desc",
 			},
 			{
-				month: "desc",
+				year: "desc",
 			},
 		],
 		where: {
