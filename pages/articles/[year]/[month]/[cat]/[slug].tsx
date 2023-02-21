@@ -1,3 +1,9 @@
+/**
+ * eslint-disable react/jsx-key
+ *
+ * @format
+ */
+
 /** @format */
 
 import { article } from "@prisma/client";
@@ -88,7 +94,7 @@ export default function Article({ article }: Props) {
 			<section className="content">
 				{paragraphs.map((paragraph, index) =>
 					paragraph.startsWith("@img=") ? (
-						<div className="img">
+						<div className="img" key={index}>
 							<Image
 								src={paragraph.substring(5)}
 								alt="Article image"
@@ -96,6 +102,7 @@ export default function Article({ article }: Props) {
 								layout="fill"
 								blurDataURL={article.img}
 								placeholder="blur"
+								key={index}
 							/>
 						</div>
 					) : (

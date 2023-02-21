@@ -30,6 +30,11 @@ export async function getFrontpageArticles() {
 			articles[categories[i]] = temp;
 		}
 
+		if (month === 0) {
+			month = 12;
+			year--;
+		}
+
 		restart = articles[categories[0]].length === 0;
 	}
 
@@ -93,6 +98,8 @@ export async function getCurrArticles() {
 }
 
 export async function getArticlesByDate(year: string, month: string) {
+	const curr = new Date();
+
 	await prisma.$connect();
 
 	const articles = await prisma.article.findMany({

@@ -1,4 +1,4 @@
-# `thetowerphs.com`
+# `towerphs.com`
 
 ## Important Links
 - https://app.supabase.io/project/yusjougmsdnhcsksadaw (postgres database on Supabase)
