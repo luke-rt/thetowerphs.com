@@ -20,16 +20,17 @@ export default function Button({ name, href, children }: Props) {
 				}
 				.dropdown:hover .content {
 					display: block;
+					opacity: 1;
 				}
 				.btn {
-					color: ${styles.color.background};
-					background-color: ${styles.color.primary};
+					color: ${styles.color.primary};
+					background-color: ${styles.color.navbar};
 					display: inline-block;
 					padding: 15px;
-					font-size: x-large;
+					font-size: large;
 					font-weight: bold;
 
-					transition: 0.3s ease-in;
+					transition: 0.1s ease-in;
 				}
 				.btn:hover {
 					color: ${styles.color.primary};
@@ -37,14 +38,16 @@ export default function Button({ name, href, children }: Props) {
 					display: block;
 				}
 				.content {
-					display: none;
+					display: block;
 					position: absolute;
 					font-size: large;
 					padding: 12px;
 
 					min-width: 14vw;
-					box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+					box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
 					z-index: 1;
+					opacity: 0;
+					transition: 0.1s ease-in opacity;
 				}
 				.content a:hover {
 					cursor: pointer;

@@ -42,9 +42,21 @@ function Banner() {
 	return (
 		<div className="banner">
 			<style jsx>{`
+				.banner {
+					margin: 0px;
+					margin-top: 30px;
+				}
 				.image {
-					display: flex;
-					margin-left: 36vw;
+					display: block;
+					margin-left: auto;
+					text-align: center;
+					margin: 0px;
+					padding: 0;
+				}
+				.image Image {
+					display: inline-block;
+					padding: 0;
+					margin: 0;
 				}
 				.image:hover {
 					cursor: pointer;
@@ -56,9 +68,11 @@ function Banner() {
 				}
 			`}</style>
 			<div className="sub">
-				<Link href="/subscribe">SUBSCRIBE</Link>
+				<Link href="/subscribe">
+					<span style={{ color: "black", cursor: "pointer", fontFamily: "Open Sans" }}>SUBSCRIBE</span>
+				</Link>
 				<br />
-				<span>{dayjs().format("dddd, MMMM D, YYYY ").toUpperCase()}</span>
+				<span style={{ fontFamily: "Open Sans" }}>{dayjs().format("dddd, MMMM D, YYYY ").toUpperCase()}</span>
 			</div>
 			<div className="image">
 				<Link href="/home" passHref>
@@ -180,7 +194,7 @@ function Footer() {
 				</div>
 			</div>
 			<hr />
-			<span>© 2022 The Tower</span>
+			<span>© 2017-2023 The Tower</span>
 		</div>
 	);
 }
@@ -191,9 +205,9 @@ function NavBar() {
 			<style jsx>{`
 				.navbar {
 					display: block;
-					background-color: ${styles.color.primary};
+					background-color: ${styles.color.navbar};
 					margin-bottom: 2vh;
-					padding-left: 8vw;
+					text-align: center;
 				}
 				.navbar hr {
 					background-color: #ccc;

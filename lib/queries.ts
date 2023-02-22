@@ -5,19 +5,18 @@ import { article, PrismaClient, spreads } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export async function getFrontpageArticles() {
-	const curr = new Date();
-	let month = curr.getMonth() + 2;
-	let year = curr.getFullYear();
-
 	let articles: Record<string, article[]> = { "news-features": [], opinions: [], "arts-entertainment": [], sports: [] };
 	const categories = Object.keys(articles);
-	let restart = true;
 
 	await prisma.$connect();
+	for (let i = 0; i < categories.length; i++) {
+		const curr = new Date();
+		let month = curr.getMonth() + 2;
+		let year = curr.getFullYear();
 
-	while (restart) {
-		month--;
-		for (let i = 0; i < categories.length; i++) {
+		while (!articles[categories[i]].length) {
+			month--;
+
 			let temp = await prisma.article.findMany({
 				where: {
 					year: year,
@@ -28,14 +27,11 @@ export async function getFrontpageArticles() {
 			});
 
 			articles[categories[i]] = temp;
+			if (month === 0) {
+				month = 12;
+				year--;
+			}
 		}
-
-		if (month === 0) {
-			month = 12;
-			year--;
-		}
-
-		restart = articles[categories[0]].length === 0;
 	}
 
 	prisma.$disconnect();

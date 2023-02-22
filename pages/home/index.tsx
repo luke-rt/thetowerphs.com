@@ -26,6 +26,8 @@ export default function FrontPage({ articles }: Props) {
 				.mosaic {
 					display: grid;
 					grid-gap: 10px;
+					margin-left: 10vw;
+					margin-right: 10vw;
 				}
 				.double {
 					display: grid;

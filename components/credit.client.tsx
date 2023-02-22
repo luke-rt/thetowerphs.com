@@ -12,8 +12,7 @@ export default function CreditLink({ author, small }: Props) {
 		<>
 			<style jsx>{`
 				a {
-					margin-right: 8px;
-					${small ? "color: #8b8b8b;" : "font-size: large;"}
+					${small ? "color: #bbbbb;" : "font-size: large;color: #bbbbb;"}
 				}
 				a:hover {
 					text-decoration: underline;
