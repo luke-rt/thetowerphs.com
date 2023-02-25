@@ -1,3 +1,9 @@
+/**
+ * eslint-disable react/jsx-key
+ *
+ * @format
+ */
+
 /** @format */
 
 import { article } from "@prisma/client";
@@ -61,43 +67,45 @@ export default function Article({ article }: Props) {
 				}
 				.article .content p {
 					font-family: ${styles.font.text}, ${styles.font.stack};
+					font-size: 1.2rem;
 				}
 				.article p {
 					margin-top: 3vh;
+					margin-bottom: 3vh;
+				}
+				.article .titleblock {
+					display: block;
+					text-align: center;
+				}
+				.article .titleblock h1 {
+					font-size: 2rem;
 				}
 			`}</style>
 
-			<h1>{article.title}</h1>
-
-			<span>{displayDate(article.year, article.month)}</span>
-
-			{article.authors.length > 0 && (
-				<section className="authors">
-					{article.authors.map((author, index) => (
-						<CreditLink key={index} author={author} />
-					))}
-				</section>
-			)}
-
-			{article.img && (
-				<section className="main-img">
-					<Image src={article.img} alt="Article image" objectFit="contain" layout="fill" blurDataURL={article.img} placeholder="blur" />
-				</section>
-			)}
-
 			<section className="content">
+				<div className="titleblock">
+					<h1>{article.title}</h1>
+
+					<span>{displayDate(article.year, article.month)}</span>
+
+					{article.authors.length > 0 && (
+						<section className="authors">
+							{article.authors.map((author, index) => (
+								<>
+									<CreditLink key={index} author={author} />
+									<span style={{ marginLeft: "10px", marginRight: "10px" }}>{index < article.authors.length - 1 ? " | " : ""}</span>
+								</>
+							))}
+						</section>
+					)}
+				</div>
+				<br></br>
+				<br></br>
+
+				{article.img && <img src={article.img} width="100%" height="auto"></img>}
 				{paragraphs.map((paragraph, index) =>
 					paragraph.startsWith("@img=") ? (
-						<div className="img">
-							<Image
-								src={paragraph.substring(5)}
-								alt="Article image"
-								objectFit="contain"
-								layout="fill"
-								blurDataURL={article.img}
-								placeholder="blur"
-							/>
-						</div>
+						<img src={paragraph.substring(5)} width="100%" height="auto" key={index}></img>
 					) : (
 						<p key={index}>{paragraph}</p>
 					)

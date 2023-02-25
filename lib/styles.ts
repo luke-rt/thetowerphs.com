@@ -3,12 +3,13 @@
 const styles = {
 	font: {
 		stack: "system-ui, sans-serif",
-		header: "DIN2014-Demi",
-		text: "georgia",
+		header: "Lusitana",
+		text: "Lusitana",
 	},
 	color: {
-		background: "white",
+		background: "#f4f4f4",
 		primary: "black",
+		navbar: "#e8e8e8",
 	},
 	lineHeight: 1.4,
 };

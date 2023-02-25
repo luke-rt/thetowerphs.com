@@ -9,7 +9,7 @@
 		"dev": "next dev",
 		"start": "next build && next start",
 		"analyze": "ANALYZE=true next build",
-		"lint": "next lint --fix && prettier --write '**/*.{ts,tsx}'",
+		"lint": "next lint --fix && prettier --write \"**/*.{ts,tsx}\"",
 		"postinstall": "prisma generate",
 		"prepare": "husky install"
 	},

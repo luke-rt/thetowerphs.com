@@ -3,38 +3,31 @@
 import { article } from "@prisma/client";
 import Head from "next/head";
 import ArticlePreview from "~/components/preview.client";
-import { getArticlesByCategory, getFrontpageArticles } from "~/lib/queries";
+import { getFrontpageArticles } from "~/lib/queries";
 
 export async function getServerSideProps() {
-	const newfe = await getArticlesByCategory("news-features");
-	const opinions = await getArticlesByCategory("opinions");
-	const ane = await getArticlesByCategory("arts-entertainment");
-	const sports = await getArticlesByCategory("sports");
+	const articles = await getFrontpageArticles();
 
 	return {
 		props: {
-			newfe,
-			opinions,
-			ane,
-			sports,
+			articles,
 		},
 	};
 }
 
 interface Props {
-	newfe: article[];
-	opinions: article[];
-	ane: article[];
-	sports: article[];
+	articles: { [name: string]: article[] };
 }
 
-export default function FrontPage({ newfe, opinions, ane, sports }: Props) {
+export default function FrontPage({ articles }: Props) {
 	return (
 		<div>
 			<style jsx>{`
 				.mosaic {
 					display: grid;
 					grid-gap: 10px;
+					margin-left: 10vw;
+					margin-right: 10vw;
 				}
 				.double {
 					display: grid;
@@ -56,14 +49,12 @@ export default function FrontPage({ newfe, opinions, ane, sports }: Props) {
 			</Head>
 			<div className="mosaic">
 				<div className="one double">
-					<div>
-						<NewsFeatures {...newfe} />
-						<Opinions {...opinions} />
-					</div>
-					<div className="three double">
-						<ArtsEntertainment {...ane} />
-						<Sports {...sports} />
-					</div>
+					<NewsFeatures {...articles["news-features"]} />
+					<Opinions {...articles["opinions"]} />
+				</div>
+				<div className="three double">
+					<ArtsEntertainment {...articles["arts-entertainment"]} />
+					<Sports {...articles["sports"]} />
 				</div>
 			</div>
 		</div>
@@ -97,7 +88,7 @@ export function Opinions(articles: article[]) {
 	return (
 		<div className="opinions">
 			<style jsx>{``}</style>
-			<div className="opinions">
+			<div className="opinons">
 				<ArticlePreview article={articles[0]} style="box" size="medium" category />
 				<div>
 					<ArticlePreview article={articles[1]} style="row" size="medium" category />
