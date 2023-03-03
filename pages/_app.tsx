@@ -221,6 +221,8 @@ function NavBar() {
 				<Link href="/category/news-features/phs-profiles">PHS Profiles</Link>
 			</Button>
 
+			<Button name="Multimedia" href="/category/multimedia"></Button>
+
 			<Button name="Opinions" href="/category/opinions">
 				<Link href="/category/opinions/editorials">Editorials</Link>
 				<hr />
