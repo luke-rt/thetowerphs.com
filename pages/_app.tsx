@@ -249,7 +249,7 @@ function NavBar() {
 				onClick={() => {
 					let menu = document.querySelector(".menu");
 					console.log(menu);
-					menu.classList.toggle("show");
+					if (menu) menu.classList.toggle("show");
 				}}
 			></Button>
 			<div className="menu">
