@@ -64,7 +64,8 @@ export default function Year({ year, sections }: Props) {
 			</Head>
 			<style jsx>{`
 				.about {
-					max-width: 85vw;
+					margin-left: 9%;
+					margin-right: 9%;
 				}
 				h1 {
 					text-align: center;

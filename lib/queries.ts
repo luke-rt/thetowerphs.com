@@ -18,6 +18,11 @@ export async function getFrontpageArticles() {
 			month--;
 
 			let temp = await prisma.article.findMany({
+				orderBy: [
+					{
+						id: "asc",
+					},
+				],
 				where: {
 					year: year,
 					month: month,
@@ -94,11 +99,14 @@ export async function getCurrArticles() {
 }
 
 export async function getArticlesByDate(year: string, month: string) {
-	const curr = new Date();
-
 	await prisma.$connect();
 
 	const articles = await prisma.article.findMany({
+		orderBy: [
+			{
+				id: "desc",
+			},
+		],
 		where: {
 			year: parseInt(year),
 			month: parseInt(month),
@@ -117,10 +125,10 @@ export async function getArticlesByCategory(cat: string) {
 	const articles = await prisma.article.findMany({
 		orderBy: [
 			{
-				month: "desc",
+				year: "desc",
 			},
 			{
-				year: "desc",
+				month: "desc",
 			},
 		],
 		where: {
