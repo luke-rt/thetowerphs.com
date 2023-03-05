@@ -65,6 +65,10 @@ export default function Article({ article }: Props) {
 					margin-top: 5vh;
 					max-width: 50vw;
 				}
+				.main-article::first-letter {
+					initial-letter: 3;
+					margin-right: 10px;
+				}
 				.article .content p {
 					font-family: ${styles.font.text}, ${styles.font.stack};
 					font-size: 1.2rem;
@@ -101,15 +105,17 @@ export default function Article({ article }: Props) {
 				</div>
 				<br></br>
 				<br></br>
-
 				{article.img && <img src={article.img} width="100%" height="auto"></img>}
-				{paragraphs.map((paragraph, index) =>
-					paragraph.startsWith("@img=") ? (
-						<img src={paragraph.substring(5)} width="100%" height="auto" key={index}></img>
-					) : (
-						<p key={index}>{paragraph}</p>
-					)
-				)}
+
+				<div className="main-article">
+					{paragraphs.map((paragraph, index) =>
+						paragraph.startsWith("@img=") ? (
+							<img src={paragraph.substring(5)} width="100%" height="auto" key={index}></img>
+						) : (
+							<p key={index}>{paragraph}</p>
+						)
+					)}
+				</div>
 			</section>
 		</div>
 	);

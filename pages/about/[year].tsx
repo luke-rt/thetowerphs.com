@@ -33,6 +33,11 @@ export async function getStaticPaths() {
 					year: "2022",
 				},
 			},
+			{
+				params: {
+					year: "2023",
+				},
+			},
 		],
 		fallback: false,
 	};
@@ -79,7 +84,7 @@ export default function Year({ year, sections }: Props) {
 					{section.members.map((member, index) => (
 						<>
 							<CreditLink key={index} author={member.name} />
-							<span>{member.position}</span>
+							<span style={{ marginLeft: "10px" }}>{member.position}</span>
 							<br />
 						</>
 					))}

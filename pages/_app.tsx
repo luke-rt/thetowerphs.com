@@ -244,7 +244,9 @@ function NavBar() {
 			</Button>
 
 			<Button name="About" href="/about">
-				{years.map((year, index) => (year ? <Link key={index} href={`/about/${year}`}>{`${year} Staff`}</Link> : <hr key={index} />))}
+				<Link href="/about/2023">2023 Staff</Link>
+				<hr />
+				<Link href="/about/2022">2022 Staff</Link>
 			</Button>
 
 			<Button name="Archives" href="/archives" />

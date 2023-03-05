@@ -77,8 +77,11 @@ export function NewsFeatures(articles: article[]) {
 			`}</style>
 			<ArticlePreview article={articles[0]} style="box" size="large" category />
 			<div className="double">
-				<ArticlePreview article={articles[1]} style="box" size="small" category />
-				<ArticlePreview article={articles[2]} style="box" size="small" category />
+				{Object.values(articles)
+					.slice(1)
+					.map(article => (
+						<ArticlePreview key={article.id} article={article} style="box" size="small" category />
+					))}
 			</div>
 		</div>
 	);
@@ -91,9 +94,11 @@ export function Opinions(articles: article[]) {
 			<div className="opinons">
 				<ArticlePreview article={articles[0]} style="box" size="medium" category />
 				<div>
-					<ArticlePreview article={articles[1]} style="row" size="medium" category />
-					<ArticlePreview article={articles[2]} style="row" size="medium" category />
-					<ArticlePreview article={articles[3]} style="row" size="medium" category />
+					{Object.values(articles)
+						.slice(1)
+						.map(article => (
+							<ArticlePreview key={article.id} style="row" size="medium" category article={article} />
+						))}
 				</div>
 			</div>
 		</div>
@@ -111,7 +116,11 @@ export function ArtsEntertainment(articles: article[]) {
 			`}</style>
 			<ArticlePreview article={articles[0]} style="box" size="large" category />
 			<div>
-				<ArticlePreview article={articles[1]} style="row" size="medium" category />
+				{Object.values(articles)
+					.slice(1)
+					.map(article => (
+						<ArticlePreview key={article.id} style="row" size="medium" article={article} category />
+					))}
 			</div>
 		</div>
 	);
@@ -130,10 +139,11 @@ export function Sports(articles: article[]) {
 			<div className="sports">
 				<ArticlePreview article={articles[0]} style="box" size="large" category />
 				<div className="double">
-					<ArticlePreview article={articles[1]} style="box" size="small" category />
-					<ArticlePreview article={articles[2]} style="box" size="small" category />
-					<ArticlePreview article={articles[3]} style="box" size="small" category />
-					<ArticlePreview article={articles[4]} style="box" size="small" category />
+					{Object.values(articles)
+						.slice(1)
+						.map(article => (
+							<ArticlePreview key={article.id} style="row" size="small" article={article} category />
+						))}
 				</div>
 			</div>
 		</div>
