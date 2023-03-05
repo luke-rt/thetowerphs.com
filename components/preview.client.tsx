@@ -97,9 +97,11 @@ export default function ArticlePreview({ article, category, style = "row", size 
 				}
 				.title .large {
 					font-size: xx-large;
+					color: ${styles.color.secondary} !important !important !important;
 				}
 				.title .medium {
 					font-size: large;
+					color: ${styles.color.tertiary} !important !important !important;
 				}
 				.title .small {
 					font-size: medium;

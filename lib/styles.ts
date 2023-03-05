@@ -7,9 +7,11 @@ const styles = {
 		text: "EgyptianText",
 	},
 	color: {
-		background: "#f4f4f4",
+		background: "#fff",
 		primary: "black",
-		navbar: "#e8e8e8",
+		secondary: "#7d0f3f",
+		tertiary: "#061b40",
+		navbar: "#041a38",
 	},
 	lineHeight: 2,
 };

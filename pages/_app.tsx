@@ -72,6 +72,10 @@ function Banner() {
 					<span style={{ color: "black", cursor: "pointer", fontFamily: "Open Sans" }}>SUBSCRIBE</span>
 				</Link>
 				<br />
+				<Link href="https://yusjougmsdnhcsksadaw.supabase.co/storage/v1/object/public/prints/323-full.pdf">
+					<span style={{ color: "black", cursor: "pointer", fontFamily: "Open Sans" }}>PRINT EDITION</span>
+				</Link>
+				<br />
 				<span style={{ fontFamily: "Open Sans" }}>{dayjs().format("dddd, MMMM D, YYYY ").toUpperCase()}</span>
 			</div>
 			<div className="image">
@@ -123,6 +127,11 @@ function Footer() {
 					margin: 1vh;
 					display: grid;
 					grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+				}
+				@media screen and (max-width: 700px) {
+					.bottom {
+						grid-template-columns: 1fr;
+					}
 				}
 				.bottom b {
 					font-size: 1.1em;
@@ -195,6 +204,7 @@ function Footer() {
 			</div>
 			<hr />
 			<span>© 2017-2023 The Tower</span>
+			<span>Site by Luke Tong &apos;23 and Jieruei Chang &apos;24</span>
 		</div>
 	);
 }
@@ -205,10 +215,12 @@ function NavBar() {
 			<style jsx>{`
 				.navbar {
 					display: block;
-					background-color: ${styles.color.navbar};
+					background-color: ${styles.color.navbar} !important;
 					margin-bottom: 2vh;
 					text-align: center;
+					width: 100%;
 				}
+
 				.navbar hr {
 					background-color: #ccc;
 					border: none;
@@ -216,40 +228,65 @@ function NavBar() {
 					margin-top: 5px;
 					margin-bottom: 5px;
 				}
+
+				.menu {
+					display: contents;
+				}
+
+				@media screen and (max-width: 1000px) {
+					.menu {
+						display: none;
+					}
+					.show {
+						display: contents !important;
+					}
+				}
 			`}</style>
-			<Button name="News & Features" href="/category/news-features">
-				<Link href="/category/news-features/phs-profiles">PHS Profiles</Link>
-			</Button>
+			<Button
+				name="☰"
+				href=""
+				className="showMenu"
+				onClick={() => {
+					let menu = document.querySelector(".menu");
+					console.log(menu);
+					menu.classList.toggle("show");
+				}}
+			></Button>
+			<div className="menu">
+				<Button name="News & Features" href="/category/news-features">
+					<Link href="/category/news-features/phs-profiles">PHS Profiles</Link>
+				</Button>
 
-			<Button name="Multimedia" href="/category/multimedia"></Button>
+				<Button name="Multimedia" href="/category/multimedia"></Button>
 
-			<Button name="Opinions" href="/category/opinions">
-				<Link href="/category/opinions/editorials">Editorials</Link>
-				<hr />
-				<Link href="/category/opinions/cheers-jeers">Cheers & Jeers</Link>
-			</Button>
+				<Button name="Opinions" href="/category/opinions">
+					<Link href="/category/opinions/editorials">Editorials</Link>
+					<hr />
+					<Link href="/category/opinions/cheers-jeers">Cheers & Jeers</Link>
+				</Button>
 
-			<Button name="Vanguard" href="/category/vanguard" />
+				<Button name="Vanguard" href="/category/vanguard" />
 
-			<Button name="Arts & Entertainment" href="/category/arts-entertainment">
-				<Link href="/category/arts-entertainment/student-artists">Student Artists</Link>
-			</Button>
+				<Button name="Arts & Entertainment" href="/category/arts-entertainment">
+					<Link href="/category/arts-entertainment/student-artists">Student Artists</Link>
+				</Button>
 
-			<Button name="Sports" href="/category/sports">
-				<Link href="/category/sports/student-athletes">Student Athletes</Link>
-			</Button>
+				<Button name="Sports" href="/category/sports">
+					<Link href="/category/sports/student-athletes">Student Athletes</Link>
+				</Button>
 
-			<Button name="Special Issues" href="/category/special/nsi">
-				<Link href="/category/special/nsi">New Student Issues</Link>
-			</Button>
+				<Button name="Special Issues" href="/category/special/nsi">
+					<Link href="/category/special/nsi">New Student Issues</Link>
+				</Button>
 
-			<Button name="About" href="/about">
-				<Link href="/about/2023">2023 Staff</Link>
-				<hr />
-				<Link href="/about/2022">2022 Staff</Link>
-			</Button>
+				<Button name="About" href="/about">
+					<Link href="/about/2023">2023 Staff</Link>
+					<hr />
+					<Link href="/about/2022">2022 Staff</Link>
+				</Button>
 
-			<Button name="Archives" href="/archives" />
+				<Button name="Archives" href="/archives" />
+			</div>
 		</div>
 	);
 }

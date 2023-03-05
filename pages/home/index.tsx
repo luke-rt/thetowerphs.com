@@ -26,13 +26,22 @@ export default function FrontPage({ articles }: Props) {
 				.mosaic {
 					display: grid;
 					grid-gap: 10px;
-					margin-left: 10vw;
-					margin-right: 10vw;
+					margin-left: 15vw;
+					margin-right: 15vw;
 				}
 				.double {
 					display: grid;
 					grid-gap: 10px;
 					grid-template-columns: 1fr 1fr;
+				}
+				@media (max-width: 1000px) {
+					.mosaic {
+						margin-left: 5vw;
+						margin-right: 5vw;
+					}
+					.double {
+						grid-template-columns: 1fr;
+					}
 				}
 				.one {
 					padding-bottom: 10px;

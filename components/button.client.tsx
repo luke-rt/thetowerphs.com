@@ -7,35 +7,37 @@ interface Props {
 	name: string;
 	href: string;
 	children?: any;
+	className?: string;
+	onClick?: () => void;
 }
 
-export default function Button({ name, href, children }: Props) {
+export default function Button({ name, href, children, className, onClick }: Props) {
 	return (
-		<div className="dropdown">
+		<div className={`dropdown ${className}`} onClick={onClick}>
 			<style jsx>{`
 				.dropdown {
 					position: relative;
 					display: inline-block;
 					text-decoration: none;
 				}
+				.showMenu {
+					display: none;
+				}
 				.dropdown:hover .content {
 					display: block;
 					opacity: 1;
 				}
 				.btn {
-					color: ${styles.color.primary};
+					color: /*${styles.color.primary}*/ white;
 					background-color: ${styles.color.navbar};
 					display: inline-block;
 					padding: 15px;
 					font-size: large;
-					font-weight: bold;
-
 					transition: 0.1s ease-in;
 				}
 				.btn:hover {
 					color: ${styles.color.primary};
 					background-color: ${styles.color.background};
-					display: block;
 				}
 				.content {
 					display: block;
@@ -52,6 +54,14 @@ export default function Button({ name, href, children }: Props) {
 				.content a:hover {
 					cursor: pointer;
 					color: #474747;
+				}
+				@media screen and (max-width: 1000px) {
+					.showMenu,
+					.dropdown,
+					.btn {
+						display: block;
+						width: 100%;
+					}
 				}
 			`}</style>
 			<Link href={href}>
