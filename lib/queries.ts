@@ -142,6 +142,31 @@ export async function getArticlesByCategory(cat: string) {
 	return articles;
 }
 
+export async function getArticlesBySearch(cat: string) {
+	await prisma.$connect();
+	const articles = await prisma.article.findMany({
+		orderBy: [
+			{
+				year: "desc",
+			},
+			{
+				month: "desc",
+			},
+		],
+		where: {
+			content: {
+				contains: ` ${cat} `,
+				mode: "insensitive",
+			},
+			published: true,
+		},
+	});
+
+	prisma.$disconnect();
+
+	return articles;
+}
+
 export async function getArticlesBySubcategory(subcat: string) {
 	await prisma.$connect();
 

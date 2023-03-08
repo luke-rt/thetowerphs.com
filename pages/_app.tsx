@@ -45,6 +45,7 @@ function Banner() {
 				.banner {
 					margin: 0px;
 					margin-top: 30px;
+					position: relative;
 				}
 				.image {
 					display: block;
@@ -64,7 +65,36 @@ function Banner() {
 				.sub {
 					position: absolute;
 					left: 1vw;
-					top: 80px;
+					bottom: 20px;
+				}
+				.search {
+					position: absolute;
+					right: 1vw;
+					bottom: 20px;
+				}
+				.search input {
+					width: 200px;
+					height: 30px;
+					border: 2px solid ${styles.color.navbar};
+					border-radius: 10px 0px 0px 10px;
+					padding: 5px;
+					font-family: "Open Sans";
+					box-sizing: border-box;
+					vertical-align: middle;
+				}
+				.search button {
+					width: 40px;
+					height: 30px;
+					border: 2px solid ${styles.color.navbar};
+					border-radius: 0px 10px 10px 0px;
+					background-color: ${styles.color.navbar};
+					color: white;
+					font-family: "Open Sans";
+					cursor: pointer;
+					text-align: left;
+					box-sizing: border-box;
+					padding: 5px;
+					vertical-align: middle;
 				}
 			`}</style>
 			<div className="sub">
@@ -77,6 +107,24 @@ function Banner() {
 				</Link>
 				<br />
 				<span style={{ fontFamily: "Open Sans" }}>{dayjs().format("dddd, MMMM D, YYYY ").toUpperCase()}</span>
+			</div>
+			<div className="search">
+				<input
+					type="text"
+					placeholder="Search"
+					onKeyDown={e => {
+						if (e.key === "Enter") {
+							window.location.href = "/search/" + document.getElementsByTagName("input")[0].value;
+						}
+					}}
+				/>
+				<button
+					onClick={() => {
+						window.location.href = "/search/" + document.getElementsByTagName("input")[0].value;
+					}}
+				>
+					Go
+				</button>
 			</div>
 			<div className="image">
 				<Link href="/home" passHref>
