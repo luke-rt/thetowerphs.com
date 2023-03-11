@@ -154,10 +154,29 @@ export async function getArticlesBySearch(cat: string) {
 			},
 		],
 		where: {
-			content: {
-				contains: ` ${cat} `,
-				mode: "insensitive",
-			},
+			OR: [
+				{
+					title: {
+						contains: cat,
+						mode: "insensitive",
+					},
+				},
+				{
+					authors: {
+						has: cat
+							.toLowerCase()
+							.split(" ")
+							.map(s => s.charAt(0).toUpperCase() + s.substring(1))
+							.join(" "),
+					},
+				},
+				{
+					content: {
+						contains: ` ${cat} `,
+						mode: "insensitive",
+					},
+				},
+			],
 			published: true,
 		},
 	});

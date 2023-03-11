@@ -74,8 +74,8 @@ function Banner() {
 				}
 				.search input {
 					width: 200px;
-					height: 30px;
-					border: 2px solid ${styles.color.navbar};
+					height: 40px;
+					border: 1px solid ${styles.color.navbar};
 					border-radius: 10px 0px 0px 10px;
 					padding: 5px;
 					font-family: "Open Sans";
@@ -84,14 +84,13 @@ function Banner() {
 				}
 				.search button {
 					width: 40px;
-					height: 30px;
-					border: 2px solid ${styles.color.navbar};
+					height: 40px;
+					border: 1px solid ${styles.color.navbar};
 					border-radius: 0px 10px 10px 0px;
 					background-color: ${styles.color.navbar};
 					color: white;
 					font-family: "Open Sans";
 					cursor: pointer;
-					text-align: left;
 					box-sizing: border-box;
 					padding: 5px;
 					vertical-align: middle;
