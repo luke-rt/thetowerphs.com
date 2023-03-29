@@ -32,17 +32,29 @@ export default function Button({ name, href, children, className, onClick }: Pro
 					background-color: ${styles.color.navbar};
 					display: inline-block;
 					padding: 15px;
-					font-size: large;
+					font-size: medium;
+					transition: 0.1s ease-in;
+					box-sizing: border-box;
+					position: relative;
+				}
+				.btn::after {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 100%;
+					height: 0%;
+					background-color: ${styles.color.accent};
 					transition: 0.1s ease-in;
 				}
-				.btn:hover {
-					color: ${styles.color.primary};
-					background-color: ${styles.color.background};
+				.btn:hover::after {
+					height: 10%;
 				}
 				.content {
 					display: block;
 					position: absolute;
-					font-size: large;
+					font-size: medium;
 					padding: 12px;
 
 					min-width: 14vw;
@@ -50,6 +62,8 @@ export default function Button({ name, href, children, className, onClick }: Pro
 					z-index: 1;
 					opacity: 0;
 					transition: 0.1s ease-in opacity;
+
+					background-color: ${styles.color.background};
 				}
 				.content a:hover {
 					cursor: pointer;

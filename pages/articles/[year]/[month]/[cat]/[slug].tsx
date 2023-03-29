@@ -112,7 +112,10 @@ export default function Article({ article }: Props) {
 						paragraph.startsWith("@img=") ? (
 							<img src={paragraph.substring(5)} width="100%" height="auto" key={index}></img>
 						) : (
-							<p key={index}>{paragraph}</p>
+							<p key={index}>
+								{paragraph}
+								{index < paragraphs.length - 1 ? "" : "∎"}
+							</p>
 						)
 					)}
 				</div>

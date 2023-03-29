@@ -127,6 +127,9 @@ export default function ArticlePreview({ article, category, style = "row", size 
 					margin-bottom: 10px;
 					border-left: 2px solid ${styles.color.secondary};
 				}
+				.article-preview > .large-preview:hover {
+					background-color: #f0f0f0;
+				}
 				.article-preview > .medium-preview {
 					display: contents;
 				}

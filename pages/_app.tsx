@@ -44,8 +44,9 @@ function Banner() {
 			<style jsx>{`
 				.banner {
 					margin: 0px;
-					margin-top: 30px;
+					padding-top: 20px;
 					position: relative;
+					background-color: ${styles.color.navbar};
 				}
 				.image {
 					display: block;
@@ -74,38 +75,49 @@ function Banner() {
 				}
 				.search input {
 					width: 200px;
-					height: 40px;
-					border: 1px solid ${styles.color.navbar};
-					border-radius: 10px 0px 0px 10px;
+					height: 30px;
+					border: 1px solid ${styles.color.accent};
+					border-radius: 5px 0px 0px 5px;
 					padding: 5px;
 					font-family: "Open Sans";
 					box-sizing: border-box;
 					vertical-align: middle;
+					color: ${styles.color.accent};
+				}
+				.search input::placeholder {
+					color: ${styles.color.accent};
 				}
 				.search button {
-					width: 40px;
-					height: 40px;
-					border: 1px solid ${styles.color.navbar};
-					border-radius: 0px 10px 10px 0px;
-					background-color: ${styles.color.navbar};
-					color: white;
+					width: 30px;
+					height: 30px;
+					border: 1px solid ${styles.color.accent};
+					border-radius: 5px 0px 0px 5px;
+					transform: scaleX(-1);
+					background-color: ${styles.color.accent};
+					color: ${styles.color.navbar};
 					font-family: "Open Sans";
 					cursor: pointer;
 					box-sizing: border-box;
 					padding: 5px;
 					vertical-align: middle;
 				}
+				@media screen and (max-width: 1000px) {
+					.sub,
+					.search {
+						display: none;
+					}
+				}
 			`}</style>
 			<div className="sub">
 				<Link href="/subscribe">
-					<span style={{ color: "black", cursor: "pointer", fontFamily: "Open Sans" }}>SUBSCRIBE</span>
+					<span style={{ color: "white", cursor: "pointer", fontFamily: "Open Sans" }}>SUBSCRIBE</span>
 				</Link>
 				<br />
 				<Link href="https://yusjougmsdnhcsksadaw.supabase.co/storage/v1/object/public/prints/323-full.pdf">
-					<span style={{ color: "black", cursor: "pointer", fontFamily: "Open Sans" }}>PRINT EDITION</span>
+					<span style={{ color: "white", cursor: "pointer", fontFamily: "Open Sans" }}>PRINT EDITION</span>
 				</Link>
 				<br />
-				<span style={{ fontFamily: "Open Sans" }}>{dayjs().format("dddd, MMMM D, YYYY ").toUpperCase()}</span>
+				<span style={{ fontFamily: "Open Sans", color: styles.color.accent }}>{dayjs().format("dddd, MMMM D, YYYY ").toUpperCase()}</span>
 			</div>
 			<div className="search">
 				<input
@@ -122,12 +134,12 @@ function Banner() {
 						window.location.href = "/search/" + document.getElementsByTagName("input")[0].value;
 					}}
 				>
-					Go
+					🔎︎
 				</button>
 			</div>
 			<div className="image">
 				<Link href="/home" passHref>
-					<Image src="/assets/logo.png" alt="Tower banner" width="420px" height="128px" priority />
+					<Image src="/assets/logo.png" alt="Tower banner" width="350px" height="105px" priority />
 				</Link>
 			</div>
 		</div>
@@ -266,6 +278,7 @@ function NavBar() {
 					margin-bottom: 2vh;
 					text-align: center;
 					width: 100%;
+					border-top: 1px solid ${styles.color.accent};
 				}
 
 				.navbar hr {
