@@ -89,7 +89,7 @@ function Banner() {
 				}
 				.search button {
 					width: 30px;
-					height: 30px;
+					height: 29.5px;
 					border: 1px solid ${styles.color.accent};
 					border-radius: 5px 0px 0px 5px;
 					transform: scaleX(-1);
