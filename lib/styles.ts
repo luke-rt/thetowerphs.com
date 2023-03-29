@@ -9,7 +9,7 @@ const styles = {
 	color: {
 		background: "#fff",
 		primary: "black",
-		secondary: "#7d0f3f",
+		secondary: "#a8133f",
 		tertiary: "#061b40",
 		navbar: "#041a38",
 	},

@@ -11,7 +11,7 @@ export async function getFrontpageArticles() {
 	await prisma.$connect();
 	for (let i = 0; i < categories.length; i++) {
 		const curr = new Date();
-		let month = curr.getMonth() + 2;
+		let month = curr.getMonth() + 3;
 		let year = curr.getFullYear();
 
 		while (!articles[categories[i]].length) {
@@ -30,7 +30,6 @@ export async function getFrontpageArticles() {
 					published: true,
 				},
 			});
-
 			articles[categories[i]] = temp;
 			if (month === 0) {
 				month = 12;

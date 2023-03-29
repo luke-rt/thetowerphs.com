@@ -119,36 +119,52 @@ export default function ArticlePreview({ article, category, style = "row", size 
 				img {
 					width: 100%;
 					background-color: #f7f7f7;
-					border: 1px solid gainsboro;
+					border-radius: 0px;
+				}
+				.article-preview > .large-preview {
+					background-color: #f5f5f5;
+					padding: 10px;
+					margin-bottom: 10px;
+					border-left: 2px solid ${styles.color.secondary};
+				}
+				.article-preview > .medium-preview {
+					display: contents;
+				}
+				.article-preview > .small-preview {
+					display: contents;
 				}
 			`}</style>
-			<img src={article.img} width="100%" height="auto"></img>
-			<div>
-				<section className="category">
-					<em>
-						{category && (
-							<Link href={"/category/" + article.category}>
-								<span style={{ margin: "0px", fontFamily: "Open Sans" }}>{expandCategorySlug(article.category)}</span>
-							</Link>
-						)}
-					</em>
-				</section>
-				<section className="title">
-					<Link href={"/articles/" + article.year + "/" + article.month + "/" + article.category + "/" + encodeURI(article.title)}>
-						<a className={size}>{article.title}</a>
-					</Link>
-				</section>
-				<br></br>
-				<section className="authors">
-					{article.authors?.map((author, index) => (
-						<>
-							<CreditLink key={index} author={author} />
-							<span style={{ marginLeft: "5px", marginRight: "5px" }}>{index < article.authors.length - 1 ? " | " : ""}</span>
-						</>
-					))}
-				</section>
+			<div className={size + "-preview"}>
+				<div className="img-wrapper">
+					<img src={article.img} className={size}></img>
+				</div>
+				<div>
+					<section className="category">
+						<em>
+							{category && (
+								<Link href={"/category/" + article.category}>
+									<span style={{ margin: "0px", fontFamily: "Open Sans" }}>{expandCategorySlug(article.category)}</span>
+								</Link>
+							)}
+						</em>
+					</section>
+					<section className="title">
+						<Link href={"/articles/" + article.year + "/" + article.month + "/" + article.category + "/" + encodeURI(article.title)}>
+							<a className={size}>{article.title}</a>
+						</Link>
+					</section>
+					<br></br>
+					<section className="authors">
+						{article.authors?.map((author, index) => (
+							<>
+								<CreditLink key={index} author={author} />
+								<span style={{ marginLeft: "5px", marginRight: "5px" }}>{index < article.authors.length - 1 ? " | " : ""}</span>
+							</>
+						))}
+					</section>
 
-				<section className="preview-text">{shortenText(article.content, charlen)}</section>
+					<section className="preview-text">{shortenText(article.content, charlen)}</section>
+				</div>
 			</div>
 		</div>
 	);
