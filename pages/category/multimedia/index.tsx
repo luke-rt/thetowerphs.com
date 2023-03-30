@@ -70,147 +70,21 @@ export default function Category(/*{ spreads }: Props*/) {
 			<div className="grid">
 				<NoSSR>
 					<section className="videos">
-						<Video link="QH2-TGUlwu4" title="Placeholder Title" />
+						<Video link="Z4bZBXoVseo" title="Artist of the Month: Kevin Huang Profile" />
 						<br />
 						<hr></hr>
 						<br />
+						{/*
 						<div className="sm-grid">
-							<Video link="QH2-TGUlwu4" title="Placeholder Title" />
-							<Video link="QH2-TGUlwu4" title="Placeholder Title" />
-							<Video link="QH2-TGUlwu4" title="Placeholder Title" />
-							<Video link="QH2-TGUlwu4" title="Placeholder Title" />
-							<Video link="QH2-TGUlwu4" title="Placeholder Title" />
-							<Video link="QH2-TGUlwu4" title="Placeholder Title" />
-							<Video link="QH2-TGUlwu4" title="Placeholder Title" />
-							<Video link="QH2-TGUlwu4" title="Placeholder Title" />
-						</div>
+							<Video link="Z4bZBXoVseo" title="Artist of the Month: Kevin Huang Profile" />
+						</div>*/}
 					</section>
 					<section className="papercasts">
 						<h2>Papercasts</h2>
-						<iframe
-							className="podcast"
-							src="https://player.rss.com/phstalks/844939?theme=light"
-							title="rss embed thingy"
-							frameBorder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowFullScreen
-						>
-							<a href="https://rss.com/podcasts/phstalks/844939/">Brent Ferguson on the intersection of math and religion | RSS.com</a>
-						</iframe>
-						<iframe
-							className="podcast"
-							src="https://player.rss.com/phstalks/844939?theme=light"
-							title="rss embed thingy"
-							frameBorder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowFullScreen
-						>
-							<a href="https://rss.com/podcasts/phstalks/844939/">Brent Ferguson on the intersection of math and religion | RSS.com</a>
-						</iframe>
-						<iframe
-							className="podcast"
-							src="https://player.rss.com/phstalks/844939?theme=light"
-							title="rss embed thingy"
-							frameBorder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowFullScreen
-						>
-							<a href="https://rss.com/podcasts/phstalks/844939/">Brent Ferguson on the intersection of math and religion | RSS.com</a>
-						</iframe>
-						<iframe
-							className="podcast"
-							src="https://player.rss.com/phstalks/844939?theme=light"
-							title="rss embed thingy"
-							frameBorder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowFullScreen
-						>
-							<a href="https://rss.com/podcasts/phstalks/844939/">Brent Ferguson on the intersection of math and religion | RSS.com</a>
-						</iframe>
-						<iframe
-							className="podcast"
-							src="https://player.rss.com/phstalks/844939?theme=light"
-							title="rss embed thingy"
-							frameBorder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowFullScreen
-						>
-							<a href="https://rss.com/podcasts/phstalks/844939/">Brent Ferguson on the intersection of math and religion | RSS.com</a>
-						</iframe>
-						<iframe
-							className="podcast"
-							src="https://player.rss.com/phstalks/844939?theme=light"
-							title="rss embed thingy"
-							frameBorder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowFullScreen
-						>
-							<a href="https://rss.com/podcasts/phstalks/844939/">Brent Ferguson on the intersection of math and religion | RSS.com</a>
-						</iframe>
 					</section>
 					<div className="rightbar">
 						<section className="talks">
 							<h2>PHS Talks</h2>
-							<iframe
-								className="podcast"
-								src="https://player.rss.com/phstalks/844939?theme=light"
-								title="rss embed thingy"
-								frameBorder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowFullScreen
-							>
-								<a href="https://rss.com/podcasts/phstalks/844939/">
-									Brent Ferguson on the intersection of math and religion | RSS.com
-								</a>
-							</iframe>
-							<iframe
-								className="podcast"
-								src="https://player.rss.com/phstalks/844939?theme=light"
-								title="rss embed thingy"
-								frameBorder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowFullScreen
-							>
-								<a href="https://rss.com/podcasts/phstalks/844939/">
-									Brent Ferguson on the intersection of math and religion | RSS.com
-								</a>
-							</iframe>
-							<iframe
-								className="podcast"
-								src="https://player.rss.com/phstalks/844939?theme=light"
-								title="rss embed thingy"
-								frameBorder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowFullScreen
-							>
-								<a href="https://rss.com/podcasts/phstalks/844939/">
-									Brent Ferguson on the intersection of math and religion | RSS.com
-								</a>
-							</iframe>
-							<iframe
-								className="podcast"
-								src="https://player.rss.com/phstalks/844939?theme=light"
-								title="rss embed thingy"
-								frameBorder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowFullScreen
-							>
-								<a href="https://rss.com/podcasts/phstalks/844939/">
-									Brent Ferguson on the intersection of math and religion | RSS.com
-								</a>
-							</iframe>
-							<iframe
-								className="podcast"
-								src="https://player.rss.com/phstalks/844939?theme=light"
-								title="rss embed thingy"
-								frameBorder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowFullScreen
-							>
-								<a href="https://rss.com/podcasts/phstalks/844939/">
-									Brent Ferguson on the intersection of math and religion | RSS.com
-								</a>
-							</iframe>
 							<iframe
 								className="podcast"
 								src="https://player.rss.com/phstalks/844939?theme=light"
@@ -228,75 +102,13 @@ export default function Category(/*{ spreads }: Props*/) {
 							<h2>Inside PHS</h2>
 							<iframe
 								className="podcast"
-								src="https://player.rss.com/phstalks/844939?theme=light"
+								src="https://player.rss.com/phstalks/876635?theme=light"
 								title="rss embed thingy"
 								frameBorder="0"
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 								allowFullScreen
 							>
-								<a href="https://rss.com/podcasts/phstalks/844939/">
-									Brent Ferguson on the intersection of math and religion | RSS.com
-								</a>
-							</iframe>
-							<iframe
-								className="podcast"
-								src="https://player.rss.com/phstalks/844939?theme=light"
-								title="rss embed thingy"
-								frameBorder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowFullScreen
-							>
-								<a href="https://rss.com/podcasts/phstalks/844939/">
-									Brent Ferguson on the intersection of math and religion | RSS.com
-								</a>
-							</iframe>
-							<iframe
-								className="podcast"
-								src="https://player.rss.com/phstalks/844939?theme=light"
-								title="rss embed thingy"
-								frameBorder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowFullScreen
-							>
-								<a href="https://rss.com/podcasts/phstalks/844939/">
-									Brent Ferguson on the intersection of math and religion | RSS.com
-								</a>
-							</iframe>
-							<iframe
-								className="podcast"
-								src="https://player.rss.com/phstalks/844939?theme=light"
-								title="rss embed thingy"
-								frameBorder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowFullScreen
-							>
-								<a href="https://rss.com/podcasts/phstalks/844939/">
-									Brent Ferguson on the intersection of math and religion | RSS.com
-								</a>
-							</iframe>
-							<iframe
-								className="podcast"
-								src="https://player.rss.com/phstalks/844939?theme=light"
-								title="rss embed thingy"
-								frameBorder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowFullScreen
-							>
-								<a href="https://rss.com/podcasts/phstalks/844939/">
-									Brent Ferguson on the intersection of math and religion | RSS.com
-								</a>
-							</iframe>
-							<iframe
-								className="podcast"
-								src="https://player.rss.com/phstalks/844939?theme=light"
-								title="rss embed thingy"
-								frameBorder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowFullScreen
-							>
-								<a href="https://rss.com/podcasts/phstalks/844939/">
-									Brent Ferguson on the intersection of math and religion | RSS.com
-								</a>
+								<a href="https://rss.com/podcasts/phstalks/876635/">Inside PHS: What happened to Mr. Chmiel?</a>
 							</iframe>
 						</section>
 					</div>
