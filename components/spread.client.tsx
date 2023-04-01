@@ -4,6 +4,7 @@ import { spreads } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import { displayDate } from "~/lib/utils";
+import styles from "~/lib/styles";
 
 interface Props {
 	spread: spreads;
@@ -16,23 +17,23 @@ export default function Spread({ spread }: Props) {
 				.spread {
 					min-width: 50vh;
 					justify-content: left;
-					padding: 1px;
-					border: none;
+					background-color: #f5f5f5;
+					padding: 20px;
+					margin-bottom: 10px;
+					margin-top: 10px;
+					border-left: 2px solid ${styles.color.secondary};
 				}
 				a:hover {
 					text-decoration: underline;
 				}
 				.title {
 					font-weight: bolder;
-					font-size: large;
+					font-size: larger;
 				}
 				span {
 					font-size: smaller;
 				}
 			`}</style>
-			<section className="img">
-				<Image src="/assets/default.png" alt="Spread preview" width={800} height={500} blurDataURL="/assets/default.png" placeholder="blur" />
-			</section>
 			<section className="title">
 				<Link href={"/spreads/" + spread.year + "/" + spread.month + "/vanguard/" + encodeURI(spread.title)}>
 					<a>{spread.title}</a>

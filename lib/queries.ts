@@ -82,15 +82,38 @@ export async function getCurrArticles() {
 	let month = curr.getMonth() + 1;
 	let year = curr.getFullYear();
 
-	let articles = await getArticlesByDate(curr.getFullYear().toString(), (curr.getMonth() + 1).toString());
-	while (articles["news-features"].length === 0) {
+	let articles = await getArticlesByDateOld(curr.getFullYear().toString(), (curr.getMonth() + 1).toString());
+	while (articles.length === 0) {
 		month--;
 		if (month === 0) {
 			month = 12;
 			year--;
 		}
-		articles = await getArticlesByDate(year.toString(), month.toString());
+		articles = await getArticlesByDateOld(year.toString(), month.toString());
 	}
+
+	prisma.$disconnect();
+
+	return articles;
+}
+
+export async function getArticlesByDateOld(year: string, month: string) {
+	let articles: article[] = [];
+
+	await prisma.$connect();
+
+	articles = await prisma.article.findMany({
+		orderBy: [
+			{
+				id: "desc",
+			},
+		],
+		where: {
+			year: parseInt(year),
+			month: parseInt(month),
+			published: true,
+		},
+	});
 
 	prisma.$disconnect();
 

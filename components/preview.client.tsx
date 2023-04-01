@@ -63,7 +63,6 @@ export default function ArticlePreview({ article, category, style = "row", size 
 					border: none;
 				}
 				.article-preview.row {
-					display: block;
 					padding-bottom: 2vh;
 					margin-bottom: 2vh;
 					border: none;

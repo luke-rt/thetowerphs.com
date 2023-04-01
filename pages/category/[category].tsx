@@ -64,7 +64,7 @@ export default function Category({ category, articles, sidebar }: Props) {
 			<div className="grid">
 				<section>
 					{articles.map(article => (
-						<ArticlePreview key={article.id} article={article} />
+						<ArticlePreview key={article.id} article={article} style="row" size="small" />
 					))}
 				</section>
 				<section className="sidebar">
