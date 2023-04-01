@@ -12,15 +12,12 @@ export default function Archives() {
 				<meta property="og:description" content="Read scanned PDF newspapers here" />
 			</Head>
 			<style jsx>{`
-				.archives {
-					max-width: 85vw;
-				}
 				h1 {
 					text-align: center;
 				}
 				.container {
-					margin-left: 6vw;
-					max-width: 85vw;
+					margin-left: 10%;
+					width: 80%;
 					display: grid;
 					grid-template-columns: 1fr 1fr 1fr 1fr;
 				}
