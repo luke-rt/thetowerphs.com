@@ -83,7 +83,7 @@ export async function getCurrArticles() {
 	let year = curr.getFullYear();
 
 	let articles = await getArticlesByDate(curr.getFullYear().toString(), (curr.getMonth() + 1).toString());
-	while (articles.length === 0) {
+	while (articles["news-features"].length === 0) {
 		month--;
 		if (month === 0) {
 			month = 12;
@@ -98,20 +98,26 @@ export async function getCurrArticles() {
 }
 
 export async function getArticlesByDate(year: string, month: string) {
+	let articles: Record<string, article[]> = { "news-features": [], opinions: [], "arts-entertainment": [], sports: [] };
+	const categories = Object.keys(articles);
+
 	await prisma.$connect();
 
-	const articles = await prisma.article.findMany({
-		orderBy: [
-			{
-				id: "desc",
+	for (let category of categories) {
+		articles[category] = await prisma.article.findMany({
+			orderBy: [
+				{
+					id: "asc",
+				},
+			],
+			where: {
+				year: parseInt(year),
+				month: parseInt(month),
+				published: true,
+				category: category,
 			},
-		],
-		where: {
-			year: parseInt(year),
-			month: parseInt(month),
-			published: true,
-		},
-	});
+		});
+	}
 
 	prisma.$disconnect();
 
@@ -234,6 +240,14 @@ export async function getSpreadsByCategory(category: string) {
 	await prisma.$connect();
 
 	const spreads = await prisma.spreads.findMany({
+		orderBy: [
+			{
+				year: "desc",
+			},
+			{
+				month: "desc",
+			},
+		],
 		where: {
 			title: {
 				startsWith: category,

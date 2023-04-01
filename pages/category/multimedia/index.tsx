@@ -54,13 +54,13 @@ export default function Category(/*{ spreads }: Props*/) {
 				}
 				.rightbar section {
 					height: 50vh;
-					overflow-y: scroll;
-					overflow-x: hidden;
+					/*overflow-y: scroll;
+					overflow-x: hidden;*/
 				}
 				.videos,
 				.papercasts {
 					height: 100%;
-					overflow-y: scroll;
+					/*overflow-y: scroll;*/
 				}
 				iframe {
 					background-color: #f6f6f6;

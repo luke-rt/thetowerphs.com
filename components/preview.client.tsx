@@ -63,7 +63,7 @@ export default function ArticlePreview({ article, category, style = "row", size 
 					border: none;
 				}
 				.article-preview.row {
-					display: grid;
+					display: block;
 					padding-bottom: 2vh;
 					margin-bottom: 2vh;
 					border: none;
@@ -72,6 +72,7 @@ export default function ArticlePreview({ article, category, style = "row", size 
 					grid-gap: 1vw;
 				}
 				.article-preview.row.small {
+					display: grid;
 					grid-template-columns: 1fr 1.5fr;
 				}
 				.img-container {
