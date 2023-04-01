@@ -11,9 +11,6 @@ export default function Subscribe() {
 				<meta property="og:description" content="Subscribe to the Tower" />
 			</Head>
 			<style jsx>{`
-				.subscribe {
-					max-width: 85vw;
-				}
 				h1 {
 					text-align: center;
 				}

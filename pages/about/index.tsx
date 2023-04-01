@@ -18,7 +18,7 @@ export default function About() {
 				}
 				h1 {
 					text-align: center;
-					border-bottom: 3px double black;
+					border-bottom: 3px solid gainsboro;
 					margin-bottom: 4vh;
 				}
 				p {
@@ -69,7 +69,7 @@ export default function About() {
 
 			<p>
 				<b>Corrections:</b> The Tower aims to uphold accuracy in articles and welcomes suggestions regarding the content of the articles.
-				Corrections and retractions of articles will be determined on a case-by-case basis; Please email all requests to{" "}
+				Corrections and retractions of articles will be determined on a case-by-case basis; please email all requests to{" "}
 				<span>phstowersenioreditors@gmail.com</span> for consideration.
 			</p>
 		</div>

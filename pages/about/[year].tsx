@@ -58,7 +58,7 @@ export default function Year({ year, sections }: Props) {
 	return (
 		<div className="about">
 			<Head>
-				<title>About the {year} staff | The Tower</title>
+				<title>{year} staff | The Tower</title>
 				<meta property="og:title" content={`About the ${year} staff | The Tower`} />
 				<meta property="og:description" content={`About the ${year} staff of the Tower`} />
 			</Head>
@@ -66,9 +66,11 @@ export default function Year({ year, sections }: Props) {
 				.about {
 					margin-left: 9%;
 					margin-right: 9%;
+					text-align: center;
 				}
 				h1 {
 					text-align: center;
+					border-bottom: 3px solid gainsboro;
 				}
 				h2 {
 					margin-top: 4vh;
@@ -78,7 +80,7 @@ export default function Year({ year, sections }: Props) {
 					font-size: larger;
 				}
 			`}</style>
-			<h1>About the {year} Staff</h1>
+			<h1>{year} Staff</h1>
 			{sections.map((section, index) => (
 				<>
 					<h2 key={index}>{section.name}</h2>
