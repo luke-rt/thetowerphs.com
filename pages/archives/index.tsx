@@ -22,7 +22,7 @@ export default function Archives() {
 					margin-left: 6vw;
 					max-width: 85vw;
 					display: grid;
-					grid-template-columns: 1fr 1fr 1fr;
+					grid-template-columns: 1fr 1fr 1fr 1fr;
 				}
 			`}</style>
 			<h1>Archives</h1>

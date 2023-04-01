@@ -1,8 +1,7 @@
 /** @format */
-
-import Image from "next/image";
 import Link from "next/link";
 import { months } from "~/lib/constants";
+import styles from "~/lib/styles";
 
 interface Props {
 	month: number;
@@ -16,9 +15,16 @@ export default function VirtualArchive({ month, year }: Props) {
 		<div className="archive">
 			<style jsx>{`
 				.archive {
-					max-width: 26vw;
 					display: flexbox;
 					cursor: pointer;
+					justify-content: left;
+					background-color: #f0f0f0;
+					padding: 30px;
+					margin: 10px;
+					border-left: 3px solid ${styles.color.secondary};
+				}
+				.archive:hover {
+					background-color: #d0d0d0;
 				}
 				h2 {
 					text-align: center;
@@ -32,17 +38,13 @@ export default function VirtualArchive({ month, year }: Props) {
 				}
 				.thumbnail {
 					position: relative;
-					width: 25vw;
-					height: 20vw;
 				}
 			`}</style>
 			<div className="thumbnail">
 				<Link href={`/archives/${year}/${month}`}>
-					<Image src={img} alt="PDF article preview" layout="fill" blurDataURL={img} placeholder="blur" />
+					<h2>{`${months[month]} ${year}`}</h2>
 				</Link>
 			</div>
-			<hr />
-			<h2>{`${months[month]} ${year}`}</h2>
 		</div>
 	);
 }
