@@ -39,11 +39,13 @@ export default function Credit({ author, articles }: Props) {
 				}
 				h1 {
 					text-align: center;
+					border-bottom: 3px double black;
+					margin-bottom: 1vh;
 				}
 			`}</style>
 			<h1>{author}&apos;s Work</h1>
 			{articles.map(article => (
-				<ArticlePreview key={article.id} article={article} category />
+				<ArticlePreview key={article.id} article={article} style="row" size="small" />
 			))}
 		</div>
 	);

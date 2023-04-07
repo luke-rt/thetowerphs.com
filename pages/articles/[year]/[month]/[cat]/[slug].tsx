@@ -69,6 +69,17 @@ export default function Article({ article }: Props) {
 					initial-letter: 3;
 					margin-right: 10px;
 				}
+				@media screen and (max-width: 1000px) {
+					.article .content {
+						max-width: 100vw;
+						margin-left: 10px;
+						margin-right: 10px;
+					}
+					.main-article::first-letter {
+						initial-letter: 1;
+						margin-right: 0px;
+					}
+				}
 				.article .content p {
 					font-family: ${styles.font.text}, ${styles.font.stack};
 					font-size: 1.2rem;
@@ -97,7 +108,7 @@ export default function Article({ article }: Props) {
 							{article.authors.map((author, index) => (
 								<>
 									<CreditLink key={index} author={author} />
-									<span style={{ marginLeft: "10px", marginRight: "10px" }}>{index < article.authors.length - 1 ? " | " : ""}</span>
+									{index < article.authors.length - 1 ? <span style={{ marginLeft: "5px", marginRight: "5px" }}> • </span> : ""}
 								</>
 							))}
 						</section>

@@ -243,6 +243,9 @@ export async function getArticlesByAuthor(author: string) {
 	const articles = await prisma.article.findMany({
 		orderBy: [
 			{
+				year: "desc",
+			},
+			{
 				month: "desc",
 			},
 		],

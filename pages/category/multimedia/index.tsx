@@ -39,7 +39,7 @@ export default function Category(/*{ spreads }: Props*/) {
 					grid-template-columns: 2fr 1fr 1fr;
 					height: 100vh;
 				}
-				section:nth-child(even) {
+				.grid > section:nth-child(even) {
 					border-left: 1px solid gainsboro;
 					border-right: 1px solid gainsboro;
 				}
