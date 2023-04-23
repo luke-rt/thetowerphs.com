@@ -161,7 +161,7 @@ export default function ArticlePreview({ article, category, style = "row", size 
 						{article.authors?.map((author, index) => (
 							<>
 								<CreditLink key={index} author={author} />
-								<span style={{ marginLeft: "5px", marginRight: "5px" }}>{index < article.authors.length - 1 ? " | " : ""}</span>
+								{index < article.authors.length - 1 ? <span style={{ marginLeft: "5px", marginRight: "5px" }}> • </span> : ""}
 							</>
 						))}
 					</section>
