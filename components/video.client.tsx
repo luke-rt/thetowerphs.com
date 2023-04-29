@@ -16,6 +16,8 @@ export default function Video({ link, title }: Props) {
 					align-items: center;
 					justify-content: center;
 					margin-bottom: 2vh;
+					background-color: #f5f5f5;
+					border-radius: 10px;
 				}
 				.video_container {
 					width: 100%;
@@ -29,6 +31,11 @@ export default function Video({ link, title }: Props) {
 					left: 0;
 					width: 100%;
 					height: 100%;
+					border-radius: 10px 10px 0px 0px;
+				}
+				h3 {
+					margin-top: 1vh;
+					margin-bottom: 1vh;
 				}
 			`}</style>
 			<div className="video_container">

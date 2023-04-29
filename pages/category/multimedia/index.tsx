@@ -37,7 +37,12 @@ export default function Category(/*{ spreads }: Props*/) {
 				.grid {
 					display: grid;
 					grid-template-columns: 2fr 1fr 1fr;
-					height: 100vh;
+					/*height: 100vh;*/
+				}
+				@media (max-width: 1000px) {
+					.grid {
+						grid-template-columns: 1fr;
+					}
 				}
 				.grid > section:nth-child(even) {
 					border-left: 1px solid gainsboro;
@@ -70,10 +75,9 @@ export default function Category(/*{ spreads }: Props*/) {
 			<div className="grid">
 				<NoSSR>
 					<section className="videos">
+						<Video link="VEcVyFME3M0" title="The Making of Newsies" />
+						<br />
 						<Video link="Z4bZBXoVseo" title="Artist of the Month: Kevin Huang Profile" />
-						<br />
-						<hr></hr>
-						<br />
 						{/*
 						<div className="sm-grid">
 							<Video link="Z4bZBXoVseo" title="Artist of the Month: Kevin Huang Profile" />
@@ -85,6 +89,18 @@ export default function Category(/*{ spreads }: Props*/) {
 					<div className="rightbar">
 						<section className="talks">
 							<h2>PHS Talks</h2>
+							<iframe
+								className="podcast"
+								src="https://player.rss.com/phstalks/927613/?theme=light"
+								title="rss embed thingy"
+								frameBorder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowFullScreen
+							>
+								<a href="https://rss.com/podcasts/phstalks/927613/">
+									Jessica Hull &apos;23 on mental toughness and the PHS girls&apos; swim team | RSS.com
+								</a>
+							</iframe>
 							<iframe
 								className="podcast"
 								src="https://player.rss.com/phstalks/844939?theme=light"
