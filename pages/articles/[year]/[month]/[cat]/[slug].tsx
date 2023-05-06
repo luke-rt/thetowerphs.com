@@ -124,7 +124,7 @@ export default function Article({ article }: Props) {
 							<img src={paragraph.substring(5)} width="100%" height="auto" key={index}></img>
 						) : (
 							<p key={index}>
-								{paragraph}
+								{paragraph.replace("&lt;", "<").replace("&gt;", ">")}
 								{index < paragraphs.length - 1 ? "" : "∎"}
 							</p>
 						)
