@@ -71,6 +71,8 @@ export default function Category(/*{ spreads }: Props*/) {
 			<div className="grid">
 				<NoSSR>
 					<section className="videos">
+						<Video link="NlVjqI7eSfc" title="To Track or Not To Track? - A Math Talk with NCTM President Kevin Dykema" />
+						<br />
 						<Video link="VEcVyFME3M0" title="The Making of Newsies" />
 						<br />
 						<Video link="Z4bZBXoVseo" title="Artist of the Month: Kevin Huang Profile" />
